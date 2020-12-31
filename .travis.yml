@@ -1,16 +1,19 @@
 language: node_js
 node_js:
-  - lts/*
+- lts/*
 before_install:
-  - yarn install
+- yarn install
 script:
-  - yarn run build
+- yarn run build
 deploy:
   provider: pages
   target-branch: master
   local-dir: docs/.vuepress/dist
   repo: maxlxq/maxlxq.github.io
-  github-token: $GITHUB_TOKEN
+  github-token: "$GITHUB_TOKEN"
   keep-history: true
   on:
     branch: master
+env:
+  global:
+    secure: Ffs0TiZ3iovp7I4gHuCpTVwP5hHw5BcgZpUJzA+VUybFsrxoTNFIQxz6xbFme1TZSckeu7+U33vsYg005QHcyAE9pa42iyhEIzFThUPIj2FN3VReowRiMNPgFj1f0VwM30ZpYQ/0j08iqHB3GXy6do1FA7KeuvMZ9aeA/MHqkE94/4Is5Mh5IX43AtlZ1QnxrTJgRNu6WrYORT/GLT9hE3kpvqULuqh0kWM5ABblxSH+qJY8n1hm213xrA62vXbehavl0NfjM41FSlHxhTXUdcP+/RA2KwgTZrAjjAdppRSJNKQXVecJVVQroAypq8UPfyKKdrFDZ2iZoF1Czsxuij8fsl8GS/oGJueMFuejbcGAzbGl6gwJmyzHFah2G2w2f4IC2aGLuTrCzl6nhXSRItxsIHJeK9/DJCH6kXuw+OBBgruBIcVJb0MxZPJTsDWAAFnz499183VQdu9TtAMDy/3eVy4/kiJhhFQ6xiuyNBLss5R/hE0n5IG5Mi3xsE7HFPBGylNXK9wAHWHW3chc1VKL5CzfpPtq+liwp27InopSzjgKuOJV9ETQnyV4J01jumRdJ4jhFCuiVs25TRdx6Xxa4RzE1L0ezQRX7yLP4N2wVKP4Y2dHNhL7CAw56rU+MSnmjt2gCEs7ey+3WJtMAAeEaEWHJs652DDNPQN+Iog=
