@@ -1,11 +1,11 @@
 module.exports = {
   title: "大前端飞升指南",
   description: "欢迎访问公众号：大前端飞升指南",
-  ga: "UA-121061441-1",
+  ga: "G-0WGB32QW31",
   markdown: {
     lineNumbers: true,
   },
-  head: [["link", { rel: "icon", href: "https://skr.oss-cn-beijing.aliyuncs.com/blog/qrcode.jpeg" }]],
+  head: [["link", { rel: "icon", href: "/logo.png" }]],
   themeConfig: {
     repo: "maxlxq/maxlxq.github.io",
     nav: [
