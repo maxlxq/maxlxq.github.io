@@ -18,6 +18,7 @@ deploy:
   keep_history: true
   committer_from_gh: true
   on:
+    repo: maxlxq/maxlxq.github.io
     branch: master
 env:
   global:
