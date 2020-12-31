@@ -5,7 +5,7 @@ module.exports = {
   markdown: {
     lineNumbers: true,
   },
-  head: [["link", { rel: "icon", href: "/logo.png" }]],
+  head: [["link", { rel: "icon", href: "/logo.jpg" }]],
   themeConfig: {
     repo: "maxlxq/maxlxq.github.io",
     nav: [
