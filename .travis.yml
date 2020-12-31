@@ -5,6 +5,10 @@ before_install:
 - yarn install
 script:
 - yarn run build
+cache:
+  directories:
+    - node_modules
+  yarn: true
 deploy:
   provider: pages
   target-branch: master
