@@ -15,5 +15,3 @@ git push -f git@github.com:maxlxq/maxlxq.github.io.git master:master
 
 # 如果部署到 https://{USERNAME}.github.io/{REPO}
 #git push -f git@github.com:{USERNAME}/{REPO}.git master
-
-cd -
