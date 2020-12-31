@@ -12,6 +12,7 @@ cache:
 deploy:
   provider: pages
   target_branch: gh-blog
+  skip_cleanup: true
   local_dir: docs/.vuepress/dist
   repo: maxlxq/maxlxq.github.io
   github_token: "$GITHUB_TOKEN"
