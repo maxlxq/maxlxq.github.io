@@ -13,6 +13,14 @@ module.exports = {
         text: "原创",
         link: "/blog/",
       },
+      {
+        text: "刷题",
+        link: "/leetcode/",
+      },
+      {
+        text: "面试",
+        link: "/interview/",
+      },
     ],
     sidebar: {
       "/blog/": [
@@ -20,6 +28,24 @@ module.exports = {
           title: "Test",
           collapsable: false,
           children: [
+            "test.md"
+          ],
+        },
+      ],
+      "/leetcode/": [
+        {
+          title: "力扣",
+          collapsable: false,
+          children: [
+          ],
+        },
+      ],
+      "/interview/": [
+        {
+          title: "面试",
+          collapsable: false,
+          children: [
+
           ],
         },
       ],
