@@ -1,13 +1,13 @@
 language: node_js
 node_js:
-  - lts/*
+- lts/*
 before_install:
-  - yarn install
+- yarn install
 script:
-  - yarn run build
+- yarn run build
 cache:
   directories:
-    - node_modules
+  - node_modules
   yarn: true
 deploy:
   provider: pages
@@ -21,4 +21,4 @@ deploy:
     branch: master
 env:
   global:
-    - secure: eXX4e3u9E7l9SN1Ko1LDCoZEYesn5vX57Dm+HMZ8iu88GxC8H0OxsM0i14BGy9TQ8ZHezhs6jRGP2v279varJ/2AnEUCul0uvyuw8DGORXGS7XpJ/GLB93lpEJtKWQCMuxH5SzI0wGGm+uXJP0oZR4fcLJPeNPZf8o/ft/0BAaQk4cdmuymzO56nFQxxQmGtXTXGohPcSHLtpsGbKMebvIZr810RwWvRBOhq2yXywXkFJ9ce0EYWFskhUywNG5jRwWbFaCcK6fczPGzfvagv/KFD16y1usgVVyLMHSVActT5Kb+nbj8GYuNj+Ei9LNZOQ/ZDbK2czB8qxW3kpw3UtYIalOKO+On3ODjexF2e8WRRUrHigrNwCko9GZWKPDcKOFa+p0UGNBz1zPN7K1+myJv2HyvmcwC3NLqvjfDfPFr8wqNgA7fnBqECHZSzYqD6G7QfaH1d+9sSG4DMBi6T06um3Oz32pGvJ9jWVMhcdCGv7FumtVPUyMJ0p4/X2RuUvse23nRLTwyaw1XJzwsd0wrOJgKxSzQgZnQPY0tXEeYoEUdSs/XUOhQOxAYqmTk3INZSJHAZmtqBqMI0fBtDsDmQIoNydwDPrraHyeMFIFlX/OrLhnztT1iqO/73y0EYk7T39SkkMsPrYLvJ4cN+ldVYb1WxSECGlCUPosCfLA8=
+  - secure: JgHVES2NUjdaqlkg6flvuCiRiSPZV5o83Va+/+88rtLvcNuDm8yLvo6hUa4LZ6xkH6qpphVoc3tXQJmX/eiDRYXTTMJeJYGwo4cS7RYKz/GPfWQCwGIgLbqJX2ICxDK+ya0JNW68nNbr7VeKry4cV723S/6AB+6gTPkQ/G3qfjRnnnbNFwAZnPiuO4qzb3Ua1vAm4ibyBYqMedc+lKu7Lobf6Olk5AQ6S+1WXxoeUr5mceenb/N99ebSx2zGuv1QSkxqvKsW2uTJ7Xvs7sSWj1bjg0QybOYid51yaprUzc74p+7vmaRIRKWA/uV4+kqd+xsmrkWqW1/P6IHtS+kQSuUHzLeZo4t/LMm1F7lpfddgkPCXoRdOE2N1F20MM9QJM207jKtlKGkpmxmQpY5hPOXHUdoOxKFOx4eqHC4bHgmHUe8W8u7DFJ4q+gj1kfjFC7UCH9ev5pM4GtHlkykKzZdsuebc/b0UmaZTENkhfvK/qZzFlX03BvqSfZnA+8UJGkNfUAE3/h5DujpW/KUCI7wKuzFZD+vuzxRZcomDJBaZVbkQxWjKrk+ZfKdRWz4nWIGoiNGmTiBIhecuhpX6LOkC2AXp8DsPnhZcuGpRg/5Xh3uWMOagt3QpGh2Xhk+dPYgXEDulOBqZnN1Xu2etEl3kzOagBEaWGJmym4kyipA=
