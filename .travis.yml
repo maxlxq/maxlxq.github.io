@@ -1,4 +1,3 @@
-sudo: required
 language: node_js
 node_js:
   - lts/*
@@ -9,7 +8,6 @@ script:
 deploy:
   provider: pages
   target-branch: master
-  skip-cleanup: true
   local-dir: docs/.vuepress/dist
   repo: maxlxq/maxlxq.github.io
   github-token: $GITHUB_TOKEN
