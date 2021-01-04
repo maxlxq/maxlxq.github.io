@@ -2,4 +2,4 @@
 
 ### todo
 
-CNAME
+public/CNAME
