@@ -27,7 +27,7 @@ self.addEventListener('message', (event) => {
 self.__precacheManifest = [
   {
     "url": "404.html",
-    "revision": "3d2a874c7a63cc0357e6ac80f2416b6c"
+    "revision": "490f847ba0c3ada65b68a157d7ceb5d8"
   },
   {
     "url": "assets/css/0.styles.f85f523a.css",
@@ -58,12 +58,12 @@ self.__precacheManifest = [
     "revision": "e084ec291b75e427c742c98467035240"
   },
   {
-    "url": "assets/js/15.b47dc41d.js",
-    "revision": "10d1c7aea8063b322f53af15f83db01b"
+    "url": "assets/js/15.97d5afc7.js",
+    "revision": "62b4d746126fd066213c66054ec9951b"
   },
   {
-    "url": "assets/js/16.06de8304.js",
-    "revision": "a14e02b3ba3a6ef0c607e31900ae602f"
+    "url": "assets/js/16.48f5a01a.js",
+    "revision": "1e3f70a96b0eb13cca821bc73f2b8adf"
   },
   {
     "url": "assets/js/17.3afd2d85.js",
@@ -102,44 +102,44 @@ self.__precacheManifest = [
     "revision": "16f871dffc23691478c1134ef064c34a"
   },
   {
-    "url": "assets/js/app.84cc3a74.js",
-    "revision": "deea4ea753c90561ecaf8d58827faead"
+    "url": "assets/js/app.7a5a8c0e.js",
+    "revision": "670bcb473e83bd5f8f7c9194266d4fc4"
   },
   {
     "url": "blog/Fiber详解.html",
-    "revision": "48f4bf046a0f56e3820a2797c4863260"
+    "revision": "cd30466e43f96c1b09138f0ec751feaf"
   },
   {
     "url": "blog/Git使用.html",
-    "revision": "91189261a3e3213ae2e52d2bf4924157"
+    "revision": "e489087461c24a758fdb5cf48be56961"
   },
   {
     "url": "blog/index.html",
-    "revision": "bc8751be81e9f2e9c7746cc6fa5a4221"
+    "revision": "28147149170cf79a3f0bb3e54772b077"
   },
   {
     "url": "blog/React核心.html",
-    "revision": "9692290f943ace75fb93923c8d770540"
+    "revision": "4310b704d8092e12239907f3cd35aa3a"
   },
   {
     "url": "index.html",
-    "revision": "78071f3133ae4a72543b7d7fb6d7be87"
+    "revision": "f09d4eb969a4bdca20de3fa8c614db49"
   },
   {
     "url": "interview/index.html",
-    "revision": "6cbb3b99493b5669ce7eabc0294251cf"
+    "revision": "15ef497b245541f39c7d931caa4795b9"
   },
   {
     "url": "interview/javascript.html",
-    "revision": "8b85c17e7b0ac370030702995f08f5db"
+    "revision": "c52ae6c022a6a5de80cdbcee077763b6"
   },
   {
     "url": "leetcode/Array.html",
-    "revision": "027cc61fdeee306215a59f02c5c9586e"
+    "revision": "4bceedb2b79ddeb49edaa69190960ac1"
   },
   {
     "url": "leetcode/index.html",
-    "revision": "16d7607f5721787ff43c619d2cb93a47"
+    "revision": "2b9970465797ee68ad4ece296977d900"
   },
   {
     "url": "logo.jpg",
