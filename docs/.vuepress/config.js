@@ -45,6 +45,7 @@ module.exports = {
           title: "力扣",
           collapsable: false,
           children: [
+            'Array.md',
           ],
         },
       ],
