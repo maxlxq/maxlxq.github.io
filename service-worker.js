@@ -27,7 +27,7 @@ self.addEventListener('message', (event) => {
 self.__precacheManifest = [
   {
     "url": "404.html",
-    "revision": "13a714a0ea59afba2e000dd87332185a"
+    "revision": "037d1e2c43972824c60adc8684d063e9"
   },
   {
     "url": "assets/css/0.styles.f85f523a.css",
@@ -58,8 +58,8 @@ self.__precacheManifest = [
     "revision": "e084ec291b75e427c742c98467035240"
   },
   {
-    "url": "assets/js/15.8459e7ea.js",
-    "revision": "f2d398904af9619e1a947ddee88fc260"
+    "url": "assets/js/15.e4af28fe.js",
+    "revision": "148fccc590134a75e754adc26185bc34"
   },
   {
     "url": "assets/js/16.06de8304.js",
@@ -102,44 +102,44 @@ self.__precacheManifest = [
     "revision": "16f871dffc23691478c1134ef064c34a"
   },
   {
-    "url": "assets/js/app.0f4d0313.js",
-    "revision": "31e252c7cea76c984aa8570ec8b77d25"
+    "url": "assets/js/app.74b4904d.js",
+    "revision": "2b969b2ee2b6207785339832c91b7246"
   },
   {
     "url": "blog/Fiber详解.html",
-    "revision": "0f07d3571efa7a04150c87ddf7414034"
+    "revision": "8c4dec7b4e656fdf2269d652d8fe6c68"
   },
   {
     "url": "blog/Git使用.html",
-    "revision": "b65680b2a8011b023199ab78ca7e42ea"
+    "revision": "c114fddcfd5cd9d4c8ddc3bc93f9bbe6"
   },
   {
     "url": "blog/index.html",
-    "revision": "b8b2e1a2e6cc49107b7560a0c3ccc31e"
+    "revision": "b450efbaf4ccb1e0b06714296d714ebd"
   },
   {
     "url": "blog/React核心.html",
-    "revision": "0d8ea3ffa86a9094baa95ea37ee93681"
+    "revision": "3c81070a366b453d0350be2676f5e9d5"
   },
   {
     "url": "index.html",
-    "revision": "49f9001ca4d2707e8d5e5d4a7d4acde5"
+    "revision": "ea6fd4b8e7d1f6fdf1dd75802dd28322"
   },
   {
     "url": "interview/index.html",
-    "revision": "9d0238065f48d4e8f96eb8bb9f80cd71"
+    "revision": "cae0ce40c83111d73cd710f32f80a07c"
   },
   {
     "url": "interview/javascript.html",
-    "revision": "d349f2a87249b219c03df86be44fcfa4"
+    "revision": "612336d0ed507add1140b8370d3422e3"
   },
   {
     "url": "leetcode/Array.html",
-    "revision": "5dbb946d4558cef39476c84b52e2473d"
+    "revision": "d0ba12d65af669a87119fe17efee9e52"
   },
   {
     "url": "leetcode/index.html",
-    "revision": "d67467692f0261442f61f833b343b2cc"
+    "revision": "bc613e232b1512b5cd3de618a34557cc"
   },
   {
     "url": "logo.jpg",
