@@ -25,10 +25,18 @@ module.exports = {
     sidebar: {
       "/blog/": [
         {
-          title: "Test",
+          title: "DevOps",
           collapsable: false,
           children: [
-            "test.md"
+            "Git使用.md"
+          ],
+        },
+        {
+          title: "Framework",
+          collapsable: false,
+          children: [
+            "React核心.md",
+            "Fiber详解.md",
           ],
         },
       ],
@@ -45,7 +53,7 @@ module.exports = {
           title: "面试",
           collapsable: false,
           children: [
-
+            'javascript.md'
           ],
         },
       ],

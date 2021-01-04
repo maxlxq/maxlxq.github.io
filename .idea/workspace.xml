@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d0c27398-e18c-4d4b-b7a6-a5f7e01e000a" name="默认的" comment="[init] 测试提交build">
+      <change afterPath="$PROJECT_DIR$/docs/blog/Fiber详解.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/blog/Git使用.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/blog/React核心.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/interview/javascript.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deploy.sh" beforeDir="false" afterPath="$PROJECT_DIR$/deploy.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/blog/test.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/interview/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/interview/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/leetcode/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/leetcode/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +65,7 @@
       <workItem from="1609334859760" duration="4488000" />
       <workItem from="1609377397576" duration="7889000" />
       <workItem from="1609722305631" duration="225000" />
-      <workItem from="1609722551792" duration="1435000" />
+      <workItem from="1609722551792" duration="4186000" />
     </task>
     <task id="LOCAL-00001" summary="[init] 初始化">
       <created>1609339598800</created>
