@@ -27,7 +27,7 @@ self.addEventListener('message', (event) => {
 self.__precacheManifest = [
   {
     "url": "404.html",
-    "revision": "059a0e003de2c57a0cba743470074096"
+    "revision": "339de53249f2044001b691e25d0c62e6"
   },
   {
     "url": "assets/css/0.styles.f85f523a.css",
@@ -86,28 +86,28 @@ self.__precacheManifest = [
     "revision": "b8ae23576d99562306deab852224d70f"
   },
   {
-    "url": "assets/js/app.d8460148.js",
-    "revision": "eccbb7250e439e9ed77a5e37d466ba5b"
+    "url": "assets/js/app.26aa48e1.js",
+    "revision": "fabee883f211b361b5a03bca740941c0"
   },
   {
     "url": "blog/index.html",
-    "revision": "b9bf96ae1b8c910bfb7cc41aded47e09"
+    "revision": "7aa221c742cd66150201b58a8bb95938"
   },
   {
     "url": "blog/test.html",
-    "revision": "4f26cf003715e5084876b4d675bc770a"
+    "revision": "c961d878e674548afb72dbe293eb82ba"
   },
   {
     "url": "index.html",
-    "revision": "a0707a215d99adae9c61a457dd531e8e"
+    "revision": "6ebab7269fbcb3d5ee5a0828d3311c0b"
   },
   {
     "url": "interview/index.html",
-    "revision": "47436b13ab101b9e77541db46bfab7de"
+    "revision": "a0108e1bcd0135e7f37fe97a0b3bc5c8"
   },
   {
     "url": "leetcode/index.html",
-    "revision": "53409d2d611af4e0063e5347316bba80"
+    "revision": "34fadb9a370e6937b9344b1a94aed9fd"
   },
   {
     "url": "logo.jpg",
