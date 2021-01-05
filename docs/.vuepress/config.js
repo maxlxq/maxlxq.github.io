@@ -39,6 +39,13 @@ module.exports = {
             "Fiber详解.md",
           ],
         },
+        {
+          title: "浏览器网络相关",
+          collapsable: false,
+          children: [
+            "HTTP发展.md"
+          ],
+        },
       ],
       "/leetcode/": [
         {
