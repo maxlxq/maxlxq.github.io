@@ -27,7 +27,7 @@ self.addEventListener('message', (event) => {
 self.__precacheManifest = [
   {
     "url": "404.html",
-    "revision": "989c2c6a9add54a80ed71abad7347fab"
+    "revision": "50ea8ba9847e8764368c7f0ac159ca05"
   },
   {
     "url": "assets/css/0.styles.f85f523a.css",
@@ -42,8 +42,8 @@ self.__precacheManifest = [
     "revision": "875bb96dbd87f456edc7641dc82ae6ea"
   },
   {
-    "url": "assets/js/11.c35be34b.js",
-    "revision": "90de8f3f95bb2bdae71cb5d0920659e8"
+    "url": "assets/js/11.2b0f91c9.js",
+    "revision": "1929e3dc2909e0943056f7e4dd37c407"
   },
   {
     "url": "assets/js/12.6dd1ab5b.js",
@@ -62,16 +62,20 @@ self.__precacheManifest = [
     "revision": "94b43b848f93e595196259ad656e905b"
   },
   {
-    "url": "assets/js/16.e25595e1.js",
-    "revision": "03fd7408f54c7b51f943bb95299b1926"
+    "url": "assets/js/16.bb900bdb.js",
+    "revision": "887d9b186df0c77e203070ff7e71fe4e"
   },
   {
     "url": "assets/js/17.b1fce0a8.js",
     "revision": "53e369c341eb8127bf9dec56eca05c8e"
   },
   {
-    "url": "assets/js/18.2c84ca7b.js",
-    "revision": "1c831f965bceeb434b2264dd327348b1"
+    "url": "assets/js/18.027e540a.js",
+    "revision": "b0ea15d302f908a5c601a2bb57364315"
+  },
+  {
+    "url": "assets/js/19.5f607df0.js",
+    "revision": "6c2553142ba2885218865d78873f7159"
   },
   {
     "url": "assets/js/2.f858d565.js",
@@ -82,8 +86,8 @@ self.__precacheManifest = [
     "revision": "c8088fe0a969ac992df5689395b0937b"
   },
   {
-    "url": "assets/js/4.cc3e2053.js",
-    "revision": "5c576f405db032a9c9297574165c9d30"
+    "url": "assets/js/4.c9d16097.js",
+    "revision": "db7b21f59940338d9ad1e098740b2416"
   },
   {
     "url": "assets/js/5.66f8ea3a.js",
@@ -106,48 +110,52 @@ self.__precacheManifest = [
     "revision": "16f871dffc23691478c1134ef064c34a"
   },
   {
-    "url": "assets/js/app.5a7287f4.js",
-    "revision": "75077ffb4d2157ccc1f23ebd822cfad4"
+    "url": "assets/js/app.094b2883.js",
+    "revision": "f011bbc22cd912864b6b8acd09f80bf4"
   },
   {
     "url": "blog/Fiber详解.html",
-    "revision": "2c4f560c5ff93c674d01dc6f46242d2d"
+    "revision": "49d76f77347fd54f532bad7c0c9b7716"
   },
   {
     "url": "blog/Git使用.html",
-    "revision": "e89a1ddcd1a23941b3d05b81932ceb99"
+    "revision": "5a19de8980969f98bc078f133837690e"
   },
   {
     "url": "blog/HTTP发展.html",
-    "revision": "86d6160bde97b1830a57de1c3e100f30"
+    "revision": "dcaeaeb5a97286b09310d418cbc2d174"
   },
   {
     "url": "blog/index.html",
-    "revision": "40f898fcf72ef5aa46163c783dfb5427"
+    "revision": "558a45d6be29989731dacae017902801"
   },
   {
     "url": "blog/React核心.html",
-    "revision": "235c65e9ff71751608d2fdf1742fe035"
+    "revision": "7d640d5d437c5cf84bcb34abeaede4e2"
   },
   {
     "url": "index.html",
-    "revision": "8584c4b98afb8978487e1f5976623292"
+    "revision": "69abd5df7db12f3d65685fe1da5c99f7"
   },
   {
     "url": "interview/index.html",
-    "revision": "023cfccb073d18a08e71fc65f829c115"
+    "revision": "9229590fa9ed3e4e3051f88dded86823"
   },
   {
     "url": "interview/javascript.html",
-    "revision": "f3d3c631b70f251cecfbf43018e2aff0"
+    "revision": "dce242aee7206d280c257f061f8e5925"
   },
   {
     "url": "leetcode/Array.html",
-    "revision": "548ccc260a69f663648424de9bcd3b8a"
+    "revision": "5ed0c092205f6781de99cfb7523ed756"
   },
   {
     "url": "leetcode/index.html",
-    "revision": "dee53f23ce807055169d75a2d24422a6"
+    "revision": "91721ddb8bc07c60f07643de24d5e834"
+  },
+  {
+    "url": "leetcode/Tree.html",
+    "revision": "c570d5c11124db956c0b70cc5ced9aca"
   },
   {
     "url": "logo.jpg",
