@@ -62,7 +62,7 @@ module.exports = {
           title: "面试",
           collapsable: false,
           children: [
-            'javascript.md'，
+            'javascript.md',
             '基础知识.md',
           ],
         },
