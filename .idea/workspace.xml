@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d0c27398-e18c-4d4b-b7a6-a5f7e01e000a" name="默认的" comment="[init] 测试提交build">
-      <change afterPath="$PROJECT_DIR$/docs/leetcode/Tree.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/blog/HTTP发展.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/blog/HTTP发展.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +60,7 @@
       <workItem from="1609722551792" duration="7222000" />
       <workItem from="1609895736575" duration="146000" />
       <workItem from="1609898369258" duration="2374000" />
+      <workItem from="1609940425627" duration="1626000" />
     </task>
     <task id="LOCAL-00001" summary="[init] 初始化">
       <created>1609339598800</created>
