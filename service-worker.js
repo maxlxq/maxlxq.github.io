@@ -27,7 +27,7 @@ self.addEventListener('message', (event) => {
 self.__precacheManifest = [
   {
     "url": "404.html",
-    "revision": "50ea8ba9847e8764368c7f0ac159ca05"
+    "revision": "97e4350cf6f38baca2314fb932bd3e44"
   },
   {
     "url": "assets/css/0.styles.f85f523a.css",
@@ -62,32 +62,36 @@ self.__precacheManifest = [
     "revision": "94b43b848f93e595196259ad656e905b"
   },
   {
-    "url": "assets/js/16.bb900bdb.js",
-    "revision": "887d9b186df0c77e203070ff7e71fe4e"
+    "url": "assets/js/16.4b5a62ac.js",
+    "revision": "190869790e33b5f5d94dbd66b1c4b2a2"
   },
   {
-    "url": "assets/js/17.b1fce0a8.js",
-    "revision": "53e369c341eb8127bf9dec56eca05c8e"
+    "url": "assets/js/17.ca105a67.js",
+    "revision": "0106a455f4e1f607b90ed2eed6801818"
   },
   {
-    "url": "assets/js/18.027e540a.js",
-    "revision": "b0ea15d302f908a5c601a2bb57364315"
+    "url": "assets/js/18.15cd580e.js",
+    "revision": "814193dff64de77874e7a8f09e4ab78c"
   },
   {
-    "url": "assets/js/19.5f607df0.js",
-    "revision": "6c2553142ba2885218865d78873f7159"
+    "url": "assets/js/19.d37e8659.js",
+    "revision": "5311d762f7d5d646d5518b475736f8b0"
   },
   {
     "url": "assets/js/2.f858d565.js",
     "revision": "db009cc856da9d2c7e1126e6b71be97f"
   },
   {
+    "url": "assets/js/20.4e99edbd.js",
+    "revision": "43cba71f1b038cfc05f36631820ff90c"
+  },
+  {
     "url": "assets/js/3.42dff118.js",
     "revision": "c8088fe0a969ac992df5689395b0937b"
   },
   {
-    "url": "assets/js/4.c9d16097.js",
-    "revision": "db7b21f59940338d9ad1e098740b2416"
+    "url": "assets/js/4.879ed87c.js",
+    "revision": "5a6b5134caf2e163582e406b446616ef"
   },
   {
     "url": "assets/js/5.66f8ea3a.js",
@@ -110,52 +114,56 @@ self.__precacheManifest = [
     "revision": "16f871dffc23691478c1134ef064c34a"
   },
   {
-    "url": "assets/js/app.094b2883.js",
-    "revision": "f011bbc22cd912864b6b8acd09f80bf4"
+    "url": "assets/js/app.8f0dff28.js",
+    "revision": "7d808e46fd0b8f340e2598fb811460c9"
   },
   {
     "url": "blog/Fiber详解.html",
-    "revision": "49d76f77347fd54f532bad7c0c9b7716"
+    "revision": "2561ea20d8ab8b9591a0eb7db008f8c7"
   },
   {
     "url": "blog/Git使用.html",
-    "revision": "5a19de8980969f98bc078f133837690e"
+    "revision": "a6c3911c8e87e666f191fdd1a539125e"
   },
   {
     "url": "blog/HTTP发展.html",
-    "revision": "dcaeaeb5a97286b09310d418cbc2d174"
+    "revision": "d5db58e5ccf16fce1ed89fd4026dfea7"
   },
   {
     "url": "blog/index.html",
-    "revision": "558a45d6be29989731dacae017902801"
+    "revision": "36328ea01bac293bf9de234b5baaefa2"
   },
   {
     "url": "blog/React核心.html",
-    "revision": "7d640d5d437c5cf84bcb34abeaede4e2"
+    "revision": "55c936a19fe1481429dbe9864f6b504a"
   },
   {
     "url": "index.html",
-    "revision": "69abd5df7db12f3d65685fe1da5c99f7"
+    "revision": "9f3ac8ef491e8462336d646672d0d409"
   },
   {
     "url": "interview/index.html",
-    "revision": "9229590fa9ed3e4e3051f88dded86823"
+    "revision": "ee390ee4a724d0395755a1ac48037a2b"
   },
   {
     "url": "interview/javascript.html",
-    "revision": "dce242aee7206d280c257f061f8e5925"
+    "revision": "131284ca585eef7ad9e72ce87fb9fe70"
+  },
+  {
+    "url": "interview/基础知识.html",
+    "revision": "a4f379041dbece8e80451033fb85172d"
   },
   {
     "url": "leetcode/Array.html",
-    "revision": "5ed0c092205f6781de99cfb7523ed756"
+    "revision": "ed6525e07c57ceec1d91fcfce61cea6e"
   },
   {
     "url": "leetcode/index.html",
-    "revision": "91721ddb8bc07c60f07643de24d5e834"
+    "revision": "d03c4b28f0167eac8c96012522b78b52"
   },
   {
     "url": "leetcode/Tree.html",
-    "revision": "c570d5c11124db956c0b70cc5ced9aca"
+    "revision": "be62ae7ea1c619f8b169d8e8ed9c94f9"
   },
   {
     "url": "logo.jpg",
