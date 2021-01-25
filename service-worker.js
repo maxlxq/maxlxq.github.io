@@ -27,7 +27,7 @@ self.addEventListener('message', (event) => {
 self.__precacheManifest = [
   {
     "url": "404.html",
-    "revision": "26d65e4b41b412e35a632a30c42b9e1c"
+    "revision": "69cc8abde4c16c0714560045f8be87ac"
   },
   {
     "url": "assets/css/0.styles.f85f523a.css",
@@ -54,44 +54,48 @@ self.__precacheManifest = [
     "revision": "b72ad34aa84d76251110901ab526da83"
   },
   {
-    "url": "assets/js/14.f42df187.js",
-    "revision": "95121e9cef0233b5b73564045a234ce9"
+    "url": "assets/js/14.806ee42a.js",
+    "revision": "f77e6ab27d3b260771c0625e4ae8d047"
   },
   {
-    "url": "assets/js/15.ddddeacd.js",
-    "revision": "94b43b848f93e595196259ad656e905b"
+    "url": "assets/js/15.25056a90.js",
+    "revision": "496c12f4bb6bf45dfd8fee65e56ff392"
   },
   {
-    "url": "assets/js/16.a8739184.js",
-    "revision": "36e4c2a16060e8443769099515968c70"
+    "url": "assets/js/16.659154bc.js",
+    "revision": "1f60ccbcf0c4aa942fad8253f02d5674"
   },
   {
-    "url": "assets/js/17.ca105a67.js",
-    "revision": "0106a455f4e1f607b90ed2eed6801818"
+    "url": "assets/js/17.f0c9a431.js",
+    "revision": "b55e43754a63fd5dfddd75990c3fdeff"
   },
   {
-    "url": "assets/js/18.15cd580e.js",
-    "revision": "814193dff64de77874e7a8f09e4ab78c"
+    "url": "assets/js/18.dd17f751.js",
+    "revision": "84b876e83b63b9f334bdb1c7f590fbab"
   },
   {
-    "url": "assets/js/19.d37e8659.js",
-    "revision": "5311d762f7d5d646d5518b475736f8b0"
+    "url": "assets/js/19.d71e7709.js",
+    "revision": "586479642479b7ef7729b5830399e5f1"
   },
   {
     "url": "assets/js/2.f858d565.js",
     "revision": "db009cc856da9d2c7e1126e6b71be97f"
   },
   {
-    "url": "assets/js/20.4e99edbd.js",
-    "revision": "43cba71f1b038cfc05f36631820ff90c"
+    "url": "assets/js/20.e9222806.js",
+    "revision": "884599360ac03897ef605889bdf44eea"
+  },
+  {
+    "url": "assets/js/21.660d7999.js",
+    "revision": "35eb64a48b4d605a4c835eee96874c42"
   },
   {
     "url": "assets/js/3.42dff118.js",
     "revision": "c8088fe0a969ac992df5689395b0937b"
   },
   {
-    "url": "assets/js/4.879ed87c.js",
-    "revision": "5a6b5134caf2e163582e406b446616ef"
+    "url": "assets/js/4.63135e2d.js",
+    "revision": "4e115195dc436320e2bcf0342173421b"
   },
   {
     "url": "assets/js/5.66f8ea3a.js",
@@ -114,56 +118,60 @@ self.__precacheManifest = [
     "revision": "16f871dffc23691478c1134ef064c34a"
   },
   {
-    "url": "assets/js/app.985342be.js",
-    "revision": "6c568b25e840a8b77863bc7e50ec6815"
+    "url": "assets/js/app.09e026f1.js",
+    "revision": "5526a593622c0827065bdf71b14bfabe"
   },
   {
     "url": "blog/Fiber详解.html",
-    "revision": "61bba6d434c7d414bfe0141f18bfb99f"
+    "revision": "2dd4e62a86d51a3a7129c636c955e653"
   },
   {
     "url": "blog/Git使用.html",
-    "revision": "539c99f53b3fcde1b8de496ab4f01349"
+    "revision": "b1ec6665e7778071e8332f099cccd01d"
   },
   {
     "url": "blog/HTTP发展.html",
-    "revision": "97566b16967b5d4daffe95a277862f26"
+    "revision": "b762282306202f5225016c5b829bd659"
   },
   {
     "url": "blog/index.html",
-    "revision": "81ad579cf748bb803d880531c3159337"
+    "revision": "236d458797a6325b68069bfe9a04bf57"
   },
   {
     "url": "blog/React核心.html",
-    "revision": "8d79cd39a7b57b955ccdebbe0ac5114c"
+    "revision": "f04245d2dfc0dca6e2230c9b3c616f86"
   },
   {
     "url": "index.html",
-    "revision": "5c4a7a9d8e8ebb48e74da7d9e752f28e"
+    "revision": "eb378ca2642b5490dfd5b8ea4233e2ca"
+  },
+  {
+    "url": "interview/Event.html",
+    "revision": "5ab6ff140d21e6b7737c2af30542e71f"
   },
   {
     "url": "interview/index.html",
-    "revision": "a6c38125895ec8390d113ae487ccd6d8"
+    "revision": "b3b5ac4cd59d8ad8b796002649ea94fe"
   },
   {
     "url": "interview/javascript.html",
-    "revision": "17a9085306764c8d00b4161c9bf83469"
+    "revision": "32a078e8f7f1e20af1c736971c5e7ece"
   },
   {
-    "url": "interview/基础知识.html",
-    "revision": "15bf3f5906f5453279df76db9c594742"
+    "url": "interview/浏览器输入URL系列.html",
+    "revision": "db63ac8bbbd88eb92e043984935eb655"
   },
   {
     "url": "leetcode/Array.html",
-    "revision": "b0ee59e24963df1cbdc407cd7fb37dbd"
+    "revision": "0f38b2e0e23ae46fd3d633c279d1b4a0"
   },
   {
     "url": "leetcode/index.html",
-    "revision": "ed9096bde929269851b6d9228f5a1fca"
+    "revision": "711fea281df75332b9764d7ededd5efb"
   },
   {
     "url": "leetcode/Tree.html",
-    "revision": "24da4efc1d60ca0fdb5df1d8a0d9e965"
+    "revision": "4e74cc6a51d04285fd5e4037526b9fd9"
   },
   {
     "url": "logo.jpg",
