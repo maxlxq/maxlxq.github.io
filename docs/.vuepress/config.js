@@ -63,7 +63,7 @@ module.exports = {
           collapsable: false,
           children: [
             'javascript.md',
-            '基础知识.md',
+            'Event.md',
           ],
         },
       ],
