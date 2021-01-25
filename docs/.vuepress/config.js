@@ -64,6 +64,7 @@ module.exports = {
           children: [
             'javascript.md',
             'Event.md',
+            '浏览器输入URL系列.md',
           ],
         },
       ],
