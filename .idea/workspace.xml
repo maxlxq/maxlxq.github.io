@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d0c27398-e18c-4d4b-b7a6-a5f7e01e000a" name="默认的" comment="[init] 测试提交build">
+      <change afterPath="$PROJECT_DIR$/docs/interview/浏览器输入URL系列.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,6 +14,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1mNX7d3OyhXqPai5D12cY8NoKBf" />
   <component name="ProjectLevelVcsManager">
@@ -61,6 +71,7 @@
       <workItem from="1609895736575" duration="146000" />
       <workItem from="1609898369258" duration="2374000" />
       <workItem from="1609940425627" duration="1626000" />
+      <workItem from="1611574995371" duration="3684000" />
     </task>
     <task id="LOCAL-00001" summary="[init] 初始化">
       <created>1609339598800</created>
@@ -139,7 +150,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609408878355</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="[init] 测试提交build">
+      <created>1611575070222</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1611575070222</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
