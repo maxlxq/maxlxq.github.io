@@ -65,6 +65,7 @@ module.exports = {
             'javascript.md',
             'Event.md',
             '浏览器输入URL系列.md',
+            'JS基础.md',
           ],
         },
       ],
