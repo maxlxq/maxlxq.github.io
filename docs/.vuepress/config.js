@@ -60,12 +60,21 @@ module.exports = {
       "/interview/": [
         {
           title: "面试",
-          collapsable: false,
+          collapsable: true,
           children: [
             'javascript.md',
             'Event.md',
             '浏览器输入URL系列.md',
             'JS基础.md',
+          ],
+        },
+        {
+          title: "手撕代码",
+          collapsable: true,
+          children: [
+            'new模拟实现.md',
+            'bind模拟实现.md',
+            'call和apply模拟实现.md',
           ],
         },
       ],
