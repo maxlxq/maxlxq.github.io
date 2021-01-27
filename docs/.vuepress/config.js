@@ -18,6 +18,10 @@ module.exports = {
         link: "/leetcode/",
       },
       {
+        text: "MDN",
+        link: "/mdn/",
+      },
+      {
         text: "面试",
         link: "/interview/",
       },
@@ -54,6 +58,15 @@ module.exports = {
           children: [
             'Array.md',
             'Tree.md',
+          ],
+        },
+      ],
+      "/mdn/": [
+        {
+          title: "MDN",
+          collapsable: false,
+          children: [
+            '真_基础.md',
           ],
         },
       ],
