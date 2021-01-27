@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>bind模拟实现 | 大前端飞升指南</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    <link rel="icon" href="/logo.jpg">
+    <meta name="description" content="欢迎访问公众号：大前端飞升指南">
+    
+    <link rel="preload" href="/assets/css/0.styles.f85f523a.css" as="style"><link rel="preload" href="/assets/js/app.66e1a963.js" as="script"><link rel="preload" href="/assets/js/2.6620eda4.js" as="script"><link rel="preload" href="/assets/js/17.1269caef.js" as="script"><link rel="preload" href="/assets/js/4.19e7613d.js" as="script"><link rel="prefetch" href="/assets/js/10.0217def4.js"><link rel="prefetch" href="/assets/js/11.c98e243a.js"><link rel="prefetch" href="/assets/js/12.b73f0c78.js"><link rel="prefetch" href="/assets/js/13.0548ed0e.js"><link rel="prefetch" href="/assets/js/14.b753c25d.js"><link rel="prefetch" href="/assets/js/15.1193134e.js"><link rel="prefetch" href="/assets/js/16.96fb9169.js"><link rel="prefetch" href="/assets/js/18.5cede34a.js"><link rel="prefetch" href="/assets/js/19.d926ac26.js"><link rel="prefetch" href="/assets/js/20.cc50c93b.js"><link rel="prefetch" href="/assets/js/21.d17d7191.js"><link rel="prefetch" href="/assets/js/22.969f34b9.js"><link rel="prefetch" href="/assets/js/23.02887f74.js"><link rel="prefetch" href="/assets/js/24.b73baeff.js"><link rel="prefetch" href="/assets/js/25.e4b4807c.js"><link rel="prefetch" href="/assets/js/3.7ee1a3e6.js"><link rel="prefetch" href="/assets/js/5.09e36ba5.js"><link rel="prefetch" href="/assets/js/6.ec5451c7.js"><link rel="prefetch" href="/assets/js/7.5ec62129.js"><link rel="prefetch" href="/assets/js/8.ab5b260b.js"><link rel="prefetch" href="/assets/js/9.e1890810.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.f85f523a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">大前端飞升指南</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/" class="nav-link">
+  原创
+</a></div><div class="nav-item"><a href="/leetcode/" class="nav-link">
+  刷题
+</a></div><div class="nav-item"><a href="/interview/" class="nav-link router-link-active">
+  面试
+</a></div> <a href="https://github.com/maxlxq/maxlxq.github.io" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/" class="nav-link">
+  原创
+</a></div><div class="nav-item"><a href="/leetcode/" class="nav-link">
+  刷题
+</a></div><div class="nav-item"><a href="/interview/" class="nav-link router-link-active">
+  面试
+</a></div> <a href="https://github.com/maxlxq/maxlxq.github.io" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>面试</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>手撕代码</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/interview/new模拟实现.html" class="sidebar-link">new模拟实现</a></li><li><a href="/interview/bind模拟实现.html" class="active sidebar-link">bind模拟实现</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/interview/bind模拟实现.html#原理" class="sidebar-link">原理</a></li><li class="sidebar-sub-header"><a href="/interview/bind模拟实现.html#代码实现" class="sidebar-link">代码实现</a></li></ul></li><li><a href="/interview/call和apply模拟实现.html" class="sidebar-link">call和apply模拟实现</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="bind模拟实现"><a href="#bind模拟实现" class="header-anchor">#</a> bind模拟实现</h1> <h2 id="原理"><a href="#原理" class="header-anchor">#</a> 原理</h2> <h2 id="代码实现"><a href="#代码实现" class="header-anchor">#</a> 代码实现</h2></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/maxlxq/maxlxq.github.io/edit/master/docs/interview/bind模拟实现.md" target="_blank" rel="noopener noreferrer">本文源码地址</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">更新时间:</span> <span class="time">1/27/2021, 8:02:56 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/interview/new模拟实现.html" class="prev">
+        new模拟实现
+      </a></span> <span class="next"><a href="/interview/call和apply模拟实现.html">
+        call和apply模拟实现
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.66e1a963.js" defer></script><script src="/assets/js/2.6620eda4.js" defer></script><script src="/assets/js/17.1269caef.js" defer></script><script src="/assets/js/4.19e7613d.js" defer></script>
+  </body>
+</html>
