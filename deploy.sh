@@ -5,7 +5,7 @@ set -e
 
 git init
 git add -A
-git commit -m 'init'
+git commit -m '更新blog'
 
 git config --local user.name "向前Hell"
 git config --local user.email "542168513@qq.com"
