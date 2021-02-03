@@ -79,6 +79,7 @@ module.exports = {
             'Event.md',
             '浏览器输入URL系列.md',
             'JS基础.md',
+            'React知识点.md',
           ],
         },
         {
