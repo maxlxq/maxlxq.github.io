@@ -50,6 +50,13 @@ module.exports = {
             "HTTP发展.md"
           ],
         },
+        {
+          title: "ECMAScript",
+          collapsable: false,
+          children: [
+            "ECMAScript.md"
+          ],
+        },
       ],
       "/leetcode/": [
         {
