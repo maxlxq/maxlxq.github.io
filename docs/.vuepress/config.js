@@ -39,7 +39,6 @@ module.exports = {
           title: "Framework",
           collapsable: false,
           children: [
-            "React核心.md",
             "Fiber详解.md",
           ],
         },
@@ -96,6 +95,14 @@ module.exports = {
             'new模拟实现.md',
             'bind模拟实现.md',
             'call和apply模拟实现.md',
+            'requestIdleCallback模拟实现.md',
+          ],
+        },
+        {
+          title: "设计模式",
+          collapsable: true,
+          children: [
+            'GoF介绍.md',
           ],
         },
       ],
