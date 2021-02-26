@@ -86,6 +86,7 @@ module.exports = {
             '浏览器输入URL系列.md',
             'JS基础.md',
             'React知识点.md',
+            '垃圾回收.md',
           ],
         },
         {
