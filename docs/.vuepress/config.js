@@ -56,6 +56,13 @@ module.exports = {
             "ECMAScript.md"
           ],
         },
+        {
+          title: "基础建设和架构",
+          collapsable: false,
+          children: [
+            "基础建设和架构.md"
+          ],
+        },
       ],
       "/leetcode/": [
         {
