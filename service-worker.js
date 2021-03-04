@@ -27,7 +27,7 @@ self.addEventListener('message', (event) => {
 self.__precacheManifest = [
   {
     "url": "404.html",
-    "revision": "78ddd44a23ea37a56324679234c2d72f"
+    "revision": "349ea430815f51ffa4afe163cb5ce709"
   },
   {
     "url": "assets/css/0.styles.aee30c31.css",
@@ -118,48 +118,52 @@ self.__precacheManifest = [
     "revision": "253bd107137b019a41e87d5b5f375c40"
   },
   {
-    "url": "assets/js/25.03c426eb.js",
-    "revision": "fb9b93a14325d8535c0a06e121df8ad7"
+    "url": "assets/js/25.27a930a2.js",
+    "revision": "56ec15194418edbcb1e14317b1b5be73"
   },
   {
-    "url": "assets/js/26.9acbe081.js",
-    "revision": "3b50eb273e1e11f1e68aff502e9520d8"
+    "url": "assets/js/26.b26d31d8.js",
+    "revision": "c70b2bc3d4e77fe902f3cf18bb53faf0"
   },
   {
-    "url": "assets/js/27.283f533b.js",
-    "revision": "f054b19d412058bfa62dbf097625fc09"
+    "url": "assets/js/27.a7df5069.js",
+    "revision": "7d5e1d8eb7c669fe2d0d7a6237fac2fa"
   },
   {
-    "url": "assets/js/28.e3193d36.js",
-    "revision": "bc65aaa1cfc763748f7db7b84e296b64"
+    "url": "assets/js/28.4a64bb42.js",
+    "revision": "c8133565f0b081ac666b45fbebddf7aa"
   },
   {
-    "url": "assets/js/29.b6465eae.js",
-    "revision": "f231a3b22c01c2cf83fc986be698efdf"
+    "url": "assets/js/29.d9d062a3.js",
+    "revision": "5dc22d72175d3e68e5dc2786b8c5c2cc"
   },
   {
     "url": "assets/js/3.a14a11a0.js",
     "revision": "6ceff1c3367f29fb896bad7866de09ae"
   },
   {
-    "url": "assets/js/30.eb8bc8f0.js",
-    "revision": "61048d37d6625c4608cbfcc07fff0707"
+    "url": "assets/js/30.8c304dd2.js",
+    "revision": "7dc28b3e2869bc18212a095e940960eb"
   },
   {
-    "url": "assets/js/31.aa44b7bc.js",
-    "revision": "a417a648fb915dd3d04f55ae4ed0937b"
+    "url": "assets/js/31.4d2a936b.js",
+    "revision": "d5939dc2ee2d6ef34d8b437282e1711d"
   },
   {
-    "url": "assets/js/32.c1102041.js",
-    "revision": "bdfe2ca0d9fab15aede2f49a97f8adfe"
+    "url": "assets/js/32.24381f71.js",
+    "revision": "37c8a6b9707537c838cce66083be4727"
   },
   {
-    "url": "assets/js/4.fe0467e7.js",
-    "revision": "22bf758592b0b064176e4afd20cdfbfa"
+    "url": "assets/js/33.df062aa9.js",
+    "revision": "0f5d8dec434b4a434e6ca86cd81449ab"
   },
   {
-    "url": "assets/js/5.0022a1d7.js",
-    "revision": "6ad089e51392156423d3aa1ea1666e85"
+    "url": "assets/js/4.c8a6c212.js",
+    "revision": "9f59762e59d53c6c05232981f5dfb92a"
+  },
+  {
+    "url": "assets/js/5.8b0a7375.js",
+    "revision": "36c10c886c3f8696fbd8dff492fb1668"
   },
   {
     "url": "assets/js/6.c5beb5cf.js",
@@ -178,36 +182,36 @@ self.__precacheManifest = [
     "revision": "8b634e585ddec52ca948232fa0778c56"
   },
   {
-    "url": "assets/js/app.c5f21a7c.js",
-    "revision": "c560c77b439d65aa821562305843375c"
+    "url": "assets/js/app.a4f76994.js",
+    "revision": "612cdf90f11d4813826b0d491a931c7e"
   },
   {
     "url": "blog/ECMAScript.html",
-    "revision": "af4d83eaac569ced1a5252a8a0dae1b9"
+    "revision": "e1c43d4737c8605d64c858c2ebede42a"
   },
   {
     "url": "blog/Fiber详解.html",
-    "revision": "703ce963fa71c507026a419eb85fe607"
+    "revision": "63afd1c3786c8f886c14bf4e0ac1b279"
   },
   {
     "url": "blog/Git使用.html",
-    "revision": "54362098a82a776ed8d8c3afdec0e6ff"
+    "revision": "2325d2b5f437bf572598cbfafffcd588"
   },
   {
     "url": "blog/HTTP发展.html",
-    "revision": "754b935d3c6a11c081acfb8be3e941d7"
+    "revision": "333acd2e835acdb2e69bd528293a57ab"
   },
   {
     "url": "blog/index.html",
-    "revision": "8e713481d0c08893d0336cf66125ce1d"
+    "revision": "d71ad170a7dd9cc3a2e198604654d424"
   },
   {
     "url": "blog/基础建设和架构.html",
-    "revision": "a32da5fa06621390372ff456fded6542"
+    "revision": "f014bb39b2694b2d67a37f53ca0b2d58"
   },
   {
     "url": "index.html",
-    "revision": "08a115621b37c0e1a16583d33269329b"
+    "revision": "6725c9499cd91ca77fa79d2b32a25872"
   },
   {
     "url": "interview/1.png",
@@ -223,35 +227,35 @@ self.__precacheManifest = [
   },
   {
     "url": "interview/bind模拟实现.html",
-    "revision": "6536c3a0c39ca2f1c1f003d369e854fd"
+    "revision": "14753d87b316113b70045c20190f1cdc"
   },
   {
     "url": "interview/call和apply模拟实现.html",
-    "revision": "86004336b76baa2f78e10a1620100865"
+    "revision": "aa75faae010e9d58f6065ea3dbc88fba"
   },
   {
     "url": "interview/Event.html",
-    "revision": "a920c5787547930725b7491fe5eab0ba"
+    "revision": "328db122aafc85754e9d63cec8bfcfa3"
   },
   {
     "url": "interview/GoF介绍.html",
-    "revision": "7d91fd30b2cb87f40cd1c007673de717"
+    "revision": "7a21bb4c9dfcfcd0e2acdd1426645781"
   },
   {
     "url": "interview/index.html",
-    "revision": "35627560d179c3e878483ef82e1da6e3"
+    "revision": "ca5e5eab777fd7a61f1a0d32351f37de"
   },
   {
     "url": "interview/javascript.html",
-    "revision": "ad7a2002c661505fd425a66392fccbff"
+    "revision": "8cae6dbccfacbd44606c30a18d3f4e6f"
   },
   {
     "url": "interview/JS基础.html",
-    "revision": "9eef67c2cfe8b99cd9cdd0640694d252"
+    "revision": "a94b28f30fd380f13aec613d7d9f19e5"
   },
   {
     "url": "interview/new模拟实现.html",
-    "revision": "f6bb4a66bca501dc3dccee833681895b"
+    "revision": "58ba4f3370264eb041e0c42d928f87b3"
   },
   {
     "url": "interview/react_lifestyle.png",
@@ -259,31 +263,35 @@ self.__precacheManifest = [
   },
   {
     "url": "interview/React知识点.html",
-    "revision": "86b18a5637eb2228659ca0feaa399b8f"
+    "revision": "fc5e4985b4cab346efb0acf3c0c56bd0"
   },
   {
     "url": "interview/requestIdleCallback模拟实现.html",
-    "revision": "fc334b7ed42f570d20b7d5f61b7f58f8"
+    "revision": "b2a58a6b3a5077ecdc21df81bb00285b"
+  },
+  {
+    "url": "interview/原型和原型链.html",
+    "revision": "c96a7366904bbb13e4ce502797ba8704"
   },
   {
     "url": "interview/垃圾回收.html",
-    "revision": "e755a5f3469d8e6350910ba6f312f8cc"
+    "revision": "4a28fdf8233c80c7b44b16d5b8e9e42d"
   },
   {
     "url": "interview/浏览器输入URL系列.html",
-    "revision": "1b8baf836b8f7c741c141114f4d3d936"
+    "revision": "78f55740052919c95c0a297a883ba464"
   },
   {
     "url": "leetcode/Array.html",
-    "revision": "055ca4e579afffae3f13409c3e5583a0"
+    "revision": "c701426f2f2dd340de1981d23ad1f7a7"
   },
   {
     "url": "leetcode/index.html",
-    "revision": "5f29ba189e4432a84902181fc19bf4b8"
+    "revision": "0c8eea137e8e895fee98670964103508"
   },
   {
     "url": "leetcode/Tree.html",
-    "revision": "ff365899280056f01373fc5faabce369"
+    "revision": "efafc36927b3278e89fb03b94818ee88"
   },
   {
     "url": "logo.jpg",
@@ -291,11 +299,11 @@ self.__precacheManifest = [
   },
   {
     "url": "mdn/index.html",
-    "revision": "59151251d51f3e8a5dd4012c5949b345"
+    "revision": "b9149fe7de9328aecc4e6208436625a9"
   },
   {
     "url": "mdn/真_基础.html",
-    "revision": "c2397b48f872c41bfcdfdcc4b7b24564"
+    "revision": "d0492c9bcfc5aa1f347d2e152d3fa10d"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
