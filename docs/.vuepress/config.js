@@ -88,6 +88,7 @@ module.exports = {
           title: "面试",
           collapsable: true,
           children: [
+            '原型和原型链.md',
             'javascript.md',
             'Event.md',
             '浏览器输入URL系列.md',
