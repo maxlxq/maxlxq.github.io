@@ -82,11 +82,18 @@ module.exports = {
             '真_基础.md',
           ],
         },
+        {
+          title: "内置标准对象",
+          collapsable: false,
+          children: [
+            'Symbol.md',
+          ],
+        },
       ],
       "/interview/": [
         {
           title: "面试",
-          collapsable: true,
+          collapsable: false,
           children: [
             '原型和原型链.md',
             'javascript.md',
