@@ -96,6 +96,7 @@ module.exports = {
           title: "面试",
           collapsable: false,
           children: [
+            'JavaScript-基础.md',
             'javascript.md',
             'Event.md',
             '浏览器输入URL系列.md',

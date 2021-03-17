@@ -1,6 +1,6 @@
 # JavaScript 基础
 
-> 部分链接出自 *GitHub: [mqyqingfeng/Blog](https://github.com/mqyqingfeng/Blog/issues/9*
+> 部分链接出自 *GitHub: [mqyqingfeng/Blog](https://github.com/mqyqingfeng/Blog/issues*
 
 ## 原型链
 - [自我认知系列 原型和原型链](JavaScript-原型.md)
