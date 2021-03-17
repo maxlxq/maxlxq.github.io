@@ -5,7 +5,12 @@ set -e
 
 git init
 git add -A
-git commit -m '更新blog'
+
+if [ -n "$1" ]; then
+  git commit -m "[feat] $1"
+else
+  git commit -m "[feat] update blog"
+fi
 
 git config --local user.name "向前Hell"
 git config --local user.email "542168513@qq.com"
