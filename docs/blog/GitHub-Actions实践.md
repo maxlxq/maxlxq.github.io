@@ -81,7 +81,7 @@ jobs:
       - name: build and deploy
         uses: jenkey2011/vuepress-deploy@master
         env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          # ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           TARGET_REPO: maxlxq/maxlxq.github.io
           TARGET_BRANCH: gh-pages
           BUILD_SCRIPT: yarn && yarn build
@@ -115,7 +115,7 @@ jobs:
       - name: build and deploy
       uses: jenkey2011/vuepress-deploy@master
       env:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        # ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         TARGET_REPO: maxlxq/maxlxq.github.io
         TARGET_BRANCH: gh-pages
         BUILD_SCRIPT: yarn && yarn build
