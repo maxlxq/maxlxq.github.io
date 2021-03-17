@@ -27,7 +27,7 @@ self.addEventListener('message', (event) => {
 self.__precacheManifest = [
   {
     "url": "404.html",
-    "revision": "d405d9fe8a52f25e8a641480b9bf434b"
+    "revision": "85d565914a56648b7a35d0b5ccc098be"
   },
   {
     "url": "assets/css/0.styles.aee30c31.css",
@@ -66,8 +66,8 @@ self.__precacheManifest = [
     "revision": "4e21568c0456f5f10ab60db364bdb4f8"
   },
   {
-    "url": "assets/js/16.afc24795.js",
-    "revision": "4711e2c3007affe6a0fddf6cca6e509b"
+    "url": "assets/js/16.4b59826f.js",
+    "revision": "6a072273cdade3dff86526cadefce5d7"
   },
   {
     "url": "assets/js/17.3d2bdde0.js",
@@ -234,128 +234,128 @@ self.__precacheManifest = [
     "revision": "176b9960fd7f2df95f42c45986d167e0"
   },
   {
-    "url": "assets/js/app.e12c034c.js",
-    "revision": "945cc7451b2193108857e3f7e8d1fcee"
+    "url": "assets/js/app.52d6bcab.js",
+    "revision": "4627ac114f70cef0f7a7a985ef906f4e"
   },
   {
     "url": "blog/ECMAScript.html",
-    "revision": "43bb0283da6df40d5f575343ed3f46c5"
+    "revision": "100b2aa3d4626a7a0ad67c1ae89cc97a"
   },
   {
     "url": "blog/Fiber详解.html",
-    "revision": "548f1ab9370f6a947719851ec07430ba"
+    "revision": "be03f9644a8ea81ed28e85f359405d66"
   },
   {
     "url": "blog/Git使用.html",
-    "revision": "2a33802a7297b4a95b74c20d55db3ea5"
+    "revision": "0fc5f5f3ebd68cdad6bd26b34d7ff9cf"
   },
   {
     "url": "blog/HTTP发展.html",
-    "revision": "9c9c0c152af405f673aac791eb7ba837"
+    "revision": "170ae8dadcf9d46894d21813e8aa9fd2"
   },
   {
     "url": "blog/index.html",
-    "revision": "54b9fafa2a3ea2326d6548a86f11c4e7"
+    "revision": "5a6dd0a9316325a512a1eebeb6622f1a"
   },
   {
     "url": "blog/基础建设和架构.html",
-    "revision": "7c7cb846235e4ec4d7a29fd9a93ed49e"
+    "revision": "6372d6b15012d3fd550912769216fbb1"
   },
   {
     "url": "index.html",
-    "revision": "b7b3c2a522674952b60d68d328a6b6d1"
+    "revision": "0b7ba1a2aefdc57a5c0675073fc949a6"
   },
   {
     "url": "interview/CSS-盒子模型.html",
-    "revision": "05295d2ac255e244fbbc8499b1cf871c"
+    "revision": "a2985ec408db439dfba1c96534f5625f"
   },
   {
     "url": "interview/Event.html",
-    "revision": "27f5839954ad81776c550ce5dd3a4108"
+    "revision": "1f45e1efba4a8dc5dffe136d3ed1a809"
   },
   {
     "url": "interview/GoF介绍.html",
-    "revision": "53bd99c1e145b1ed88e7ada2c411660d"
+    "revision": "badbfa6348c35d83a8a92719137b734e"
   },
   {
     "url": "interview/index.html",
-    "revision": "fb077c233b0a282093618ee793e63855"
+    "revision": "d65eaa1788fa7407a89746453fec80be"
   },
   {
     "url": "interview/JavaScript-apply和call.html",
-    "revision": "8228289e2eb91932ee5cc9b08165aec8"
+    "revision": "1de9ce8faefa0ced398c1efa19a4c761"
   },
   {
     "url": "interview/JavaScript-bind原理.html",
-    "revision": "76164aac74789c1aed58270bc6579686"
+    "revision": "3a9bdcdc09c2642fe26835a60208e705"
   },
   {
     "url": "interview/JavaScript-Generators原理.html",
-    "revision": "e76ef5d4e4590926b62d0d026e2f1ab1"
+    "revision": "c0bdf496426a16bc8124b736551b6b48"
   },
   {
     "url": "interview/JavaScript-IIFE.html",
-    "revision": "cd7aa0534f0ee9d2302212bccbd4ff52"
+    "revision": "7ff10201e810613f37857fea8d481f1c"
   },
   {
     "url": "interview/JavaScript-instanceof原理.html",
-    "revision": "226de00f1ed984a699fc0e8f18e86764"
+    "revision": "ee19e45e2f7993ea3a1ee15f9ba55adc"
   },
   {
     "url": "interview/JavaScript-new模拟实现.html",
-    "revision": "c821074592dbb3fa883ced8776fc2e78"
+    "revision": "9aaa09600536c96ba0f411b97f7f5538"
   },
   {
     "url": "interview/JavaScript-Promise.html",
-    "revision": "9ceabeb3e4dc18a74a383d35163f3c15"
+    "revision": "dbaa404ef9bbe6099895e7af1680f92a"
   },
   {
     "url": "interview/JavaScript-this.html",
-    "revision": "e63d946af87bf13322dcdcb8bfb233a3"
+    "revision": "c400df65d089a7060189f2746f74a05c"
   },
   {
     "url": "interview/JavaScript-事件循环机制.html",
-    "revision": "0c45031a3ed08f6fee74945b387d2cf5"
+    "revision": "5807e637c83a87f5863ff91dcfabe57b"
   },
   {
     "url": "interview/JavaScript-作用域.html",
-    "revision": "1256cc8268cc4c6886a81f1505401dff"
+    "revision": "09e3c4af966ae25d6011a8fbe1a8b873"
   },
   {
     "url": "interview/JavaScript-原型.html",
-    "revision": "a637ea07a4d10c43e21720d71af0c4a4"
+    "revision": "bbdfdd79bf30db8d0ca08d4e3ea2f1e3"
   },
   {
     "url": "interview/JavaScript-变量提升.html",
-    "revision": "3575369dbe7861d439ca4c893f343653"
+    "revision": "f903ed53552ed2a6e17fea38eb15d91f"
   },
   {
     "url": "interview/JavaScript-垃圾回收机制.html",
-    "revision": "194eebcd486192d5d858afaf680029fe"
+    "revision": "884e256eea9169e7fbeab992796c98e5"
   },
   {
     "url": "interview/JavaScript-基础.html",
-    "revision": "9ce930e756756df0d1c8d9fdb48883f9"
+    "revision": "10e87a0270e5f1167c7ead1efdfd8ac7"
   },
   {
     "url": "interview/JavaScript-柯里化.html",
-    "revision": "57e52fa4e061336f42ef8a55eb6351ff"
+    "revision": "967301d660fb24f2ab27995d490e1816"
   },
   {
     "url": "interview/JavaScript-浮点数精度.html",
-    "revision": "4056c6f21b4b982f9f4e25d6e8da4333"
+    "revision": "34f6b978c671b52694b0c9d5475d5063"
   },
   {
     "url": "interview/JavaScript-继承.html",
-    "revision": "3eeeb4ee473582c22e67cc074d36d5ee"
+    "revision": "c8c801d1a357fd4bec6801a047dd4430"
   },
   {
     "url": "interview/JavaScript-闭包.html",
-    "revision": "2f2fc9a3ed330a7d66aba7a95ea17298"
+    "revision": "8679e6475765583239d08fe52d90789b"
   },
   {
     "url": "interview/javascript.html",
-    "revision": "b1a847bcf370d5d33c03951578646e81"
+    "revision": "027c93bfe5beb587e240837a1b77bcf8"
   },
   {
     "url": "interview/react_lifestyle.png",
@@ -363,31 +363,31 @@ self.__precacheManifest = [
   },
   {
     "url": "interview/React知识点.html",
-    "revision": "920a4cf1469ef599c7fb9b5dc354df3d"
+    "revision": "062982a472187fdbc6d24314a4280ef9"
   },
   {
     "url": "interview/requestIdleCallback模拟实现.html",
-    "revision": "86d0910b447df7e88264eded03ede6bb"
+    "revision": "cbd2b01a5980f058908c421bc8d64ab2"
   },
   {
     "url": "interview/垃圾回收.html",
-    "revision": "4ef0ccab632550b45b34649e9445b7ee"
+    "revision": "9132b6461d2c52e4b512d9c02b60c7b8"
   },
   {
     "url": "interview/浏览器输入URL系列.html",
-    "revision": "bbc97099db6bc2d20aee2c8e406ac9c6"
+    "revision": "07f51f3128b170025a4fcd8a0ceeeca6"
   },
   {
     "url": "leetcode/Array.html",
-    "revision": "f22ea502fec41ed520f55fb27641473a"
+    "revision": "a00c24fd4ffba1a2d9af561e6979d037"
   },
   {
     "url": "leetcode/index.html",
-    "revision": "03fc7a563f852a6fdd3f45d8f7d392d4"
+    "revision": "bb1838d5abf0fa7c7eb4a1d8ecbb933c"
   },
   {
     "url": "leetcode/Tree.html",
-    "revision": "bc5326eb341d1fb99a89db50f6447e4e"
+    "revision": "8121e1db0e1c63368e47bd9f071911d6"
   },
   {
     "url": "logo.jpg",
@@ -395,19 +395,19 @@ self.__precacheManifest = [
   },
   {
     "url": "mdn/index.html",
-    "revision": "ec5c9b7d98f2d78bae16bfa5e341dd5c"
+    "revision": "b835a834f0d364a3979aaa009f5b01a2"
   },
   {
     "url": "mdn/Promise.html",
-    "revision": "0a3ca1b10ce339870a3bedce666e1aa9"
+    "revision": "4c1bfde93ff88815809998c3bcc013da"
   },
   {
     "url": "mdn/Symbol.html",
-    "revision": "719e781c4ae0bee85d409f9189c70882"
+    "revision": "a55ae3dfdab1cc940f1f11d4e413857c"
   },
   {
     "url": "mdn/真_基础.html",
-    "revision": "6b5b2845c0a606b7385545f065195c01"
+    "revision": "d8df4a7aec0e4045d46e32ea348a1699"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
