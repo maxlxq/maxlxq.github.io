@@ -32,7 +32,8 @@ module.exports = {
           title: "DevOps",
           collapsable: false,
           children: [
-            "Git使用.md"
+            "Git使用.md",
+            "GitHub-Actions实践.md",
           ],
         },
         {
