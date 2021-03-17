@@ -126,3 +126,5 @@ Settings 中配置信息：分支 = TARGET_BRANCH、设置 domain，启用 HTTPS
 ![自定义域名访问](../.vuepress/public/blog/CNAME_config.png)
 
 更多内容详见 [Actions 文档](https://docs.github.com/en/rest/reference/actions)
+
+PS: 文中出现的 `ACCESS_TOKEN` 使用 secrets 引出的用法 会致使 CI 失败，默认会从 secrets 中访问，因文本中 secrets 为 undefined，所以会产生错误，使 ci 失败。
