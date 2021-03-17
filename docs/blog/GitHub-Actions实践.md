@@ -100,8 +100,8 @@ jobs:
 
 ACCESS_TOKEN 需要去用户的 `Settings => Developer Settings => Personal access tokens` 创建，配置权限有限的 token，注意保存 token，仅出现一次。
 
-配置中出现的 `${{ secrets.ACCESS_TOKEN }}` 则需要在 Settings 中配置，如下：
-![ACCESS_TOKEN设置](../.vuepress/public/blog/ACCESS_TOKEN.png)
+配置中出现的 `ACCESS_TOKEN` 则需要在 Settings 中配置，如下：
+![ACCESS_TOKEN 设置](../.vuepress/public/blog/ACCESS_TOKEN.png)
 
 整体配置结束后，将 vuepress 项目推送到 GitHub 仓库地址 master 分支，GitHub Actions 会自动运行，将构建产物发布到网页。
 
