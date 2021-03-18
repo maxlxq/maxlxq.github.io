@@ -108,7 +108,7 @@ module.exports = {
         },
         {
           title: "JavaScript",
-          collapsable: true,
+          collapsable: false,
           children: [
             'JavaScript-原型.md',
             'JavaScript-继承.md',
@@ -131,7 +131,7 @@ module.exports = {
         },
         {
           title: "CSS",
-          collapsable: true,
+          collapsable: false,
           children: [
             'CSS-盒子模型.md',
             'CSS-选择器.md',
@@ -150,7 +150,7 @@ module.exports = {
         },
         {
           title: "浏览器",
-          collapsable: true,
+          collapsable: false,
           children: [
             '行内元素-块级元素.md',
             '浏览器-跨页面通信.md',
@@ -166,14 +166,14 @@ module.exports = {
         },
         {
           title: "手撕代码",
-          collapsable: true,
+          collapsable: false,
           children: [
             'requestIdleCallback模拟实现.md',
           ],
         },
         {
           title: "设计模式",
-          collapsable: true,
+          collapsable: false,
           children: [
             'GoF介绍.md',
           ],
