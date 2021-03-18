@@ -98,11 +98,12 @@ module.exports = {
           children: [
             'JavaScript-基础.md',
             'CSS-基础.md',
+            '浏览器-基础.md',
             'javascript.md',
-            'Event.md',
+            '浏览器-事件模型.md',
             '浏览器输入URL系列.md',
             'React知识点.md',
-            '垃圾回收.md',
+            '浏览器-垃圾回收机制.md',
           ],
         },
         {
@@ -145,6 +146,22 @@ module.exports = {
             'CSS-层叠上下文.md',
             'CSS-居中方法.md',
             'CSS-浮动.md',
+          ],
+        },
+        {
+          title: "浏览器",
+          collapsable: true,
+          children: [
+            '行内元素-块级元素.md',
+            '浏览器-跨页面通信.md',
+            '路由模式-hash&history.md',
+            '浏览器-DOM树.md',
+            '浏览器-事件模型.md',
+            '浏览器-缓存机制.md',
+            '浏览器架构.md',
+            '浏览器-工作原理.md',
+            '浏览器-内存泄漏.md',
+            '浏览器-垃圾回收机制.md',
           ],
         },
         {
