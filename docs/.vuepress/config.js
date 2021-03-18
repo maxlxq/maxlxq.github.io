@@ -97,6 +97,7 @@ module.exports = {
           collapsable: false,
           children: [
             'JavaScript-基础.md',
+            'CSS-基础.md',
             'javascript.md',
             'Event.md',
             '浏览器输入URL系列.md',
@@ -132,6 +133,9 @@ module.exports = {
           collapsable: true,
           children: [
             'CSS-盒子模型.md',
+            'CSS-选择器.md',
+            'CSS-BFC.md',
+            'CSS-position.md',
           ],
         },
         {
