@@ -100,6 +100,7 @@ module.exports = {
             'CSS-基础.md',
             '浏览器-基础.md',
             '性能优化.md',
+            '工程化.md',
             'javascript.md',
             '浏览器-事件模型.md',
             '性能优化-浏览器输入URL到页面展示发生了什么.md',
@@ -109,7 +110,7 @@ module.exports = {
         },
         {
           title: "JavaScript",
-          collapsable: false,
+          collapsable: true,
           children: [
             'JavaScript-原型.md',
             'JavaScript-继承.md',
@@ -132,7 +133,7 @@ module.exports = {
         },
         {
           title: "CSS",
-          collapsable: false,
+          collapsable: true,
           children: [
             'CSS-盒子模型.md',
             'CSS-选择器.md',
@@ -151,7 +152,7 @@ module.exports = {
         },
         {
           title: "浏览器",
-          collapsable: false,
+          collapsable: true,
           children: [
             '行内元素-块级元素.md',
             '浏览器-跨页面通信.md',
@@ -167,7 +168,7 @@ module.exports = {
         },
         {
           title: "性能优化",
-          collapsable: false,
+          collapsable: true,
           children: [
             '性能优化-RAIL模型.md',
             '性能优化-优化手段.md',
@@ -177,6 +178,19 @@ module.exports = {
             '性能优化-浏览器输入URL到页面展示发生了什么.md',
             '性能优化-动画性能.md',
             '性能优化-渲染合成层.md',
+          ],
+        },
+        {
+          title: "工程化",
+          collapsable: true,
+          children: [
+            '工程化-模块化机制.md',
+            '工程化-Tree-Sharking.md',
+            '工程化-uglify原理.md',
+            '工程化-babel原理.md',
+            '工程化-webpack工作流程.md',
+            '工程化-rollup.md',
+            '工程化-微服务.md',
           ],
         },
         {
