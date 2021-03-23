@@ -10,12 +10,16 @@ module.exports = {
     repo: "maxlxq/maxlxq.github.io",
     nav: [
       {
-        text: "原创",
-        link: "/blog/",
+        text: "基础",
+        link: "/base/",
       },
       {
-        text: "刷题",
-        link: "/leetcode/",
+        text: "进阶",
+        link: "/more/",
+      },
+      {
+        text: "原创",
+        link: "/blog/",
       },
       {
         text: "MDN",
@@ -27,87 +31,7 @@ module.exports = {
       },
     ],
     sidebar: {
-      "/blog/": [
-        {
-          title: "DevOps",
-          collapsable: false,
-          children: [
-            "Git使用.md",
-            "GitHub-Actions实践.md",
-          ],
-        },
-        {
-          title: "Framework",
-          collapsable: false,
-          children: [
-            "Fiber详解.md",
-          ],
-        },
-        {
-          title: "浏览器网络相关",
-          collapsable: false,
-          children: [
-            "HTTP发展.md"
-          ],
-        },
-        {
-          title: "ECMAScript",
-          collapsable: false,
-          children: [
-            "ECMAScript.md"
-          ],
-        },
-        {
-          title: "基础建设和架构",
-          collapsable: false,
-          children: [
-            "基础建设和架构.md"
-          ],
-        },
-      ],
-      "/leetcode/": [
-        {
-          title: "力扣",
-          collapsable: false,
-          children: [
-            'Array.md',
-            'Tree.md',
-          ],
-        },
-      ],
-      "/mdn/": [
-        {
-          title: "MDN",
-          collapsable: false,
-          children: [
-            '真_基础.md',
-          ],
-        },
-        {
-          title: "内置标准对象",
-          collapsable: false,
-          children: [
-            'Symbol.md',
-          ],
-        },
-      ],
-      "/interview/": [
-        {
-          title: "面试",
-          collapsable: false,
-          children: [
-            'JavaScript-基础.md',
-            'CSS-基础.md',
-            '浏览器-基础.md',
-            '性能优化.md',
-            '工程化.md',
-            'javascript.md',
-            '浏览器-事件模型.md',
-            '性能优化-浏览器输入URL到页面展示发生了什么.md',
-            'React知识点.md',
-            '浏览器-垃圾回收机制.md',
-          ],
-        },
+      "/base/": [
         {
           title: "JavaScript",
           collapsable: true,
@@ -193,18 +117,105 @@ module.exports = {
             '工程化-微服务.md',
           ],
         },
-        {
-          title: "手撕代码",
-          collapsable: false,
-          children: [
-            'requestIdleCallback模拟实现.md',
-          ],
-        },
+      ],
+      "/more/": [
         {
           title: "设计模式",
           collapsable: false,
           children: [
-            'GoF介绍.md',
+            '设计模式.md',
+          ],
+        },
+        {
+          title: "DevOps",
+          collapsable: false,
+          children: [
+            "Git使用.md",
+            "GitHub-Actions实践.md",
+          ],
+        },
+        {
+          title: "Framework",
+          collapsable: false,
+          children: [
+            "Fiber详解.md",
+          ],
+        },
+        {
+          title: "浏览器网络相关",
+          collapsable: false,
+          children: [
+            "HTTP发展.md"
+          ],
+        },
+        {
+          title: "ECMAScript",
+          collapsable: false,
+          children: [
+            "ECMAScript.md"
+          ],
+        },
+        {
+          title: "力扣",
+          collapsable: false,
+          children: [
+            'leetcode.md',
+            'Array.md',
+            'Tree.md',
+          ],
+        },
+      ],
+      "/blog/": [
+        {
+          title: "读书笔记",
+          collapsable: false,
+          children: [
+            "读书笔记.md",
+          ],
+        },
+        {
+          title: "基建",
+          collapsable: false,
+          children: [
+            "基础建设和架构.md",
+          ],
+        },
+      ],
+      "/mdn/": [
+        {
+          title: "MDN",
+          collapsable: false,
+          children: [
+            '真_基础.md',
+          ],
+        },
+        {
+          title: "内置标准对象",
+          collapsable: false,
+          children: [
+            'Symbol.md',
+            'Promise.md',
+          ],
+        },
+      ],
+      "/interview/": [
+        {
+          title: "基础知识",
+          collapsable: false,
+          children: [
+            'JavaScript-基础.md',
+            'CSS-基础.md',
+            '浏览器-基础.md',
+            '性能优化.md',
+            '工程化.md',
+            'React知识点.md',
+          ],
+        },
+        {
+          title: "手撕代码--面试系列",
+          collapsable: false,
+          children: [
+            'requestIdleCallback模拟实现.md',
           ],
         },
       ],
