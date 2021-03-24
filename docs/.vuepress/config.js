@@ -139,6 +139,7 @@ module.exports = {
           collapsable: false,
           children: [
             "Fiber详解.md",
+            "React源码分析.md",
           ],
         },
         {
@@ -171,6 +172,14 @@ module.exports = {
           collapsable: false,
           children: [
             "读书笔记.md",
+          ],
+        },
+        {
+          title: "框架相关",
+          collapsable: false,
+          children: [
+            "React合成事件.md",
+            "Virtual-DOM&Diff算法.md",
           ],
         },
         {
