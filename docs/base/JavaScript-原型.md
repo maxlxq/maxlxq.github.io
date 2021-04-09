@@ -23,14 +23,14 @@
    console.log('fn.__proto__', fn.__proto__);
    ```
 
-3. 隐式原型`__proto__`的属性值，指向它的构造函数的显示原型`prototype`属性
+3. 隐式原型`__proto__`的属性值，指向它的构造函数的显式原型`prototype`属性
    ```javascript
    obj.__proto__ == Object.prototype // true
    arr.__proto__ === Array.prototype // true
    fn.__proto__ == Function.prototype // true
    ```
 
-4. 当试图去寻找一个对象的属性时，如果对象本身没有这个属性，那么它会去它的隐式原型`__proto__` (即它的构造函数的显示原型`prototype`) 中寻找
+4. 当试图去寻找一个对象的属性时，如果对象本身没有这个属性，那么它会去它的隐式原型`__proto__` (即它的构造函数的显式原型`prototype`) 中寻找
    ```javascript
    const obj = { a: 1 }
    obj.toString

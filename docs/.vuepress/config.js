@@ -187,6 +187,7 @@ module.exports = {
           collapsable: false,
           children: [
             "基础建设和架构.md",
+            "前端基础建设与架构-工程化管理工具篇.md",
           ],
         },
       ],
