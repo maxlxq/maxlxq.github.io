@@ -5,10 +5,10 @@
 1. [JS 继承方式](../base/JavaScript-继承.md)
 2. [JS 异步解决方案的发展历程以及优缺点](./JS异步解决方案.md)
 3. [JS 作用域相关问题](../base/JavaScript-作用域.md)
-4. 浏览器输入URL之后发生的故事
+4. [浏览器输入URL之后发生的故事](../base/性能优化-浏览器输入URL到页面展示发生了什么.md)
 5. [ES5/ES6的继承除了写法意外有什么区别](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/20)
-6. 介绍回流、重绘 以及 如何优化。标准判断：[CSS Triggers](https://csstriggers.com/)
-7. Http发展，Http2的多路复用
+6. [介绍回流、重绘 以及 如何优化](../base/性能优化-重绘和回流.md)。标准判断：[CSS Triggers](https://csstriggers.com/)
+7. [Http发展，Http2的多路复用](../more/HTTP发展.md)
 8. TCP 三次握手和四次挥手的理解，详细
 9. [TCP 稳定连接后，服务端无预警掉线重启，描述客户端和服务端的状态变换](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/21#issuecomment-518486351)
 10. [React 中 setState 什么时候是同步，什么时候是异步？](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/17#issuecomment-610288316)
@@ -27,12 +27,12 @@
 23.
 
 ### 手撕代码
-1. 模拟实现 new
-2. 模拟实现 apply
-3. 模拟实现 call
-4. 模拟实现 bind
-5. 模拟实现 instanceof
-6. 模拟实现 requestIdleCallback
+1. [模拟实现 new](../base/JavaScript-new模拟实现.md)
+2. [模拟实现 apply](../base/JavaScript-apply和call.md)
+3. [模拟实现 call](../base/JavaScript-apply和call.md)
+4. [模拟实现 bind](../base/JavaScript-bind原理.md)
+5. [模拟实现 instanceof](../base/JavaScript-instanceof原理.md)
+6. [模拟实现 requestIdleCallback](requestIdleCallback模拟实现.md)
 7. [模拟实现 promise](https://juejin.cn/post/6844904111821815816)
 8. 模拟实现 防抖 debounce 和节流 throttle
 9. 模拟实现 深拷贝、浅拷贝
@@ -52,10 +52,29 @@
 ### 前端框架
 
 React
+1. Mixin => HOC => Hooks 发展
+2. React 生命周期
+3. 虚拟 DOM 和 DOM 节点
+4. Diff 算法
+5. Fiber 节点和 Fiber 树
+6. React 16 和 React 17 区别
+7. React 调度、调和过程
+8. this.setState 同步异步问题，源码解析
+9. React 源码解读
 
 React-Native
+1. React-Native 跨端原理
+2. JS 与原生通信流程
+3. 如何编写一个 原生方法给 JS 使用
+4. 如何实现热更新
+5. metro 分包机制
+6. 原生与 RN 页面跳转方案
+7. 动画和手势操作的演示
+8. 双端的脚本打包
+9. fastlane 一键发布
 
 Vue
-
+1. 与 React 的区别
+2. MVVM 框架原理
 
 
