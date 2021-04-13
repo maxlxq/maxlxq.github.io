@@ -190,13 +190,6 @@ module.exports = {
             "前端基础建设与架构-工程化管理工具篇.md",
           ],
         },
-        {
-          title: "知识点",
-          collapsable: false,
-          children: [
-            "JS异步解决方案.md",
-          ],
-        },
       ],
       "/mdn/": [
         {
@@ -226,6 +219,13 @@ module.exports = {
             '性能优化.md',
             '工程化.md',
             'React知识点.md',
+          ],
+        },
+        {
+          title: "知识点",
+          collapsable: false,
+          children: [
+            "JS异步解决方案.md",
           ],
         },
         {
