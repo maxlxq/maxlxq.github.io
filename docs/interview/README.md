@@ -2,8 +2,8 @@
 
 ### 前端知识
 0. [JS 运行原理 by Philip Roberts](https://www.bilibili.com/video/av37759434/)
-1. JS 继承方式
-2. JS 异步解决方案的发展历程以及优缺点
+1. [JS 继承方式](../base/JavaScript-继承.md)
+2. [JS 异步解决方案的发展历程以及优缺点](./JS异步解决方案.md)
 3. JS 作用域相关问题
 4. 浏览器输入URL之后发生的故事
 5. [ES5/ES6的继承除了写法意外有什么区别](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/20)
