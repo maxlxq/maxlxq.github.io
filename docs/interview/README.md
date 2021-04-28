@@ -9,7 +9,7 @@
 5. [ES5/ES6的继承除了写法意外有什么区别](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/20)
 6. [介绍回流、重绘 以及 如何优化](../base/性能优化-重绘和回流.md)。标准判断：[CSS Triggers](https://csstriggers.com/)
 7. [Http发展，Http2的多路复用](../more/HTTP发展.md)
-8. TCP 三次握手和四次挥手的理解，详细
+8. [TCP 三次握手和四次挥手的理解，详细](../more/三次握手和四次挥手.md)
 9. [TCP 稳定连接后，服务端无预警掉线重启，描述客户端和服务端的状态变换](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/21#issuecomment-518486351)
 10. [React 中 setState 什么时候是同步，什么时候是异步？](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/17#issuecomment-610288316)
 11. npm 模块安装机制，yarn呢？
