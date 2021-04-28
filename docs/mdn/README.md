@@ -7,12 +7,12 @@
 JavaScript
 - 基础知识
 - 中级
-  - Frameworks
-  - Web APIs
-  - 判断相等性
-  - Closures
+  - Frameworks：React; Ember; Vue;
+  - Web APIs：基本 DOM 操作；window 对象操作；XMLHttpRequest、Fetch、promises；Navigator；WebGL[Three.js]、canvas；video、audio；cookies｜Web Storage[localStorage]、IndexedDB｜Cache API、Service worker API[离线存储]；
+  - 判断相等性：==；===；Object.is()
+  - Closures：[闭包](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Closures)
 - 高级
-  - 继承和原型链
+  - [继承和原型链](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
   - 严格模式
   - 类型化数组
   - 内存管理
