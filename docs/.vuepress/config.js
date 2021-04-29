@@ -204,6 +204,7 @@ module.exports = {
           title: "内置标准对象",
           collapsable: false,
           children: [
+            'Array.md',
             'Symbol.md',
             'Promise.md',
           ],
