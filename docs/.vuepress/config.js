@@ -1,6 +1,6 @@
 module.exports = {
-  title: "大前端飞升指南",
-  description: "欢迎访问公众号：大前端飞升指南",
+  title: "前端知识",
+  description: "欢迎访问公众号：前端周报",
   ga: "G-0WGB32QW31",
   markdown: {
     lineNumbers: true,
