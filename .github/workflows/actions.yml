@@ -16,3 +16,13 @@ jobs:
           BUILD_SCRIPT: yarn && yarn build
           BUILD_DIR: docs/.vuepress/dist/
           CNAME: blog.ahulib.com
+
+  finish:
+    needs: build-and-deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Coveralls Finished
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.ACCESS_TOKEN }}
+          parallel-finished: true
