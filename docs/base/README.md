@@ -3,7 +3,7 @@
 ## JavaScript 基础内容
 - [自我认知系列 原型和原型链](JavaScript-原型.md)
 - [自我认知系列 继承](JavaScript-继承.md)
-- [自我认知系列 作用域](JavaScript-作用域.md)
+- [自我认知系列 作用域](JavaScript-作用域链.md)
 - [自我认知系列 闭包](JavaScript-闭包.md)
 - [自我认知系列 变量提升](JavaScript-变量提升.md)
 - [自我认知系列 this](JavaScript-this.md)

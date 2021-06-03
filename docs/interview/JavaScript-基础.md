@@ -11,7 +11,7 @@
 - [继承的多种方式和优缺点](https://github.com/mqyqingfeng/Blog/issues/16)
 
 ## 作用域
-- [自我认知系列 作用域](../base/JavaScript-作用域.md)
+- [自我认知系列 作用域](../base/JavaScript-作用域链.md)
 - [作用域链](https://github.com/mqyqingfeng/Blog/issues/6)
 
 ## 闭包

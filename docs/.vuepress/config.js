@@ -38,7 +38,7 @@ module.exports = {
           children: [
             'JavaScript-原型.md',
             'JavaScript-继承.md',
-            'JavaScript-作用域.md',
+            'JavaScript-作用域链.md',
             'JavaScript-闭包.md',
             'JavaScript-变量提升.md',
             'JavaScript-this.md',

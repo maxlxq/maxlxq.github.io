@@ -4,7 +4,7 @@
 0. [JS 运行原理 by Philip Roberts](https://www.bilibili.com/video/av37759434/)
 1. [JS 继承方式](../base/JavaScript-继承.md)
 2. [JS 异步解决方案的发展历程以及优缺点](./JS异步解决方案.md)
-3. [JS 作用域相关问题](../base/JavaScript-作用域.md)
+3. [JS 作用域相关问题](../base/JavaScript-作用域链.md)
 4. [浏览器输入URL之后发生的故事](../base/性能优化-浏览器输入URL到页面展示发生了什么.md)
 5. [ES5/ES6的继承除了写法意外有什么区别](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/20)
 6. [介绍回流、重绘 以及 如何优化](../base/性能优化-重绘和回流.md)。标准判断：[CSS Triggers](https://csstriggers.com/)
