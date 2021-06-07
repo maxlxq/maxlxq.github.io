@@ -12,19 +12,19 @@
 
 [操作符](https://mp.weixin.qq.com/s/Gof2G5rkK62KA6JsA-xdxg)
 
-语句
+[语句](./docs/other/语句.md)
 
 ## 第四章 变量、作用域与内存
 
-变量、作用域与内存
+[变量、作用域与内存](./docs/other/变量、作用域与内存.md)
 
 ## 第五章 基本引用类型
 
-基本引用类型
+[基本引用类型](./docs/other/基本引用类型.md)
 
 ## 第六章 集合引用类型
 
-集合引用类型
+[集合引用类型](./docs/other/集合引用类型.md)
 
 Map、Set、WeakMap、WeakSet
 
