@@ -49,6 +49,11 @@ console.log([] instanceof MyArray)
 // true
 ```
 
+Symbol.hasInstance 属性的属性特性：
+`writable: false`,
+`enumerable: false`,
+`configurable: false`
+
 ### Symbol.isConcatSpreadable
 > Symbol.isConcatSpreadable 符号用于配置某对象作为 Array.prototype.concat() 方法的参数时是否展开其数组元素。
 >
