@@ -7,7 +7,7 @@
 
 HTTP：超文本传输协议
 
-HTTPS： HTTP 协议的安全版本，在传输层实现 SSL 加密。
+[HTTPS](https://time.geekbang.org/column/article/156181 "HTTPS: 让数据传输更安全")： HTTP 协议的安全版本，在传输层实现 SSL 加密。
 
 HTTPS 主要作用是 建立一个信息安全通道，来确保数据的传输，确保网站的真实性。
 
