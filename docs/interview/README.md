@@ -4,10 +4,10 @@
 
 ### HTTP/HTML/浏览器
 0. [说一下 HTTP 和 HTTPS](../better/0_http_https.md)
-1. TCP 三次握手，概括介绍；详细介绍；四次挥手呢
-2. TCP 和 UDP 的区别
+1. [TCP 三次握手，概括介绍；详细介绍；四次挥手呢](../better/1_tcp_3_hands.md)
+2. [TCP 和 UDP 的区别](../better/2_tcp_udp.md)
 3. WebSocket 的实现和应用
-4. HTTP 请求的方式，HEAD 方式
+4. [HTTP 请求的方式，HEAD 方式](../better/4_http_request.md)
 5. 一个图片 URL 访问后直接下载怎样实现
 6. 说一下 web Quality（无障碍）
 7. 几个很实用的 BOM 属性对象方法
