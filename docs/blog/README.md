@@ -2,13 +2,14 @@
 
 ## 读书笔记
 - [总-读书笔记图书馆](https://www.notion.so/maxlxq/6531b72f88974d01bc9db045f287d94d)
-- [《JavaScript 高级程序设计》（第四版）](https://www.notion.so/maxlxq/JavaScript-e3efb32ed65c4ff4b441b0abe54dc0cd)
+- [《JavaScript 高级程序设计》（第四版）](./JavaScript高级程序设计.md)
 - 《JavaScript 设计模式》
 - 极客时间 - 《重学前端》
 - 极客时间 - [《数据结构与算法》](https://www.notion.so/maxlxq/99cdccb85eb143d6a06187f80e7386b5)
 - 极客时间 - [《图解 Google V8》](https://www.notion.so/maxlxq/V8-4d5676f07e70437d906467bf0b028b69)
 - 极客时间 - [《浏览器工作原理》](https://www.notion.so/maxlxq/7aa8430337284365b167dd50c73411ce)
 - 拉勾教育 - 《前端基础建设与架构》
+- 拉勾教育 - [《深入浅出搞定 React》](./深入浅出搞定React.md)
 
 ## 项目问题记录
 
