@@ -4,6 +4,7 @@
 ## 系统深入学习 基础知识
 
 [JSX 代码如何变成 DOM 的](../other/React_JSX代码如何变成DOM.md)
+[React 16 为什么要改变生命周期](../other/React_16为什么要改变生命周期.md)
 
 ## 刨根问底吃透 核心原理
 
