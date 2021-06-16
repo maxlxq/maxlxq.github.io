@@ -5,6 +5,7 @@
 
 [JSX 代码如何变成 DOM 的](../other/React_JSX代码如何变成DOM.md)
 [React 16 为什么要改变生命周期](../other/React_16为什么要改变生命周期.md)
+[数据是如何在 React 组件中流动的](../other/React_数据流动.md)
 
 ## 刨根问底吃透 核心原理
 
