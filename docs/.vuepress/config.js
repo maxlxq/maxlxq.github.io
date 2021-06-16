@@ -246,6 +246,10 @@ module.exports = {
     editLinkText: "本文源码地址",
     smoothScroll: true,
   },
+  extendMarkdown: md => {
+    md.set({ breaks: true })
+    md.use(require('markdown-it-plantuml'))
+  },
   plugins: [
     [
       "@vuepress/pwa",

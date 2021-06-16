@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "lint-md-cli": "^0.1.2",
+    "markdown-it-plantuml": "^1.4.1",
     "vuepress": "^1.7.1"
   }
 }
