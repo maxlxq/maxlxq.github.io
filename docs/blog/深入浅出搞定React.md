@@ -11,6 +11,7 @@
 ## 刨根问底吃透 核心原理
 
 [React-Hooks 工作机制](../other/React_Hooks工作机制.md)
+[真正理解虚拟 DOM](../other/React_真正理解虚拟DOM.md)
 
 ## 拓宽技术视野 周边生态
 
