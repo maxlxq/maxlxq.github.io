@@ -13,6 +13,7 @@
 [React-Hooks 工作机制](../other/React_Hooks工作机制.md)
 [真正理解虚拟 DOM](../other/React_真正理解虚拟DOM.md)
 [React 中的"栈调和"过程是怎么样的](../other/React_栈调和过程.md)
+[setState 到底是同步的还是异步的](../other/React_setState.md)
 
 ## 拓宽技术视野 周边生态
 
