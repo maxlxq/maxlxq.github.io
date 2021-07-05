@@ -29,6 +29,10 @@ module.exports = {
         text: "面试",
         link: "/interview/",
       },
+      {
+        text: "力扣",
+        link: "/leetcode/",
+      },
     ],
     sidebar: {
       "/base/": [
@@ -158,15 +162,6 @@ module.exports = {
             "ECMAScript.md",
           ],
         },
-        {
-          title: "力扣",
-          collapsable: false,
-          children: [
-            'leetcode.md',
-            'Array.md',
-            'Tree.md',
-          ],
-        },
       ],
       "/blog/": [
         {
@@ -226,6 +221,15 @@ module.exports = {
           ],
         },
         {
+          title: "力扣",
+          collapsable: false,
+          children: [
+            'README.md',
+            'Array.md',
+            'Tree.md',
+          ],
+        },
+        {
           title: "知识点",
           collapsable: false,
           children: [
@@ -237,6 +241,16 @@ module.exports = {
           collapsable: false,
           children: [
             'requestIdleCallback模拟实现.md',
+          ],
+        },
+      ],
+      "/leetcode/": [
+        {
+          title: "力扣",
+          children: [
+            'ByteDance.md',
+            'Array.md',
+            'Tree.md',
           ],
         },
       ],
