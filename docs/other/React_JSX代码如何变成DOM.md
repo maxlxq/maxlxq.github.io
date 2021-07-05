@@ -181,7 +181,7 @@ createElement 解读
 - 格式化 defaultProps
 - 发起 ReactElement 调用
 
-createElement 并没有十分复杂的算法那或真实 DOM 的逻辑，每一步几乎都是在处理数据。相当于一个数据处理层。
+createElement 并没有十分复杂的算法或真实 DOM 的逻辑，每一步几乎都是在处理数据。相当于一个数据处理层。
 
 so，我们可以称 createElement 为一个参数中介，接下来继续查看 ReactElement。
 
@@ -371,4 +371,4 @@ function legacyRenderSubtreeIntoContainer(
 - container：需要挂载的目标容器 真实 DOM
 - callback：可选 回调函数，处理渲染后的逻辑
 
-[一些源码解析](https://cybqd.com/react%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/react-dom%E4%B8%AD%E5%88%9B%E5%BB%BA%E7%9A%84%E4%B8%80%E7%B3%BB%E5%88%97%E7%8E%A9%E6%84%8F.html#reactdom-render)
+[一些源码解析](https://cybqd.com/react%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/react-dom%E4%B8%AD%E5%88%9B%E5%BB%BA%E7%9A%84%E4%B8%80%E7%B3%BB%E5%88%97%E7%8E%A9%E6%84%8F.html#reactdom-render "部分源码解析")
