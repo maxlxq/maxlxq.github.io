@@ -221,15 +221,6 @@ module.exports = {
           ],
         },
         {
-          title: "力扣",
-          collapsable: false,
-          children: [
-            'README.md',
-            'Array.md',
-            'Tree.md',
-          ],
-        },
-        {
           title: "知识点",
           collapsable: false,
           children: [
