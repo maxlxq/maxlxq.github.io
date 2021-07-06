@@ -2,8 +2,40 @@
 # ByteDance
 
 [推荐阅读：每日面试题](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues "每日面试问题")
+[The Daily Byte](https://thedailybyte.dev/?ref=kevin)
 
-## 1.RandomString
+## 121. 买卖股票的最佳时机
+
+给定一个数组 prices ，它的第 i 个元素 prices[i] 表示一支给定股票第 i 天的价格。
+
+你只能选择 某一天 买入这只股票，并选择在 未来的某一个不同的日子 卖出该股票。设计一个算法来计算你所能获取的最大利润。
+
+返回你可以从这笔交易中获取的最大利润。如果你不能获取任何利润，返回 0 。
+
+```javascript
+/**
+ * @param {number[]} prices
+ * @return {number}
+ */
+var maxProfit = function(prices) {
+  const len = prices.length
+  let min = prices[0], max = prices[0], dp = [0]
+  for (let i = 1; i < len; i++) {
+    if (prices[i] < min) {
+      min = prices[i]
+      dp[i] = 0
+    } else if (prices[i] > max) {
+      max = prices[i]
+      dp[i] = prices[i] - min
+    } else {
+      dp[i] = prices[i] - min
+    }
+  }
+  return Math.max(...dp)
+};
+```
+
+## RandomString
 
 <details>
 
@@ -33,7 +65,7 @@ function randomString() {
 
 </details>
 
-## 2.异步相加
+## 异步相加
 
 <details>
 
