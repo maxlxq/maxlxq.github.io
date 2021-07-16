@@ -162,6 +162,13 @@ module.exports = {
             "ECMAScript.md",
           ],
         },
+        {
+          title: "TypeScript",
+          collapsable: false,
+          children: [
+            "TypeScript.md",
+          ],
+        },
       ],
       "/blog/": [
         {
