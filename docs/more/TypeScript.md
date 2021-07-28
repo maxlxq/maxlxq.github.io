@@ -125,15 +125,15 @@ object 类型表示非原始类型的类型。
 
 ```typescript
 {
-  let str = 'this is string'; // str: string
-  let num = 1; // num: number
-  let bool = true; // bool: boolean
+  let str = 'this is string' // str: string
+  let num = 1 // num: number
+  let bool = true // bool: boolean
 }
 
 {
-  const str = 'this is string'; // str: 'this is string'
-  const num = 1; // num: 1
-  const bool = true; // bool: true
+  const str = 'this is string' // str: 'this is string'
+  const num = 1 // num: 1
+  const bool = true // bool: true
 }
 ```
 
@@ -145,10 +145,10 @@ TypeScript 支持 3 种字面量类型：字符串、数字、布尔。对应的
 
 ```typescript
 {
-  let specifiedStr: 'this is string' = 'this is string';
-  let str: string = 'any string';
-  specifiedStr = str; // ts(2322) 类型 '"string"' 不能赋值给类型 'this is string'
-  str = specifiedStr; // ok
+  let specifiedStr: 'this is string' = 'this is string'
+  let str: string = 'any string'
+  specifiedStr = str // ts(2322) 类型 '"string"' 不能赋值给类型 'this is string'
+  str = specifiedStr // ok
 }
 ```
 
@@ -167,9 +167,9 @@ type Direction = 'up' | 'down'
 与字符串字面量类型类似，举个例子
 ```typescript
 interface Config {
-    size: 'small' | 'big';
-    isEnable:  true | false;
-    margin: 0 | 2 | 4;
+    size: 'small' | 'big'
+    isEnable:  true | false
+    margin: 0 | 2 | 4
 }
 ```
 
@@ -197,7 +197,7 @@ let 定义的变量，在缺省类型注解时，会转换为赋值字面量类�
 
 ```typescript
 const add = (a: number, b: number): number => {
-    return a + b;
+    return a + b
 }
 ```
 
@@ -246,7 +246,7 @@ function sum(...nums: number[]) {
 
 // 使用联合类型兼容 string
 function sum2(...nums: (number | string)[]): number {
-  return nums.reduce<number>((pre, cur) => pre + Number(cur), 0);
+  return nums.reduce<number>((pre, cur) => pre + Number(cur), 0)
 }
 sum2(1, '2', 3)
 // 6
@@ -258,8 +258,8 @@ TypeScript 在严格模式下，必须指定 this 的类型。
 
 ```typescript
 interface Person {
-  name: string;
-  say(this: Person): void;
+  name: string
+  say(this: Person): void
 }
 ```
 
@@ -313,9 +313,9 @@ dog.bark()
 /** 关键字 接口名称 */
 interface ProgramLanguage {
   /** 语言名称 */
-  name: string;
+  name: string
   /** 使用年限 */
-  age: () => number;
+  age: () => number
 }
 
 let TypeScript: ProgramLanguage
@@ -326,18 +326,240 @@ TypeScript = {
 }
 ```
 
-可缺省属性
+- 可缺省属性
 
 ```typescript
 /** 关键字 接口名称 */
 interface OptionalProgramLanguage {
   /** 语言名称 */
-  name: string;
+  name: string
   /** 使用年限 */
-  age?: () => number;
+  age?: () => number
 }
 
 let OptionalTypeScript: OptionalProgramLanguage = {
   name: 'TypeScript'
-}; // ok
+} // ok
+```
+
+- 只读属性
+
+```typescript
+interface ReadOnlyProgramLanguage {
+  readonly name: string
+  readonly age: (() => number) | undefined
+}
+
+let ReadOnlyTypeScript: ReadOnlyProgramLanguage = {
+  name: 'TypeScript',
+  age: undefined,
+}
+
+ReadOnlyTypeScript.name = 'JavaScript' // ts(2540)错误，name 只读
+```
+
+这是静态类型层面的只读，实际上并不能阻止对对象的篡改。转译为 JavaScript 之后，readonly 修饰符会被抹除。
+
+- 定义函数类型
+
+```typescript
+/** 关键字 接口名称 */
+interface ProgramLanguage {
+  /** 语言名称 */
+  name: string
+  /** 使用年限 */
+  age: () => number
+}
+
+// 接口类型
+interface StudyLanguage {
+  (language: ProgramLanguage): void
+}
+
+let StudyInterface: StudyLanguage = language => console.log(`${language.name} ${language.age()}`)
+
+/** 一般使用 内联类型或类型别名，配合箭头函数愈发来定义函数类型 */
+type StudyLanguageType = (language: ProgramLanguage) => void
+```
+
+- 索引签名
+
+索引名称的类型分为 string 和 number 两种。
+
+```typescript
+interface LanguageRankInterface {
+    [rank: number]: string
+}
+
+interface LanguageYearInterface {
+    [name: string]: number
+}
+
+let LanguageRankMap: LanguageRankInterface = {
+  1: 'TypeScript',
+  2: 'JavaScript',
+  'WrongIndex': '2012', // ts(2322) 不存在的属性名
+}
+
+let LanguageMap: LanguageYearInterface = {
+  TypeScript: 2012,
+  JavaScript: 1995,
+  1: 1970, // 数字作为索引时，可以兼容数字，也可以兼容字符串
+}
+```
+
+- 继承与实现
+
+接口类型可以继承与被继承
+
+1. 使用 extends 关键字
+```typescript
+/** 关键字 接口名称 */
+interface ProgramLanguage {
+  /** 语言名称 */
+  name: string
+  /** 使用年限 */
+  age: () => number
+}
+
+interface DynamicLanguage extends ProgramLanguage {
+  rank: number // 定义新属性
+}
+
+interface TypeSafeLanguage extends ProgramLanguage {
+  typeChecker: string // 定义新属性
+}
+
+// 继承多个
+interface TypeScriptLanguage extends DynamicLanguage, TypeSafeLanguage {
+  name: 'TypeScript' // 用原属性类型的兼容的类型(子集)重新定义属性
+}
+```
+
+- Type 类型别名
+
+```typescript
+type LanguageType = {
+  name: string
+  age: () => number
+}
+```
+
+- interface 与 Type 的区别
+
+interface 接口类型重复定义，属性会累加
+
+```typescript
+interface Language {
+  id: number
+}
+interface Language {
+  name: string
+}
+
+let lang: Language = {
+  id: 1,
+  name: 'name',
+}
+```
+
+类型别名 不能重复定义
+
+## 高级类型：联合类型和交叉类型
+
+### 联合类型
+
+Unions 联合类型 表示变量、参数的类型不是单一原子类型，可能是多种不用的类型的组合。
+
+表示方法：通过`|`操作符分隔类型的语法
+
+```typescript
+function formatPX(size: number | string) {
+  if (typeof size === 'number') {
+    return `${size}px`
+  }
+  if (typeof size === 'string') {
+    return `${parseInt(size) || 0}px`
+  }
+  throw Error(` 仅支持 number 或者 string`)
+}
+
+formatPX(13)
+formatPX('13px')
+formatPX(true) // ts(2345) 'true' 类型不能赋予 'number | string' 类型
+formatPX(null) // ts(2345) 'true' 类型不能赋予 'number | string' 类型
+```
+
+```typescript
+interface Bird {
+  fly(): void
+  layEggs(): void
+}
+
+interface Fish {
+  swim(): void
+  layEggs(): void
+}
+
+const getPet: () => Bird | Fish = () => {
+  return {
+   // ...
+  } as Bird | Fish
+}
+const Pet = getPet()
+Pet.layEggs() // ok
+Pet.fly() // ts(2339) 'Fish' 没有 'fly' 属性 'Bird | Fish' 没有 'fly' 属性
+
+// 类型守卫
+if ('fly' in Pet) {
+  Pet.fly() // ok
+}
+```
+
+### 交叉类型
+
+`&` 表示交叉类型
+
+```typescript
+type Useless = string & number
+```
+
+### 合并接口类型
+
+```typescript
+type IntersectionType = { id: number name: string } & { age: number }
+
+const mixed: IntersectionType = {
+  id: 1,
+  name: 'name',
+  age: 18
+}
+```
+
+如果合并的多个接口类型存在同名属性，那么该属性的类型为 多个属性的交叉类型
+
+### 合并联合类型
+
+合并联合类型为一个交叉类型，可以理解为求交集
+
+```typescript
+type UnionA = 'px' | 'em' | 'rem' | '%'
+type UnionB = 'vh' | 'em' | 'rem' | 'pt'
+type IntersectionUnion = UnionA & UnionB
+const intersectionA: IntersectionUnion = 'em' // ok
+const intersectionB: IntersectionUnion = 'rem' // ok
+const intersectionC: IntersectionUnion = 'px' // ts(2322)
+const intersectionD: IntersectionUnion = 'pt' // ts(2322)
+```
+
+如果多个联合类型中没有相同的类型成员，交叉出来的类型就是 never。
+
+### 联合、交叉组合
+
+联合操作符`|`的优先级低于交叉操作符`&`
+
+```typescript
+type UnionIntersectionC = ({ id: number; } & { name: string; } | { id: string; }) & { name: number; };
+type UnionIntersectionD = { id: number; } & { name: string; } & { name: number; } | { id: string; } & { name: number; }; // 满足分配率
+type UnionIntersectionE = ({ id: string; } | { id: number; } & { name: string; }) & { name: number; }; // 满足交换律
 ```
