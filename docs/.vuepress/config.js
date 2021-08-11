@@ -166,7 +166,8 @@ module.exports = {
           title: "TypeScript",
           collapsable: false,
           children: [
-            "TypeScript.md",
+            "TypeScript入门.md",
+            "TypeScript进阶.md",
           ],
         },
       ],

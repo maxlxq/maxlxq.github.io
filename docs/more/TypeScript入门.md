@@ -527,7 +527,7 @@ type Useless = string & number
 ### 合并接口类型
 
 ```typescript
-type IntersectionType = { id: number name: string } & { age: number }
+type IntersectionType = { id: number, name: string } & { age: number }
 
 const mixed: IntersectionType = {
   id: 1,
@@ -563,3 +563,186 @@ type UnionIntersectionC = ({ id: number; } & { name: string; } | { id: string; }
 type UnionIntersectionD = { id: number; } & { name: string; } & { name: number; } | { id: string; } & { name: number; }; // 满足分配率
 type UnionIntersectionE = ({ id: string; } | { id: number; } & { name: string; }) & { name: number; }; // 满足交换律
 ```
+
+### 类型缩减
+
+如果将 string 原始类型和 string 字面量类型 组合成联合类型，就会类型缩减为 string。
+
+```typescript
+type URStr = 'string' | string; // string
+type URNum = 2 | number; // number
+type URBoolean = true | boolean; // boolean
+enum EnumUR {
+  ONE,
+  TWO
+}
+type URE = EnumUR.ONE | EnumUR; // EnumUR
+```
+
+类型缩减削弱了 IDE 自动提示的能力。需要给父类型添加 `& {}`, 来控制缩减。
+
+## 枚举类型: 7种用法
+
+```typescript
+type Day = 'SUNDAY' | 'MONDAY' | 'TUESDAY' | 'WEDNESDAY' | 'THURSDAY' | 'FRIDAY' | 'SATURDAY'
+const SUNDAY: Day = 'SUNDAY'
+const SATURDAY: Day = 'SATURDAY'
+```
+
+### 枚举类型 Enums
+
+使用 enum 关键字定义枚举类型： enum + 枚举名字 + 一对花括号。
+
+```typescript
+enum Day {
+  SUNDAY,
+  MONDAY,
+  TUESDAY,
+  WEDNESDAY,
+  THURSDAY,
+  FRIDAY,
+  SATURDAY
+}
+```
+
+7种常见的枚举类型：数字类型、字符串类型、异构类型、常量成员和计算成员、枚举成员类型和联合枚举、常量枚举、外部枚举。
+
+### 数字枚举
+
+仅指定常量命名的情况下，默认从 0 开始递增的数字集合，称之为数字枚举。
+
+从其他值开始递增，需要设置指定成员的初始值。
+
+```typescript
+enum Day {
+  SUNDAY = 1, // 这里指定了从 1 开始递增
+  MONDAY,
+  TUESDAY,
+  WEDNESDAY,
+  THURSDAY,
+  FRIDAY,
+  SATURDAY
+}
+```
+
+### 字符串枚举
+
+```typescript
+enum Day {
+  SUNDAY = 'SUNDAY',
+  MONDAY = 'MONDAY',
+  TUESDAY = 'TUESDAY',
+  WEDNESDAY = 'WEDNESDAY',
+  THURSDAY = 'THURSDAY',
+  FRIDAY = 'FRIDAY',
+  SATURDAY = 'SATURDAY'
+}
+```
+
+### 异构枚举
+
+异构枚举：TypeScript 支持枚举类型同时拥有数字和字符类型的成员
+
+异构枚举被认为是很鸡肋的类型。
+
+枚举成员可以是数字、字符串这样的常量，也可以是通过表达式计算出来的值
+
+### 常量成员和计算成员
+
+常量成员：枚举成员的值都是 字符串、数字字面量、未指定初始值从 0 递增数字常量；在转移时，通过被计算的常量枚举表达式（转译阶段可计算值的表达式）定义值的成员。
+
+计算成员：转译阶段之后才能计算值的表达式
+
+### 枚举成员类型和联合枚举
+
+对于不需要计算的常量类型成员，即缺省值、数字字面量、字符串字面量，被称为字面量枚举类型
+
+枚举成员和枚举类型之间的关系分两种情况： 如果枚举的成员同时包含字面量和非字面量枚举值，枚举成员的类型就是枚举本身（枚举类型本身也是本身的子类型）；如果枚举成员全部是字面量枚举值，则所有枚举成员既是值又是类型。
+
+```typescript
+enum Day {
+  SUNDAY,
+  MONDAY,
+}
+enum MyDay {
+  SUNDAY,
+  MONDAY = Day.MONDAY
+}
+
+const mondayIsDay: Day.MONDAY = Day.MONDAY; // ok: 字面量枚举成员既是值，也是类型
+const mondayIsSunday = MyDay.SUNDAY; // ok: 类型是 MyDay，MyDay.SUNDAY 仅仅是值
+const mondayIsMyDay2: MyDay.MONDAY = MyDay.MONDAY; // ts(2535)，MyDay 包含非字面量值成员，所以 MyDay.MONDAY 不能作为类型
+```
+这里因为 Day 的所有成员都是字面量枚举成员，所以 Day.MONDAY 可以同时作为值和类型使用。但是 MyDay 的成员 MONDAY 是非字面量枚举成员（但是是常量枚举成员），所以 MyDay.MONDAY 仅能作为值使用.
+
+如果枚举仅有一个成员且是字面量成员，那么这个成员的类型等于枚举类型
+
+### 常量枚举
+
+通过添加 const 修饰符定义常量枚举，常量枚举定义转译为 JavaScript 之后会被移除，并在使用常量枚举成员的地方被替换为相应的内联值，因此常量枚举的成员都必须是常量成员（字面量 + 转译阶段可计算值的表达式）
+
+### 外部枚举
+
+通过 declare 描述一个在其他地方已经定义过的变量。
+
+```typescript
+declare let $: any;
+
+$('#id').addClass('show');
+```
+
+外部枚举和常规枚举的差异在于以下几点：
+- 在外部枚举中，如果没有指定初始值的成员都被当作计算（值）成员，这跟常规枚举恰好相反；
+- 即便外部枚举只包含字面量成员，这些成员的类型也不会是字面量成员类型，自然完全不具备字面量类型的各种特性。
+
+外部枚举的作用在于为两个不同枚举（实际上是指向了同一个枚举类型）的成员进行兼容、比较、被复用提供了一种途径，这在一定程度上提升了枚举的可用性，让其显得不那么“鸡肋”。
+
+## 泛型：如何正确使用泛型约束类型变量
+
+### 泛型是什么？
+
+泛型指的是类型参数化，将原来某种具体的类型进行参数化。
+
+### 泛型类型参数
+
+泛型最常用的场景：用来约束函数参数的类型。
+
+```typescript
+function useState<S>(state: S, initialValue?: S) {
+  return [state, (s: S) => void 0] as unknown as [S, (s: S) => void];
+}
+```
+
+### 泛型类
+
+在类的定义中，我们还可以使用泛型用来约束构造函数、属性、方法的类型。
+
+对于 React 开发者而言，组件也支持泛型。
+
+### 泛型类型
+
+在 TypeScript 中，类型本身就可以被定义为拥有不明确的类型参数的泛型，并且可以接收明确类型作为入参，从而衍生出更具体的类型。
+
+```typescript
+const reflectFn: <P>(param: P) => P = reflect; // ok
+```
+
+```typescript
+type GenericReflectFunction<P> = (param: P) => P;
+interface IGenericReflectFunction<P> {
+  (param: P): P;
+}
+
+const reflectFn4: GenericReflectFunction<string> = reflect; // 具象化泛型
+const reflectFn5: IGenericReflectFunction<number> = reflect; // 具象化泛型
+const reflectFn3Return = reflectFn4('string'); // 入参和返回值都必须是 string 类型
+const reflectFn4Return = reflectFn5(1); //  入参和返回值都必须是 number 类型
+```
+
+在泛型定义中，可以使用一些类型操作符进行运算表达，使得泛型可以根据入参的类型衍生出各异的类型
+
+> 注意：枚举类型不支持泛型。
+
+### 泛型约束
+
+
