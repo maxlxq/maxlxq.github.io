@@ -741,8 +741,62 @@ const reflectFn4Return = reflectFn5(1); //  入参和返回值都必须是 numbe
 
 在泛型定义中，可以使用一些类型操作符进行运算表达，使得泛型可以根据入参的类型衍生出各异的类型
 
+```typescript
+type StringOrNumberArray<E> = E extends string | number ? E[] : E;
+type StringArray = StringOrNumberArray<string>; // 类型是 string[]
+type NumberArray = StringOrNumberArray<number>; // 类型是 number[]
+type NeverGot = StringOrNumberArray<boolean>; // 类型是 boolean
+```
+
+这里定义了一个泛型，如果入参是 number | string 就会生成一个数组类型，否则就生成入参类型。
+
+如果给这个泛型传入一个 string | boolean 联合类型作为入参
+
+```typescript
+type StringOrNumberArray<E> = E extends string | number ? E[] : E;
+type BooleanOrString = string | boolean;
+type WhatIsThis = StringOrNumberArray<BooleanOrString>; // 好像应该是 string | boolean ?
+type BooleanOrStringGot = BooleanOrString extends string | number ? BooleanOrString[] : BooleanOrString; //  string | boolean
+```
+
+WhatIsThis 并非想象中的 boolean | string, 而是 boolean | string[]。
+
+涉及到的原因是 分配条件类型。
+
+分配条件类型：在条件类型判断的情况下，如果入参是联合类型，则会被拆解成一个个独立的类型进行类型运算。
+
+上边示例中的 string | boolean 入参，先被拆解成 string 和 boolean 这两个独立类型，再分别判断是否是 string | number 类型的子集。因为 string 是子集而 boolean 不是，所以最终我们得到的 WhatIsThis 的类型是 boolean | string[]。
+
 > 注意：枚举类型不支持泛型。
 
 ### 泛型约束
 
+把泛型入参限定在一个相对更明确的集合内，以便对入参进行约束。
 
+把接受参数的类型限定在几种原始类型的集合中，就可以使用 "泛型入参名 extends 类型"。
+
+把接口泛型入参约束在特定范围内，"泛型入参名 extends `{ id: number; name: string }`"。
+此时泛型仅接受 `{ id: number; name: string }` 接口类型的子类型作为入参。
+
+在多个不同的泛型入参之间设置约束关系。
+
+```typescript
+interface ObjSetter {
+  <O extends {}, K extends keyof O, V extends O[K]>(obj: O, key: K, value: V): V;
+}
+
+const setValueOfObj: ObjSetter = (obj, key, value) => (obj[key] = value);
+
+setValueOfObj({ id: 1, name: 'name' }, 'id', 2); // ok
+setValueOfObj({ id: 1, name: 'name' }, 'name', 'new name'); // ok
+setValueOfObj({ id: 1, name: 'name' }, 'age', 2); // ts(2345)
+setValueOfObj({ id: 1, name: 'name' }, 'id', '2'); // ts(2345)
+```
+
+泛型入参的约束与默认值还可以组合使用
+
+```typescript
+interface ReduxModelMixed<State extends {} = { id: number; name: string }> {
+  state: State
+}
+```
