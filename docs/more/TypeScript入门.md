@@ -154,7 +154,7 @@ TypeScript 支持 3 种字面量类型：字符串、数字、布尔。对应的
 
 ### 字符串字面量类型
 
-单个字面量类型并没有太大的用处，将多个字面量类型组合成一个脸和类型，用来描述拥有明确成员的使用的集合。
+单个字面量类型并没有太大的用处，将多个字面量类型组合成一个联合类型，用来描述拥有明确成员的使用的集合。
 
 ```typescript
 type Direction = 'up' | 'down'
@@ -209,7 +209,7 @@ const add = (a: number, b: number): number => {
 function fn(): void {}
 ```
 
-可以使用类似定义箭头函数的愈发来表示函数类型的参数和返回值类型，此时 `=>` 仅仅用来定义一个函数类型而不用实现这个函数。
+可以使用类似定义箭头函数的语法来表示函数类型的参数和返回值类型，此时 `=>` 仅仅用来定义一个函数类型而不用实现这个函数。
 
 ```typescript
 type Adder = (a: number, b: number) => number
@@ -378,7 +378,7 @@ interface StudyLanguage {
 
 let StudyInterface: StudyLanguage = language => console.log(`${language.name} ${language.age()}`)
 
-/** 一般使用 内联类型或类型别名，配合箭头函数愈发来定义函数类型 */
+/** 一般使用 内联类型或类型别名，配合箭头函数语法来定义函数类型 */
 type StudyLanguageType = (language: ProgramLanguage) => void
 ```
 
