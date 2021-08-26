@@ -49,7 +49,7 @@ Node.js 虽然运行结果上与浏览器一直，但两者在原理上，一个
 六个阶段：
 1. timers：本阶段执行已经被 setTimeout() 和 setInterval() 调度的回调函数，简单理解为由这两个函数启动的回调函数
 2. pending callbacks：本阶段执行某些系统操作的回调函数
-3. idle、prepare：进系统内部使用
+3. idle、prepare：仅系统内部使用
 4. poll：检索新的 I/O 事件，执行与 I/O 相关的回调，其他情况 Node.js 将在适当的时候在此阻塞。这也是最复杂的一个阶段，所有的事件循环以及回调处理都在这个阶段执行。
 5. check：setImmediate() 回调函数在这里执行，setImmediate 并不是立马执行，而是当事件循环 poll 中没有新的事件处理时就执行该部分。如下：
 ```javascript
@@ -210,3 +210,44 @@ console.log('2')
  * read file sync success
  */
 ```
+
+主线程是否会被阻塞？
+
+```javascript
+const fs = require('fs');
+setTimeout(() => { // 新的事件循环的起点
+  console.log('1')
+  sleep(10000)
+  console.log('sleep 10s')
+}, 0)
+/// 将会在 poll 阶段执行
+fs.readFile('./test.conf', {encoding: 'utf-8'}, (err, data) => {
+  if (err) throw err;
+  console.log('read file success')
+})
+console.log('2')
+/// 函数实现，参数 n 单位 毫秒
+function sleep ( n ) {
+  var start = new Date().getTime()
+  while ( true ) {
+    if ( new Date().getTime() - start > n ) {
+      // 使用  break  实现；
+      break
+    }
+  }
+}
+```
+
+阻塞现象是：当每次事件循环结束后，才会执行 fs.readFile 毁掉函数。
+但 发现 fs.readFile 其实已经处理完成，并且通知回调到了主线程，但主线程处理时被阻塞了，无法处理 fs.readFile 的回调。
+
+所以，主线程会因为回调函数的执行而被阻塞。
+
+## 实践分析
+
+Node.js 不善于处理 CPU 密集型的业务。
+
+> Node.js 是单线程还是多线程的？
+>
+> 主线程是单线程执行的，但是 Node.js 存在多线程执行，多线程包括 setTimeout 和 异步 I/O 事件。
+> 其实 Node.js 还存在其他的线程，包括 垃圾回收、内存优化等。
