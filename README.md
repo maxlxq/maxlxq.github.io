@@ -4,7 +4,7 @@
 
 本文中的内容会同步到微信公众号【大前端飞升指南】
 
-![大前端飞升指南](https://skr.oss-cn-beijing.aliyuncs.com/blog/search_qrcode.png?x-oss-process=image/auto-orient,1/resize,m_fill,w_605,h_208/quality,q_30)
+![大前端飞升指南](https://skr.oss-cn-beijing.aliyuncs.com/blog/search_qrcode_dan.png?x-oss-process=image/auto-orient,1/resize,m_fill,w_570,h_208/quality,q_30)
 
 ## 2021 计划
 - 前端知识体系搭建，以博客形式分类展示
