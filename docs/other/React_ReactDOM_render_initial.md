@@ -130,7 +130,7 @@ function unbatchedUpdates(fn, a) {
 </details>
 
 
-在 unbatchedUpdates 函数体重，直接调用了传入的回调 fn。即 updateContainer。
+在 unbatchedUpdates 函数体中，直接调用了传入的回调 fn。即 updateContainer。
 
 <details>
 <summary>
