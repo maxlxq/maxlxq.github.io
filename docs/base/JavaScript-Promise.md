@@ -2,7 +2,19 @@
 
 ## 介绍
 
+Promise 是一个对象，代表了一个异步操作的最终完成或者失败。
+
+Promise 必须为以下三种状态之一：Pending、Fulfilled、Rejected。
+
+Pending 可以转换成 Fulfilled 或 Rejected 状态。
+Fulfilled、Rejected 不能再转移到其他状态。
+
 ## 基本过程
+
+1. 初始化 Promise 状态（Pending）
+2. 立即执行 Promise 中传入的 fn 函数，将 Promise 内部 resolve、reject 函数作为参数传递给 fn，按事件机制时机处理
+3. 执行 then 注册回调处理数组
+4. Promise 里的关键是，then 方法中的参数 onFulfilled、onRejected 必须在 then 方法被调用的那一轮事件循环之后的新执行栈中执行。微任务队列
 
 ## 链式调用
 
@@ -14,7 +26,53 @@
 
 ## finally 方法
 
+```javascript
+function Promise(fn) {
+  // ...
+  this.catch = function (onError) {
+    this.then(null, onError)
+  }
+  this.finally = function (onDone) {
+    this.then(onDone, onDone)
+  }
+  // ...
+}
+```
+
 ## Promise.all
+
+```javascript
+function PromiseAll(arr) {
+  let args = Array.prototype.slice.call(arr)
+  return new Promise(function(resolve, reject) {
+    if (args.length === 0) return resolve([])
+    let remaining = args.length
+
+    function res(i, val) {
+      try {
+        if (val && ['object', 'function'].includes(typeof val)) {
+          let then = val.then
+          if (typeof then === 'function') {
+            then.call(val, function(val) {
+              res(i, val)
+            }, reject)
+            return
+          }
+        }
+        args[i] = val
+        if (--remaining === 0) {
+          resolve(args)
+        }
+      } catch(e) {
+        reject(e)
+      }
+    }
+    for(let i = 0; i < args.length; i++) {
+      res(i, args[i])
+    }
+  })
+}
+```
 
 ## Promise.race
 
