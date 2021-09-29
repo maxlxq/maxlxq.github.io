@@ -4,10 +4,17 @@
 
 Promise 是一个对象，代表了一个异步操作的最终完成或者失败。
 
-Promise 必须为以下三种状态之一：Pending、Fulfilled、Rejected。
-
-Pending 可以转换成 Fulfilled 或 Rejected 状态。
-Fulfilled、Rejected 不能再转移到其他状态。
+1. Promise 必须为以下三种状态之一：Pending、Fulfilled、Rejected。
+2. new Promise 时，需要传递一个 executor() 执行器，执行器立即执行。
+3. executor 接受两个参数，resolve 和 reject。
+4. promise 的默认状态是 pending。
+5. promise 有一个 value 保存成功状态的值，可以是 undefined/thenable/promise。
+6. promise 有一个 reason 保存失败状态的值。
+7. promise 只能从 pending 到 rejected，或者从 pending 到 fulfilled。状态转换之后就不会再改变。
+8. promise 必须有一个 then 方法，then 接受两个参数，分别是 promise 成功的回调 onFulfilled，和 promise 失败的回调 onRejected。
+9. 如果调用 then 时，promise 已经成功，则执行 onFulfilled，参数是 promise 的 value。
+10. 如果调用 then 时，promise 已经失败，则执行 onRejected，参数是 promise 的 reason。
+11. 如果 then 中抛出了异常，那么就会把这个异常作为参数，传递给下一个 then 的失败的回调 onRejected。
 
 ## 基本过程
 
@@ -16,11 +23,109 @@ Fulfilled、Rejected 不能再转移到其他状态。
 3. 执行 then 注册回调处理数组
 4. Promise 里的关键是，then 方法中的参数 onFulfilled、onRejected 必须在 then 方法被调用的那一轮事件循环之后的新执行栈中执行。微任务队列
 
-## 链式调用
+## Promise 基本框架
 
-## resolve
+```javascript
+const PENDING = 'PENDING'
+const FULFILLED = 'FULFILLED'
+const REJECTED = 'REJECTED'
 
-## reject
+class Promise {
+  constructor(executor) {
+    if (typeof executor !== 'function') {
+      throw new TypeError('Promise resolver is not a function')
+    }
+
+    this.status = PENDING
+    this.value = undefined
+
+    this.onResolvedCallbackArr = []
+    this.onRejectedCallbackArr = []
+
+    const resolve = value => {
+      if (value === this) {
+        return reject(new TypeError('Chaining cycle detected for promise #<Promise>'))
+      }
+
+      if (value instanceof Promise) {
+        return value.then(resolve, reject)
+      }
+
+      if (this.status === PENDING) {
+        this.status = FULFILLED
+        this.value = value
+        this.onResolvedCallbackArr.forEach(cb => cb())
+      }
+    }
+
+    const reject = reason => {
+      if (this.status === PENDING) {
+        this.status = REJECTED
+        this.value = reason
+        this.onRejectedCallbackArr.forEach(cb => cb())
+      }
+    }
+
+    try {
+      executor(resolve, reject)
+    } catch(e) {
+      reject(e)
+    }
+  }
+
+  then(onResolved, onRejected) {
+    onResolved = typeof onResolved === 'function' ? onResolved : value => value
+    onRejected = typeof onRejected === 'function' ? onRejected : e => throw e
+
+    const nextPromise = new Promise((resolve, reject) => {
+      if (this.status === FULFILLED) {
+        setTimeout(() => {
+          try {
+            let result = onResolved(this.value)
+            resolvePromise(nextPromise, result, resolve, reject)
+          } catch (e) {
+            reject(e)
+          }
+        }, 0)
+      }
+
+      if (this.status === REJECTED) {
+        setTimeout(() => {
+          try {
+            let result = onRejected(this.value)
+            resolvePromise(nextPromise, result, resolve, reject)
+          } catch (e) {
+            reject(e)
+          }
+        }, 0)
+      }
+
+      if (this.status === PENDING) {
+        this.onResolvedCallbackArr.push(() => {
+          try {
+            let result = onResolved(this.value)
+            resolvePromise(nextPromise, result, resolve, reject)
+          } catch (e) {
+            reject(e)
+          }
+        }, 0)
+        this.onRejectedCallbackArr.push(() => {
+          try {
+            let result = onRejected(this.value)
+            resolvePromise(nextPromise, result, resolve, reject)
+          } catch (e) {
+            reject(e)
+          }
+        }, 0)
+      }
+    })
+  }
+}
+
+const resolvePromise = (nextPromise, promiseResult, resolve, reject) => {
+  // todo
+}
+```
 
 ## 异常处理
 
