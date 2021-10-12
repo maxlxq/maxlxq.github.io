@@ -57,6 +57,7 @@ module.exports = {
             'JavaScript-事件循环机制.md',
             'JavaScript-Promise.md',
             'JavaScript-Generators原理.md',
+            'JavaScript-深拷贝-浅拷贝.md',
           ],
         },
         {
