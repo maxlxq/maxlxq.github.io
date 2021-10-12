@@ -80,7 +80,7 @@
 16. 垃圾回收机制
 17. 前端模块化
 18. CommonJS、AMD、CMD
-19. 深拷贝、浅拷贝
+19. [深拷贝](https://blog.csdn.net/cc18868876837/article/details/114918262)、浅拷贝
 20. 手写 promise
 21. 监听对象属性的改变
 22. setTimeout、setInterval、requestAnimationFrame 的区别
@@ -193,7 +193,7 @@
 6. [模拟实现 requestIdleCallback](requestIdleCallback模拟实现.md)
 7. [模拟实现 promise](https://juejin.cn/post/6844904111821815816)
 8. 模拟实现 防抖 debounce 和节流 throttle
-9. 模拟实现 深拷贝、浅拷贝
+9. [模拟实现 深拷贝、浅拷贝](../base/JavaScript-深拷贝-浅拷贝.md))
 10. 模拟实现 flatten [递归｜迭代]
 11. 模拟实现 sleep，从 Promise、Generator、Async/Await
 12. 实现 (5).add(3).minus(2) 功能
