@@ -74,11 +74,100 @@ function PromiseAll(arr) {
 }
 ```
 
+```javascript
+function race(iterator) {
+  if (!Array.isArray(iterator)) return
+  let count = 0
+  let res = []
+  return new Promise((resolve, reject) => {
+    for(let item of iterator) {
+      Promise.resolve(item)
+        .then(data => {
+          res[count++] = data
+          if (count === iterator.length) {
+            resolve(res)
+          }
+        })
+        .catch(e => reject(e))
+    }
+  })
+}
+```
+
 ## Promise.race
+
+```javascript
+function race(iterator) {
+  return new Promise((resolve, reject) => {
+    for(let item of iterator) {
+      Promise.resolve(item)
+        .then(data => {
+          resolve(data)
+        })
+        .catch(e => reject(e))
+    }
+  })
+}
+```
 
 ## Promise.any
 
+```javascript
+function any(iterators) {
+  const promises = Array.from(iterators)
+  const num = promises.length
+  const rejectedList = new Array(num)
+  let rejectedNum = 0
+
+  return new Promise((resolve, reject) => {
+    promises.forEach((promise, index) => {
+      Promise.resolve(promise)
+        .then(data => resolve(data))
+        .catch(e => {
+          rejectedList[index] = e
+          if (++rejectedNum === num) {
+            reject(rejectedList)
+          }
+        })
+    })
+  })
+}
+```
+
 ## Promise.allSettled
+
+```javascript
+const formatSettledResult = (success, value) => (
+  success
+    ? { status: 'fulfilled', value }
+    : { status: 'rejected', reason: value }
+)
+
+function allSettled(iterators) {
+  const promises = Array.from(iterators)
+  const num = promises.length
+  const settledList = new Array(num)
+  let settledNum = 0
+
+  return new Promise((resolve, reject) => {
+    promises.forEach((promise, index) => {
+      Promise.resolve(promise)
+        .then(value => {
+          settledList[index] = formatSettledResult(true, value)
+          if (++settledNum === num) {
+            resolve(settledList)
+          }
+        })
+        .catch(error => {
+          settledList[index] = formatSettledResult(false, error)
+          if (++settledNum === num) {
+            reject(settledList)
+          }
+        })
+    })
+  })
+}
+```
 
 ## 实现一个 PromiseA+ 规范的 Promise 模型
 
