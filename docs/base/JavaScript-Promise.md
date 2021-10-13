@@ -169,6 +169,67 @@ function allSettled(iterators) {
 }
 ```
 
+## 并发限制
+
+```javascript
+const fetchUrl = (data, time) => {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve(data)
+    }, time)
+  })
+}
+
+const tasks = [
+  fetchUrl('fetch--1', 1000),
+  fetchUrl('fetch--2', 1200),
+  fetchUrl('fetch--3', 2500),
+  fetchUrl('fetch--4', 2000),
+  fetchUrl('fetch--5', 1000),
+]
+
+function promiseLimit(tasks) {
+  let i = 0
+  const poolLimit = 2
+  const len = tasks.length
+  const ret = []
+  const executing = []
+  const enqueue = function () {
+    // 终止条件
+    if (i === len) {
+      return Promise.resolve()
+    }
+    // 取出一个任务
+    const task = tasks[i++]
+    // 放入 promises 数组
+    ret.push(task)
+    // 执行完成后从 executing 数组中删除
+    const e = Promise.resolve(task).then(data => {
+      console.log('data:', data)
+      executing.splice(executing.indexOf(e), 1)
+      if (executing.length === 0) {
+        console.timeEnd('count')
+      }
+    })
+    // 插入 executing 数组，表示正在执行的 promise
+    executing.push(e)
+    // 使用 Promise.race, 每当 executing 数组中 promise 数量低于 poolLimit，就实例化新的 promise 并执行
+    let r = Promise.resolve()
+    if (executing.length >= poolLimit) {
+      r = Promise.race(executing)
+    }
+    // 递归，遍历所有的 task
+    return r.then(data => {
+      enqueue()
+    })
+  }
+  return enqueue().then(() => Promise.all(ret))
+}
+
+console.time('count')
+promiseLimit(tasks)
+```
+
 ## 实现一个 PromiseA+ 规范的 Promise 模型
 
 ```javascript
