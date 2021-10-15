@@ -328,10 +328,10 @@ function promiseLimit(tasks) {
       enqueue()
     })
   }
+  console.time('count')
   return enqueue().then(() => Promise.all(ret))
 }
 
-console.time('count')
 promiseLimit(tasks)
 ```
 
