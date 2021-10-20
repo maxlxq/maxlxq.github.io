@@ -188,6 +188,7 @@ module.exports = {
           children: [
             "React合成事件.md",
             "Virtual-DOM&Diff算法.md",
+            "Taro_3_跨端框架原理.md",
           ],
         },
         {
