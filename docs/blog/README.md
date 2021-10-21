@@ -17,7 +17,7 @@
 - [Taro 3 跨端框架原理](./Taro_3_跨端框架原理.md)
 
 ## 新知识 demo
-- [Svetle 框架](https://www.sveltejs.cn/)
+- [Svelte 框架](https://www.sveltejs.cn/)
 - [next.js](https://nextjs.org/)
 
 ## 工作周记
