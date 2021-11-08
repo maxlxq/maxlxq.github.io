@@ -230,3 +230,75 @@ function ChildReconciler(shouldTrackSideEffects) {
 2. 定义了大量对 Fiber 节点的创建、增加、删除、修改等动作，将直接或间接地被 reconcileChildFibers 调用
 3. ChildReconciler 的返回值为一个 reconcileChildFibers 的函数，这个函数是一个逻辑分发器，将根据入参的不同，执行不同的 Fiber 节点操作，最终返回不同的目标 Fiber 节点
 
+> Q：对副作用的处理不同，到底是哪里不同？
+>
+> A：shouldTrackSideEffects 若为 false，会直接返回。若为 true，会给 Fiber 节点搭上一个叫 "flags" 的标记。
+```javascript
+newFiber.flags = Placement
+```
+
+> flags 是什么
+>
+> React v17.0.0 版本中，属性名已经变更为 flags，早一些的版本中，更常见的事 effectTag。
+>
+> Placement 这个 flags 的意义，是在渲染器执行时，也就是真实 DOM 渲染时，告诉渲染器：这里需要新增 DOM 节点。
+> flags 记录的是副作用的类型，所谓的副作用，React 给出的定义是"数据获取、订阅或者修改 DOM"等动作。
+
+## Fiber 节点创建过程梳理
+
+```javascript
+/**
+ *                      beginWork
+ *                          ｜
+ *      updateHostRoot, 进入 rootFiber 节点的处理逻辑
+ *                          ｜
+ *   调用 reconcileChildren 分发当前节点（此处为 rootFiber 节点）
+ *           的子节点（此处为 App 节点）的创建逻辑
+ *                          ｜
+ *    Current 不为 null，逻辑因此被分发进 reconcileChildFibers，
+ *    reconcileChildFibers 是 ChildReconciler(true) 的返回值，
+ *                这意味着副作用将被追踪
+ *                          ｜
+ *    reconcileChildRibers 将子节点的创建逻辑分发给 reconcileSingleElement，
+ *                   得到 App FiberNode
+ *                          ｜
+ *       调用 placeSingleChild，为 App FiberNode 打上
+ *                    Placement 的标识
+ *                          ｜
+ *       App FiberNode 作为 rottFiber 的 child 的属性，与现有
+ *               workInProgress Fiber 树建立关联
+ */
+```
+
+**循环创建新的 Fiber 节点。**
+
+```javascript
+function workLoopSync() {
+  while(workInProgress !== null) {
+    performUnitOfWork(workInProgress)
+  }
+}
+```
+
+workLoopSync 循环地调用 performUnitOfWork，performUnitOfWork 主要工作是通过 调用 beginWork，来实现新 Fiber 节点的创建；
+次要工作是把新创建的这个 Fiber 节点的值更新到 workInProgress 变量中。
+
+```javascript
+next = beginWork$1(current, unitOfWork, subtreeRenderLanes)
+if (next === null) {
+  completeUnitOfWork(unitOfWork)
+} else {
+  workInProgress = next
+}
+```
+
+这样便能够确保每次 performUnitOfWork 执行完毕后，当前的 WorkInProgress 都存储着下一个需要被处理的节点，从而为下一次的 workLoopSync 循环做准备。
+
+**Fiber 节点间是如何连接的**
+
+不同的 Fiber 节点之间，将通过 child、return、sibling 这三个属性建立关系，
+其中 child、return 记录的是父子节点关系，而 sibling 记录的是兄弟节点关系。
+
+FiberNode 实例中，return 指向的是当前 Fiber 节点的父节点，而 sibling 指向的是当前节点的第一个兄弟节点。
+
+此时的 Fiber 树本质上已经从树变成了链表。
