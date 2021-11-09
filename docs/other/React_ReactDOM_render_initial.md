@@ -1,5 +1,4 @@
-# ReactDOM.render 是如何串联渲染链路的？
-
+# ReactDOM.render 调用栈 —— initial 阶段
 
 ## ReactDOM.render 调用栈的逻辑分层
 
