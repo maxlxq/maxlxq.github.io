@@ -17,6 +17,7 @@
 [如何理解 Fiber 架构的迭代动机和设计思想](../other/React_Fiber架构的迭代动机和设计思想.md)
 [ReactDOM.render 初始化阶段](../other/React_ReactDOM_render_initial.md)
 [ReactDOM.render render 阶段](../other/React_ReactDOM_render_render.md)
+[ReactDOM.render commit 阶段](../other/React_ReactDOM_render_commit.md)
 
 ## 拓宽技术视野 周边生态
 
