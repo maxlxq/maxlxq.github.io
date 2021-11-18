@@ -209,6 +209,260 @@ function dispatchAction(fiber, queue, action) {
 }
 ```
 
-从 update 对象到 scheduleUpdateOnFiber
+### 从 update 对象到 scheduleUpdateOnFiber
 
-scheduleUpdateOnFiber 会调度 update。
+上述代码的逻辑，React 里 updateContainer 函数中有相同的行为。
+```javascript
+var update = createUpdate(eventTime, lane)
+
+update.payload = {
+  element: element,
+}
+callback = callback === undefined ? null : callback
+
+if (callback !== null) {
+  {
+    if (typeof callback !== 'function') {
+      // error
+    }
+  }
+  update.callback = callback
+}
+
+enqueueUpdate(current$1, update)
+scheduleUpdateOnFiber(current$1, lane, eventTime)
+```
+
+以 enqueueUpdate 为界：
+1. enqueueUpdate 之前：创建 update
+2. enqueueUpdate 调用：将 update 入队。每个 Fiber 节点都会有一个属于自身的 updateQueue，用于存储多个更新，updateQueue 以链表形式存在。在 render 阶段，updateQueue 的内容会成为 render 阶段计算 Fiber 节点的新 state 的依据
+3. scheduleUpdateOnFiber：调度 update。这个方法之后会紧跟 performSyncWorkOnRoot 所触发的 render 阶段。
+
+再看 dispatchAction 的逻辑，里面依然有上述三步处理过程。
+
+有一点需要注意的是，dispatchAction 调度的是当前触发更新的节点。和过载过程不太一致。挂载过程中，updateContainer 会直接调度根节点。
+但对于更新这种场景来说，大部分更新的动作都不是由根节点触发的，而 render 阶段的起点则是根节点。
+
+因此，在 scheduleUpdateOnFiber 中，有 markUpdateLaneFromFiberToRoot 这样一个方法。
+```javascript
+function scheduleUpdateOnFiber(fiber, lane, eventTime) {
+  checkForNestedUpdates()
+  // ...
+  // 这里
+  var root = markUpdateLaneFromFiberToRoot(fiber, lane)
+
+  if (root === null) {
+    // ...
+    return null
+  }
+
+  markRootUpdated(root, lane, eventTime)
+
+  if (root === workInProgressRoot) {
+    // ...
+  }
+  // ...
+}
+```
+
+markUpdateLaneFromFiberToRoot 会从当前 Fiber 节点开始，向上遍历直至根节点，并将根节点返回。
+
+### scheduleUpdateOnFiber 如何区分同步还是异步？
+
+之前的 同步渲染链路分析中，有如下代码：
+```javascript
+if (lane === SyncLane) { // 同步
+  if (
+    (executionContext & LegacyUnbatchedContext) !== NoContext &&
+    (executionContext & (RenderContext | CommitContext)) === NoContext) {
+    schedulePendingInteractions(root, lane)
+    performSyncWorkOnRoot(root) // 开启同步的 redner 逻辑
+  } else {
+    ensureRootIsScheduled(root, eventTime) // 决定如何开启当前更新所对应的 render 阶段。
+    schedulePendingInteractions(root, lane)
+
+    if (executionContext === NoContext) {
+      resetRenderTimer()
+      flushSyncCallbackQueue()
+    }
+  }
+} else {
+  // ...
+}
+```
+
+在 ensureRootIsScheduled 中，有这样一段逻辑：
+```javascript
+if (newCallbackPriority === SyncLanePriority) {
+  // 同步更新的 render 入口
+  newCallbackNode = scheduleSyncCallback(performSyncWorkOnRoot.bind(null, root))
+} else {
+  // 将当前任务的 lane 优先级转换为 scheduler 可理解的优先级
+  var schedulerPriorityLevel = lanePriorityToSchedulerPriority(newCallbackPriority)
+  // 异步更新的 render 入口
+  newCallbackNode = scheduleCallback(schedulerPriorityLevel, performConcurrentWorkOnRoot.bind(null, root))
+}
+```
+
+performSyncWorkOnRoot 是 同步更新模式下的 render 阶段入口
+performConcurrentWorkOnRoot 是 异步模式下的 render 阶段入口
+
+所以，React 会议当前更新任务的优先级类型为依据，决定接下来调度 performSyncWorkOnRoot 还是 performConcurrentWorkOnRoot。
+调度任务分别用到 scheduleSyncCallback 和 scheduleCallback，两个函数内部都是通过调用 unstable_scheduleCallback 方法来执行任务调度的。
+
+而 unstable_scheduleCallback 正是 Scheduler 调度器 中导出的一个核心方法。
+
+## Scheduler —— 时间切片 与 优先级 的幕后推手
+
+Fiber 架构下的异步渲染（即 Concurrent 模式）的核心特征分别是 是时间切片和优先级调度。
+
+### 结合 React 调用栈，理解时间切片现象
+
+同步渲染模式下的 render 阶段是一个同步的、深度优先搜索的过程。
+
+这个过程是不可中断的，浏览器的刷新频率是 60Hz，每 16.6ms 就会刷新一次。这 16.6ms 内，除了 JS 线程外，渲染线程也是需要处理工作的。
+但是 同步渲染模式下可能有个很长的 Task 工作任务，不可中断，占用了渲染线程的时间，进而引起掉帧问题。
+
+如果是将 ReactDOM.render 改为 createRoot 调用，就会开启 Concurrent 模式。
+
+Task 任务会被切分为多个断断续续的小任务，每个 小 Task 任务切片占用很少的处理时间，总的处理工作量与同步模式下的 Task 一致。但是小 Task 留出了时间空隙，让浏览器能及时处理其他事情。
+
+### 时间切片是如何实现的？
+
+同步渲染中，循环创建 Fiber 节点、构建 Fiber 树的过程是由 workLoopSync 函数来触发的。
+
+在 workLoopSync 中，只要 workInProgress 不为空，while 循环就不会结束，触发的是一个同步的 performUnitOfWork 循环调用的过程。
+
+而 异步渲染下，这个循环是由 workLoopConcurrent 开启的。workLoopConcurrent 和 workLoopSync 仅仅在循环判断上有一处不同。
+
+```javascript
+function workLoopConcurrent() {
+  while(workInProgress !== null && !shouldYield()) {
+    performUnitOfWork(workInProgress)
+  }
+}
+```
+
+shouldYield 表示 需要让出。当 shouldYield() 调用返回为 true 时，就说明当前需要对祝线程进行让出了，此时 while 不再循环。
+
+shouldYield 是什么？
+```javascript
+var Scheduler_shouldYield = Scheduler.unstable_shouldYield
+// ......
+var shouldYield = Scheduler_shouldYield
+```
+
+shouldYield 的本体其实是 Scheduler.unstable_shouldYield
+
+```javascript
+{
+  exports.unstable_shouldYield = function () {
+    return exports.unstable_now() >= deadline
+  }
+}
+```
+
+unstable_now() 实际上取 performance.now() 的值，即**当前时间**。
+deadline 是 **当前时间切片的到期时间**。[计算过程在 Schedule 包中的 performWorkUnitOfDeadline 方法中]
+
+所以 时间切片的实现原理：React 会根据浏览器的频率，计算出时间切片的大小，并结合当前时间计算出每一个时间切片的到期时间。
+在 workLoopConcurrent 中，while 循环每次执行前，会调用 shouldYield 函数来询问当前时间切片是否到期，若已到期，则结束循环、让出主线程的控制权。
+
+## 优先级调度是如何实现的
+
+无论是通过 scheduleSyncCallback 还是 scheduleCallback，最终都是通过调用 unstable_scheduleCallback 来发起调用的。
+
+unstable_scheduleCallback 是 Scheduler 导出的一个核心方法，将结合任务的优先级信息为其执行不同的调度逻辑。
+
+```javascript
+function unstable_scheduleCallback(priorityLevel, callback, options) {
+  // 获取当前时间
+  var currentTime = exports.unstable_now()
+  // 声明 startTime，startTime 是任务的预期开始时间
+  var startTime
+  // 以下是对 options 入参的处理
+  if (typeof options === 'object' && options !== null) {
+    var delay = options.delay
+
+    // 若入参规定了延迟时间，则累加延迟时间
+    if (typeof delay === 'number' && delay > 0) {
+      startTime = currentTime + delay
+    } else {
+      startTime = currentTime
+    }
+  } else {
+    startTime = currentTime
+  }
+  // timeout 是 expirationTime 的计算依据
+  var timeout
+  // 根据 priorityLevel，确定 timeout 的值
+  switch (priorityLevel) {
+    case ImmediatePriority:
+      timeout = IMMEDIATE_PRIORITY_TIMEOUT
+      break
+    case UserBlockingPriority:
+      timeout = USER_BLOCKING_PRIORITY_TIMEOUT
+      break
+    case IdlePriority:
+      timeout = IDLE_PRIORITY_TIMEOUT
+      break
+    case LowPriority:
+      timeout = LOW_PRIORITY_TIMEOUT
+      break
+    case NormalPriority:
+    default:
+      timeout = NORMAL_PRIORITY_TIMEOUT
+      break
+  }
+  // 优先级越高，timout 越小，expirationTime 越小
+  var expirationTime = startTime + timeout
+
+  // 创建 task 对象
+  var newTask = {
+    id: taskIdCounter++,
+    callback: callback,
+    priorityLevel: priorityLevel,
+    startTime: startTime,
+    expirationTime: expirationTime,
+    sortIndex: -1
+  }
+
+  {
+    newTask.isQueued = false
+  }
+  // 若当前时间小于开始时间，说明该任务可延时执行(未过期）
+  if (startTime > currentTime) {
+    // 将未过期任务推入 "timerQueue"
+    newTask.sortIndex = startTime
+    push(timerQueue, newTask)
+
+    // 若 taskQueue 中没有可执行的任务，而当前任务又是 timerQueue 中的第一个任务
+    // peek 函数 取出小顶堆堆顶元素
+    if (peek(taskQueue) === null && newTask === peek(timerQueue)) {
+      // ......
+          // 那么就派发一个延时任务，这个延时任务用于检查当前任务是否过期
+      requestHostTimeout(handleTimeout, startTime - currentTime)
+    }
+  } else {
+    // else 里处理的是当前时间大于 startTime 的情况，说明这个任务已过期
+    newTask.sortIndex = expirationTime
+    // 过期的任务会被推入 taskQueue
+    push(taskQueue, newTask)
+    // ......
+
+    // 执行 taskQueue 中的任务
+    requestHostCallback(flushWork)
+  }
+  return newTask
+}
+```
+
+unstable_scheduleCallback 的主要工作是针对当前任务创建一个 task，然后结合 startTime 信息将这个 task 推入 timerQueue 或 taskQueue，
+最后根据 timerQueue 和 taskQueue 的情况，执行延时任务或即时任务。
+
+几个概念：
+- startTime：任务的开始时间
+- expirationTime: 与优先级相关，值越小，优先级越高
+- timerQueue：一个 以 startTime 为排序依据的小顶堆，存储的是 startTime 大于当前时间的任务[待执行]
+- taskQueue：一个 以 expirationTime 为排序依据的小顶堆，存储的事 startTime 小于当前时间的任务[已过期]
+
