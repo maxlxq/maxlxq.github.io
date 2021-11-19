@@ -2,9 +2,9 @@
 
 [![Build](https://img.shields.io/github/workflow/status/maxlxq/maxlxq.github.io/CI/master?color=brightgreen)](https://github.com/maxlxq/maxlxq.github.io/actions)
 
-本文中的内容会同步到微信公众号【大前端飞升指南】
+本文中的内容会同步到微信公众号【前端周报】
 
-![大前端飞升指南](https://skr.oss-cn-beijing.aliyuncs.com/blog/search_qrcode_dan.png?x-oss-process=image/auto-orient,1/resize,m_fill,w_570,h_208/quality,q_30)
+![前端周报](https://skr.oss-cn-beijing.aliyuncs.com/blog/search_qrcode_dan.png)
 
 ## 2021 计划
 - 前端知识体系搭建，以博客形式分类展示
