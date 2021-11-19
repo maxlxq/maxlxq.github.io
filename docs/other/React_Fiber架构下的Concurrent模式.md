@@ -466,3 +466,20 @@ unstable_scheduleCallback 的主要工作是针对当前任务创建一个 task�
 - timerQueue：一个 以 startTime 为排序依据的小顶堆，存储的是 startTime 大于当前时间的任务[待执行]
 - taskQueue：一个 以 expirationTime 为排序依据的小顶堆，存储的事 startTime 小于当前时间的任务[已过期]
 
+若判断当前任务是待执行任务，那么该任务会在 sortIndex 属性被赋值为 startTime 后，被推入 timerQueue。
+
+取出 taskQueue 堆顶元素，若为空，则当前没有已过期任务。在没有已过期任务的情况下会判断 timerQueue 未过期任务队列中的情况。
+
+timerQueue 作为一个小顶堆，排序依据为 sortIndex 属性的大小。这里的 sortIndex 属性取值为 startTime，意味着小顶堆的堆顶任务一定是整个 timerQueue 堆结构里 startTime 最小的任务，也就是需要最早被执行的未过期任务。
+
+若 newTask 得到的是 timerQueue 中需要最早被执行的未过期任务，那么 unstable_scheduleCallback 会通过调用 requestHostTimeout，为当前任务发起一个延时调用。
+
+这个延时调用（handleTimeout）并不会直接调度执行当前任务，而是在当前任务到期后，从 timerQueue 中取出，加入到 taskQueue 中，然后触发对 flushWork 的调用。
+真正的调度过程是在 flushWork 中进行的。flushWork 中将调用 workLoop，workLoop 会逐一执行 taskQueue 中的人物，直到调度过程被暂停（时间片用尽）或任务全部被清空。
+
+与 timerQueue 不同的是，taskQueue 是一个以 expirationTime 为 sortIndex 排序依据的小顶堆。
+对于已过期任务，React 在将其推入 taskQueue 后，会通过 requestHostCallback(flushWork) 发起一个针对 flushWork 的即时任务，而 flushWork 会执行 taskQueue 中过期的任务。
+
+当前 React 17 发起 Task 调度的姿势有两个：setTimeout、MessageChannel。在宿主环境不支持 MessageChannel 的情况下，会降级到 setTimeout。都是异步任务。
+
+因此，requestHostCallback 发起的即时任务，最早也要等到下一次时间循环才能够执行。
