@@ -200,7 +200,7 @@ var ReactDefaultBatchingStrategy = {
 
 锁 指的是 isBatchingUpdates 变量。false 表示 未进行任何批量更新操作；true 表示 正处于批量更新过程。
 
-当锁被锁上是，任何需要更新的组件需要进入 dirtyComponents 里排队等候下一次的批量更新。
+当锁被锁上时，任何需要更新的组件需要进入 dirtyComponents 里排队等候下一次的批量更新。
 
 ### 理解 React 中的 Transaction 机制
 

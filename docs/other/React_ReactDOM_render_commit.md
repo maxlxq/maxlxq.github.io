@@ -56,7 +56,7 @@ performUnitOfWork 每次会尝试调用 beginWork 来创建当前节点的子节
 
 <details>
 <summary>
-提取 completeWork 的远吗结构和主体逻辑
+提取 completeWork 的源码结构和主体逻辑
 </summary>
 
 ```javascript
@@ -229,7 +229,7 @@ render 阶段是一个递归过程，递归的对象就是这个 workInProgress 
 
 更新阶段与挂载阶段的主要区别在于 更新阶段的 current 树不为空。
 
-> 怎么才能让渲染器又快有好地定位到真正需要更新的节点？
+> 怎么才能让渲染器又快又好地定位到真正需要更新的节点？
 
 commit 只负责实现更新，而不负责寻找更新。此时，副作用链 effectList 的价值体现出来了。
 
@@ -274,9 +274,9 @@ commit 会在 performSyncWorkOnRoot 中被调用。
 
 commit 共分为 3 个阶段：before mutation、mutation、layout
 
-- before mutation 阶段，这个阶段 DOM 节点还没有被渲染到界面上去，过程会触发 getSnapshotBeforeUpdate，也会处理 useEffect 狗子相关的调度逻辑。
+- before mutation 阶段，这个阶段 DOM 节点还没有被渲染到界面上去，过程会触发 getSnapshotBeforeUpdate，也会处理 useEffect 钩子相关的调度逻辑。
 - mutation 阶段，负责 DOM 节点的渲染。遍历 effectList，根据 flags 的不同，执行不同的 DOM 操作。
-- layout 阶段，处理 DOM 渲染完毕之后的收尾逻辑。比如 调用 componentDidMount/componentDidUpdate，调用 useLayoutEffect 狗子函数的回调等。除此之外，还会把 fiberRoot 的 current 指针指向 workInProgress Fiber 树。
+- layout 阶段，处理 DOM 渲染完毕之后的收尾逻辑。比如 调用 componentDidMount/componentDidUpdate，调用 useLayoutEffect 钩子函数的回调等。除此之外，还会把 fiberRoot 的 current 指针指向 workInProgress Fiber 树。
 
 commit 阶段 是一个 绝对同步的过程。render 阶段可以同步也可以异步。
 

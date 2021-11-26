@@ -239,7 +239,7 @@ newFiber.flags = Placement
 
 > flags 是什么
 >
-> React v17.0.0 版本中，属性名已经变更为 flags，早一些的版本中，更常见的事 effectTag。
+> React v17.0.0 版本中，属性名已经变更为 flags，早一些的版本中，更常见的是 effectTag。
 >
 > Placement 这个 flags 的意义，是在渲染器执行时，也就是真实 DOM 渲染时，告诉渲染器：这里需要新增 DOM 节点。
 > flags 记录的是副作用的类型，所谓的副作用，React 给出的定义是"数据获取、订阅或者修改 DOM"等动作。
