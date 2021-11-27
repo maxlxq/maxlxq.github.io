@@ -93,9 +93,9 @@ React 的事件系统沿用了事件委托的思想。除少数不可冒泡的�
 
 ### 事件的绑定
 
-事件的绑定是在组件挂在过程中完成的，即 `completeWork` 中完成的。
+事件的绑定是在组件挂载过程中完成的，即 `completeWork` 中完成的。
 
-completeWork 的三个关键动作：创建 DOM 节点、将 DOM 节点插入到 DOM 树中、为 DOM 节点设置属性。
+completeWork 有三个关键动作：创建 DOM 节点、将 DOM 节点插入到 DOM 树中、为 DOM 节点设置属性。
 
 其中 **为 DOM 节点 设置属性** 环节，会遍历 `FiberNode` 的 props key。
 当遍历到事件相关的 `props` 时，就会触发事件的注册链路。
