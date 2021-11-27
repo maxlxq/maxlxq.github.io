@@ -372,7 +372,7 @@ deadline 是 **当前时间切片的到期时间**。[计算过程在 Schedule �
 
 无论是通过 scheduleSyncCallback 还是 scheduleCallback，最终都是通过调用 unstable_scheduleCallback 来发起调用的。
 
-unstable_scheduleCallback 是 Scheduler 导出的一个核心方法，将结合任务的优先级信息为其执行不同的调度逻辑。
+unstable_scheduleCallback 是 Scheduler 导出的一个核心方法，将**结合任务的优先级信息为其执行不同的调度逻辑**。
 
 ```javascript
 function unstable_scheduleCallback(priorityLevel, callback, options) {
@@ -461,16 +461,16 @@ unstable_scheduleCallback 的主要工作是针对当前任务创建一个 task�
 最后根据 timerQueue 和 taskQueue 的情况，执行延时任务或即时任务。
 
 几个概念：
-- startTime：任务的开始时间
-- expirationTime: 与优先级相关，值越小，优先级越高
-- timerQueue：一个 以 startTime 为排序依据的小顶堆，存储的是 startTime 大于当前时间的任务[待执行]
-- taskQueue：一个 以 expirationTime 为排序依据的小顶堆，存储的事 startTime 小于当前时间的任务[已过期]
+- **startTime**：任务的开始时间
+- **expirationTime**: 与优先级相关，值越小，优先级越高
+- **timerQueue**：一个 以 startTime 为排序依据的小顶堆，存储的是 startTime 大于当前时间的任务[待执行]
+- **taskQueue**：一个 以 expirationTime 为排序依据的小顶堆，存储的事 startTime 小于当前时间的任务[已过期]
 
-若判断当前任务是待执行任务，那么该任务会在 sortIndex 属性被赋值为 startTime 后，被推入 timerQueue。
+若判断当前任务是待执行任务，那么该任务会在 sortIndex 属性被赋值为 startTime 后，被**推入 timerQueue**。
 
 取出 taskQueue 堆顶元素，若为空，则当前没有已过期任务。在没有已过期任务的情况下会判断 timerQueue 未过期任务队列中的情况。
 
-timerQueue 作为一个小顶堆，排序依据为 sortIndex 属性的大小。这里的 sortIndex 属性取值为 startTime，意味着小顶堆的堆顶任务一定是整个 timerQueue 堆结构里 startTime 最小的任务，也就是需要最早被执行的未过期任务。
+timerQueue 作为一个**小顶堆**，**排序依据为 sortIndex 属性的大小。这里的 sortIndex 属性取值为 startTime，意味着小顶堆的堆顶任务一定是整个 timerQueue 堆结构里 startTime 最小的任务，也就是需要最早被执行的未过期任务**。
 
 若 newTask 得到的是 timerQueue 中需要最早被执行的未过期任务，那么 unstable_scheduleCallback 会通过调用 requestHostTimeout，为当前任务发起一个延时调用。
 

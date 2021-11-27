@@ -19,6 +19,7 @@
 [ReactDOM.render render 阶段](../other/React_ReactDOM_render_render.md)
 [ReactDOM.render commit 阶段](../other/React_ReactDOM_render_commit.md)
 [Fiber 架构下的 Concurrent 模式](../other/React_Fiber架构下的Concurrent模式.md)
+[React 事件系统](../other/React_事件系统.md)
 
 ## 拓宽技术视野 周边生态
 
