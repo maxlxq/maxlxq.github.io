@@ -6,6 +6,16 @@
 
 ![前端周报](https://skr.oss-cn-beijing.aliyuncs.com/blog/search_qrcode_dan.png)
 
+## 2022 计划
+- 工具库项目：@4-future/dan-repo
+- 上架一款 Mac 桌面应用到 App Store
+- 前端基础夯实，完成6篇基础知识整理文章
+- JS 剖析，阅读JS红宝书并整理笔记，同步公众号
+- Webpack、Gulp、Rollup、Vite 学习和比较异同，用 Demo 项目展示
+- shell 编写一套 Git 命令处理工作，尽量使用 Electron 完成桌面应用，可视化操作
+- 6 篇进阶技术博客
+- React 18 相关文章跟进，阅读 Dan 文章，深度理解 React 源码
+
 ## 2021 计划
 - 前端知识体系搭建，以博客形式分类展示
 - 前沿框架最佳实践，深入理解框架原理，形成个人理解的文章分享
