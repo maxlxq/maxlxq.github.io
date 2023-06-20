@@ -6,6 +6,8 @@
 
 ![前端周报](https://skr.oss-cn-beijing.aliyuncs.com/blog/search_qrcode_dan.png)
 
+> yarn 管理项目
+
 ## 2022 计划
 - 工具库项目：@4-future/dan-repo
 - 上架一款 Mac 桌面应用到 App Store
