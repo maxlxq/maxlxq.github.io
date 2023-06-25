@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>ReactDOM.render 调用栈 —— commit 阶段 | 前端知识</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    <link rel="icon" href="/logo.jpg">
+    <meta name="description" content="欢迎访问公众号：前端周报">
+    
+    <link rel="preload" href="/assets/css/0.styles.b3dad54c.css" as="style"><link rel="preload" href="/assets/js/app.c54d73b3.js" as="script"><link rel="preload" href="/assets/js/2.6cdc8135.js" as="script"><link rel="preload" href="/assets/js/121.b21708fa.js" as="script"><link rel="preload" href="/assets/js/4.a41c0c79.js" as="script"><link rel="prefetch" href="/assets/js/10.c02c1e21.js"><link rel="prefetch" href="/assets/js/100.8700d646.js"><link rel="prefetch" href="/assets/js/101.3a187938.js"><link rel="prefetch" href="/assets/js/102.05cbfba4.js"><link rel="prefetch" href="/assets/js/103.ce22a9d1.js"><link rel="prefetch" href="/assets/js/104.7fb5abfe.js"><link rel="prefetch" href="/assets/js/105.76f077bd.js"><link rel="prefetch" href="/assets/js/106.0aa897e9.js"><link rel="prefetch" href="/assets/js/107.762b7545.js"><link rel="prefetch" href="/assets/js/108.af4eb65b.js"><link rel="prefetch" href="/assets/js/109.a861e6aa.js"><link rel="prefetch" href="/assets/js/11.28ffe2ea.js"><link rel="prefetch" href="/assets/js/110.9a0a6e5b.js"><link rel="prefetch" href="/assets/js/111.ff3ee859.js"><link rel="prefetch" href="/assets/js/112.79eba6d4.js"><link rel="prefetch" href="/assets/js/113.2fbc12db.js"><link rel="prefetch" href="/assets/js/114.8b7d68cd.js"><link rel="prefetch" href="/assets/js/115.5ea81830.js"><link rel="prefetch" href="/assets/js/116.40b46845.js"><link rel="prefetch" href="/assets/js/117.8c956aef.js"><link rel="prefetch" href="/assets/js/118.598a09ff.js"><link rel="prefetch" href="/assets/js/119.57cda7c9.js"><link rel="prefetch" href="/assets/js/12.17171ff9.js"><link rel="prefetch" href="/assets/js/120.baa8b724.js"><link rel="prefetch" href="/assets/js/122.d86a560f.js"><link rel="prefetch" href="/assets/js/123.326dcef8.js"><link rel="prefetch" href="/assets/js/124.be8155c5.js"><link rel="prefetch" href="/assets/js/125.038837fb.js"><link rel="prefetch" href="/assets/js/126.82810062.js"><link rel="prefetch" href="/assets/js/127.cdf23cc3.js"><link rel="prefetch" href="/assets/js/128.3921536c.js"><link rel="prefetch" href="/assets/js/129.fe16c1d8.js"><link rel="prefetch" href="/assets/js/13.92e69144.js"><link rel="prefetch" href="/assets/js/130.a8b1661f.js"><link rel="prefetch" href="/assets/js/131.12b5f184.js"><link rel="prefetch" href="/assets/js/132.cf3721df.js"><link rel="prefetch" href="/assets/js/133.6ac5a394.js"><link rel="prefetch" href="/assets/js/134.e3c0ab63.js"><link rel="prefetch" href="/assets/js/135.c852878d.js"><link rel="prefetch" href="/assets/js/136.637439b3.js"><link rel="prefetch" href="/assets/js/137.c529cb4d.js"><link rel="prefetch" href="/assets/js/138.1bcf2e99.js"><link rel="prefetch" href="/assets/js/14.1ad2cb2c.js"><link rel="prefetch" href="/assets/js/15.04d83116.js"><link rel="prefetch" href="/assets/js/16.509bd9b7.js"><link rel="prefetch" href="/assets/js/17.36a6c880.js"><link rel="prefetch" href="/assets/js/18.7504f2f2.js"><link rel="prefetch" href="/assets/js/19.adcade81.js"><link rel="prefetch" href="/assets/js/20.a48cc099.js"><link rel="prefetch" href="/assets/js/21.e08d4a66.js"><link rel="prefetch" href="/assets/js/22.e15443d8.js"><link rel="prefetch" href="/assets/js/23.d1e92eb1.js"><link rel="prefetch" href="/assets/js/24.34b53952.js"><link rel="prefetch" href="/assets/js/25.d41b9dd6.js"><link rel="prefetch" href="/assets/js/26.04879470.js"><link rel="prefetch" href="/assets/js/27.f36afdbf.js"><link rel="prefetch" href="/assets/js/28.60564414.js"><link rel="prefetch" href="/assets/js/29.f2d76d07.js"><link rel="prefetch" href="/assets/js/3.08666eba.js"><link rel="prefetch" href="/assets/js/30.58237659.js"><link rel="prefetch" href="/assets/js/31.ca6fa0ba.js"><link rel="prefetch" href="/assets/js/32.690853b8.js"><link rel="prefetch" href="/assets/js/33.78101815.js"><link rel="prefetch" href="/assets/js/34.a03db625.js"><link rel="prefetch" href="/assets/js/35.351fcf38.js"><link rel="prefetch" href="/assets/js/36.ef6ff735.js"><link rel="prefetch" href="/assets/js/37.a5b5e000.js"><link rel="prefetch" href="/assets/js/38.833005a4.js"><link rel="prefetch" href="/assets/js/39.35650724.js"><link rel="prefetch" href="/assets/js/40.36336ee6.js"><link rel="prefetch" href="/assets/js/41.8ab71818.js"><link rel="prefetch" href="/assets/js/42.bb097faf.js"><link rel="prefetch" href="/assets/js/43.61e77c0c.js"><link rel="prefetch" href="/assets/js/44.0b4457ca.js"><link rel="prefetch" href="/assets/js/45.aac3b481.js"><link rel="prefetch" href="/assets/js/46.a508044f.js"><link rel="prefetch" href="/assets/js/47.ce917a93.js"><link rel="prefetch" href="/assets/js/48.c714bc1d.js"><link rel="prefetch" href="/assets/js/49.92804c9b.js"><link rel="prefetch" href="/assets/js/5.30a0b667.js"><link rel="prefetch" href="/assets/js/50.87b3809b.js"><link rel="prefetch" href="/assets/js/51.b27ce3cc.js"><link rel="prefetch" href="/assets/js/52.477f8fb5.js"><link rel="prefetch" href="/assets/js/53.4bda0434.js"><link rel="prefetch" href="/assets/js/54.525de579.js"><link rel="prefetch" href="/assets/js/55.ef8e0bfb.js"><link rel="prefetch" href="/assets/js/56.3962c9c3.js"><link rel="prefetch" href="/assets/js/57.d6f42c28.js"><link rel="prefetch" href="/assets/js/58.8fea3227.js"><link rel="prefetch" href="/assets/js/59.bd7b25f7.js"><link rel="prefetch" href="/assets/js/6.3025ef15.js"><link rel="prefetch" href="/assets/js/60.05d4b4ea.js"><link rel="prefetch" href="/assets/js/61.831da8d5.js"><link rel="prefetch" href="/assets/js/62.7fceeeb1.js"><link rel="prefetch" href="/assets/js/63.6f46075f.js"><link rel="prefetch" href="/assets/js/64.1d89c818.js"><link rel="prefetch" href="/assets/js/65.ec965501.js"><link rel="prefetch" href="/assets/js/66.893ec329.js"><link rel="prefetch" href="/assets/js/67.4d00e228.js"><link rel="prefetch" href="/assets/js/68.9f06b6a2.js"><link rel="prefetch" href="/assets/js/69.07e70ec7.js"><link rel="prefetch" href="/assets/js/7.c16c90e5.js"><link rel="prefetch" href="/assets/js/70.5e312c5b.js"><link rel="prefetch" href="/assets/js/71.9c68dd0b.js"><link rel="prefetch" href="/assets/js/72.99f53b1e.js"><link rel="prefetch" href="/assets/js/73.a98aebf5.js"><link rel="prefetch" href="/assets/js/74.55ccc92d.js"><link rel="prefetch" href="/assets/js/75.8fbad63a.js"><link rel="prefetch" href="/assets/js/76.22115303.js"><link rel="prefetch" href="/assets/js/77.89a66502.js"><link rel="prefetch" href="/assets/js/78.585e01c4.js"><link rel="prefetch" href="/assets/js/79.cef89b61.js"><link rel="prefetch" href="/assets/js/8.20975b36.js"><link rel="prefetch" href="/assets/js/80.40e152a5.js"><link rel="prefetch" href="/assets/js/81.7bd4f3fa.js"><link rel="prefetch" href="/assets/js/82.06872893.js"><link rel="prefetch" href="/assets/js/83.b70b99a6.js"><link rel="prefetch" href="/assets/js/84.fd372a96.js"><link rel="prefetch" href="/assets/js/85.1837c29b.js"><link rel="prefetch" href="/assets/js/86.295ae7b1.js"><link rel="prefetch" href="/assets/js/87.c4287e41.js"><link rel="prefetch" href="/assets/js/88.1850155b.js"><link rel="prefetch" href="/assets/js/89.e2a7834d.js"><link rel="prefetch" href="/assets/js/9.2ee6a774.js"><link rel="prefetch" href="/assets/js/90.3b4154d1.js"><link rel="prefetch" href="/assets/js/91.25b76255.js"><link rel="prefetch" href="/assets/js/92.bb5707b2.js"><link rel="prefetch" href="/assets/js/93.918cc5ea.js"><link rel="prefetch" href="/assets/js/94.3f688cce.js"><link rel="prefetch" href="/assets/js/95.e8066710.js"><link rel="prefetch" href="/assets/js/96.d49e2a71.js"><link rel="prefetch" href="/assets/js/97.965ac2e0.js"><link rel="prefetch" href="/assets/js/98.05924f51.js"><link rel="prefetch" href="/assets/js/99.24466c79.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.b3dad54c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">前端知识</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/base/" class="nav-link">
+  基础
+</a></div><div class="nav-item"><a href="/more/" class="nav-link">
+  进阶
+</a></div><div class="nav-item"><a href="/blog/" class="nav-link">
+  原创
+</a></div><div class="nav-item"><a href="/mdn/" class="nav-link">
+  MDN
+</a></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试
+</a></div><div class="nav-item"><a href="/leetcode/" class="nav-link">
+  力扣
+</a></div> <a href="https://github.com/maxlxq/maxlxq.github.io" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/base/" class="nav-link">
+  基础
+</a></div><div class="nav-item"><a href="/more/" class="nav-link">
+  进阶
+</a></div><div class="nav-item"><a href="/blog/" class="nav-link">
+  原创
+</a></div><div class="nav-item"><a href="/mdn/" class="nav-link">
+  MDN
+</a></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试
+</a></div><div class="nav-item"><a href="/leetcode/" class="nav-link">
+  力扣
+</a></div> <a href="https://github.com/maxlxq/maxlxq.github.io" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="reactdom-render-调用栈-commit-阶段"><a href="#reactdom-render-调用栈-commit-阶段" class="header-anchor">#</a> ReactDOM.render 调用栈 —— commit 阶段</h1> <p>render 阶段从 beginWork 切入，摸索出了 Fiber 节点的创建链路和 Fiber 树的构建链路。</p> <p>这里从 completeWork 切入，寻找 Fiber 树和 DOM 树之间的关联。</p> <h2 id="completework-将-fiber-节点映射为-dom-节点"><a href="#completework-将-fiber-节点映射为-dom-节点" class="header-anchor">#</a> completeWork —— 将 Fiber 节点映射为 DOM 节点</h2> <p>从 performUnitOfWork 到 completeWork，中间的调用链路为：</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token comment">/**
+ *       performUnitOfWork
+ *               |
+ *       completeUnitOfWork
+ *               |
+ *          completeWork
+ */</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><details><summary>
+performUnitOfWork 是如何调用 completeUnitOfWork 的
+</summary> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">performUnitOfWork</span><span class="token punctuation">(</span><span class="token parameter">unitOfWork</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ...</span>
+  <span class="token keyword">var</span> current <span class="token operator">=</span> unitOfWork<span class="token punctuation">.</span>alternate
+  <span class="token keyword">var</span> next
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>xxx <span class="token comment">/* xxx 条件 */</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// ... 额外操作</span>
+    <span class="token comment">// 创建当前节点的子节点</span>
+    next <span class="token operator">=</span> <span class="token function">beginWork$1</span><span class="token punctuation">(</span>current<span class="token punctuation">,</span> unitOfWork<span class="token punctuation">,</span> subtreeRenderLanes<span class="token punctuation">)</span>
+    <span class="token comment">// ... 额外操作</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 创建当前节点的子节点</span>
+    next <span class="token operator">=</span> <span class="token function">beginWork$1</span><span class="token punctuation">(</span>current<span class="token punctuation">,</span> unitOfWork<span class="token punctuation">,</span> subtreeRenderLanes<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// ...</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>next <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 调用 completeUnitOfWork</span>
+    <span class="token function">completeUnitOfWork</span><span class="token punctuation">(</span>unitOfWork<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 将当前节点更新为新创建出的 Fiber 节点</span>
+    workInProgress <span class="token operator">=</span> next
+  <span class="token punctuation">}</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br></div></div></details> <p>performUnitOfWork 每次会尝试调用 beginWork 来创建当前节点的子节点，若创建出的子节点为空，则说明当前节点是一个叶子节点。<br>
+按照深度优先遍历的原则，当遍历到叶子节点时，需要回归。此时，就会调用 completeUnitOfWork ，执行当前节点对应的 completeWork 逻辑。</p> <h2 id="completework-工作原理"><a href="#completework-工作原理" class="header-anchor">#</a> completeWork 工作原理</h2> <details><summary>
+提取 completeWork 的源码结构和主体逻辑
+</summary> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">completeWork</span><span class="token punctuation">(</span><span class="token parameter">current<span class="token punctuation">,</span> workInProgress<span class="token punctuation">,</span> renderLanes</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 取出 Fiber 节点的属性值，存储在 newProps 里</span>
+  <span class="token keyword">var</span> newProps <span class="token operator">=</span> workInProgress<span class="token punctuation">.</span>pendingProps
+
+  <span class="token comment">// 根据 workInProgress 节点的 tag 属性的不同，决定要进入哪段逻辑</span>
+  <span class="token keyword">switch</span> <span class="token punctuation">(</span>workInProgress<span class="token punctuation">.</span>tag<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> Other<span class="token comment">/* ...... */</span><span class="token operator">:</span>
+      <span class="token keyword">return</span> <span class="token keyword">null</span>
+    <span class="token keyword">case</span> ClassComponent<span class="token operator">:</span>
+      <span class="token punctuation">{</span>
+        <span class="token comment">// .....</span>
+      <span class="token punctuation">}</span>
+    <span class="token keyword">case</span> HostRoot<span class="token operator">:</span>
+      <span class="token punctuation">{</span>
+        <span class="token comment">// ......</span>
+      <span class="token punctuation">}</span>
+    <span class="token comment">// h1 节点的类型属于 HostComponent，因此这里为你讲解的是这段逻辑</span>
+    <span class="token keyword">case</span> HostComponent<span class="token operator">:</span>
+      <span class="token punctuation">{</span>
+        <span class="token function">popHostContext</span><span class="token punctuation">(</span>workInProgress<span class="token punctuation">)</span>
+        <span class="token keyword">var</span> rootContainerInstance <span class="token operator">=</span> <span class="token function">getRootHostContainer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">var</span> type <span class="token operator">=</span> workInProgress<span class="token punctuation">.</span>type
+        <span class="token comment">// 判断 current 节点是否存在，因为目前是挂载阶段，因此 current 节点是不存在的</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>current <span class="token operator">!==</span> <span class="token keyword">null</span> <span class="token operator">&amp;&amp;</span> workInProgress<span class="token punctuation">.</span>stateNode <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token function">updateHostComponent$1</span><span class="token punctuation">(</span>current<span class="token punctuation">,</span> workInProgress<span class="token punctuation">,</span> type<span class="token punctuation">,</span> newProps<span class="token punctuation">,</span> rootContainerInstance<span class="token punctuation">)</span>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span>current<span class="token punctuation">.</span>ref <span class="token operator">!==</span> workInProgress<span class="token punctuation">.</span>ref<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">markRef$1</span><span class="token punctuation">(</span>workInProgress<span class="token punctuation">)</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+          <span class="token comment">// 这里首先是针对异常情况进行 return 处理</span>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>newProps<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token punctuation">(</span>workInProgress<span class="token punctuation">.</span>stateNode <span class="token operator">!==</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              <span class="token punctuation">{</span>
+                <span class="token keyword">throw</span> <span class="token function">Error</span><span class="token punctuation">(</span><span class="token string">&quot;We must have new props for new mounts. This error is likely caused by a bug in React. Please file an issue.&quot;</span><span class="token punctuation">)</span>
+              <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">return</span> <span class="token keyword">null</span>
+          <span class="token punctuation">}</span>
+
+          <span class="token comment">// 接下来就为 DOM 节点的创建做准备了</span>
+          <span class="token keyword">var</span> currentHostContext <span class="token operator">=</span> <span class="token function">getHostContext</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+          <span class="token comment">// _wasHydrated 是一个与服务端渲染有关的值，这里不用关注</span>
+          <span class="token keyword">var</span> _wasHydrated <span class="token operator">=</span> <span class="token function">popHydrationState</span><span class="token punctuation">(</span>workInProgress<span class="token punctuation">)</span>
+
+          <span class="token comment">// 判断是否是服务端渲染</span>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span>_wasHydrated<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">// 这里不用关注，请你关注 else 里面的逻辑</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">prepareToHydrateHostInstance</span><span class="token punctuation">(</span>workInProgress<span class="token punctuation">,</span> rootContainerInstance<span class="token punctuation">,</span> currentHostContext<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              <span class="token function">markUpdate</span><span class="token punctuation">(</span>workInProgress<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token comment">// 这一步很关键， createInstance 的作用是创建 DOM 节点</span>
+            <span class="token keyword">var</span> instance <span class="token operator">=</span> <span class="token function">createInstance</span><span class="token punctuation">(</span>type<span class="token punctuation">,</span> newProps<span class="token punctuation">,</span> rootContainerInstance<span class="token punctuation">,</span> currentHostContext<span class="token punctuation">,</span> workInProgress<span class="token punctuation">)</span>
+            <span class="token comment">// appendAllChildren 会尝试把上一步创建好的 DOM 节点挂载到 DOM 树上去</span>
+            <span class="token function">appendAllChildren</span><span class="token punctuation">(</span>instance<span class="token punctuation">,</span> workInProgress<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
+            <span class="token comment">// stateNode 用于存储当前 Fiber 节点对应的 DOM 节点</span>
+            workInProgress<span class="token punctuation">.</span>stateNode <span class="token operator">=</span> instance
+
+            <span class="token comment">// finalizeInitialChildren 用来为 DOM 节点设置属性</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">finalizeInitialChildren</span><span class="token punctuation">(</span>instance<span class="token punctuation">,</span> type<span class="token punctuation">,</span> newProps<span class="token punctuation">,</span> rootContainerInstance<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              <span class="token function">markUpdate</span><span class="token punctuation">(</span>workInProgress<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">}</span>
+          <span class="token comment">// ......</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> <span class="token keyword">null</span>
+      <span class="token punctuation">}</span>
+    <span class="token keyword">case</span> HostText<span class="token operator">:</span>
+      <span class="token punctuation">{</span>
+        <span class="token comment">// ......</span>
+      <span class="token punctuation">}</span>
+    <span class="token keyword">case</span> SuspenseComponent<span class="token operator">:</span>
+      <span class="token punctuation">{</span>
+        <span class="token comment">// ......</span>
+      <span class="token punctuation">}</span>
+    <span class="token keyword">case</span> HostPortal<span class="token operator">:</span>
+      <span class="token comment">// ......</span>
+      <span class="token keyword">return</span> <span class="token keyword">null</span>
+    <span class="token keyword">case</span> ContextProvider<span class="token operator">:</span>
+      <span class="token comment">// ......</span>
+      <span class="token keyword">return</span> <span class="token keyword">null</span>
+    <span class="token comment">// ......</span>
+  <span class="token punctuation">}</span>
+  <span class="token punctuation">{</span>
+    <span class="token punctuation">{</span>
+      <span class="token keyword">throw</span> <span class="token function">Error</span><span class="token punctuation">(</span><span class="token string">&quot;Unknown unit of work tag (&quot;</span> <span class="token operator">+</span> workInProgress<span class="token punctuation">.</span>tag <span class="token operator">+</span> <span class="token string">&quot;). This error is likely caused by a bug in React. Please file an issue.&quot;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br></div></div></details> <ol><li>completeWork 的核心逻辑是一段体量巨大的 switch 语句，在这段 switch 语句中，completeWork 将根据 workInProgress 节点的 tag 属性的不同，进入不同的 DOM 节点的创建、处理逻辑</li> <li>completeWork 中的 current、workInProgress 分别对应的是通过 alternate 连接的 Fiber 树</li></ol> <p>其中 workInProgress 树代表的是 当前正在 render 中的树，而 current 树则代表已经存在的树</p> <p>workInProgress 节点和 current 节点 之间通过 alternate 属性相互连接。</p> <p>在组件挂载阶段，current 树只有一个 rootFiber 节点，并没有其他内容。此时 workInProgress 节点对应的 current 节点是 null。</p> <p>总结，关于 completeWork：</p> <ol><li>completeWork 工作内容：负责处理 Fiber 节点到 DOM 节点的映射处理。</li> <li>completeWork 内部有三个 关键动作：
+<ol><li>创建 DOM 节点 CreateInstance</li> <li>将 DOM 节点插入到 DOM 树中 AppendAllChildren</li> <li>为 DOM 节点设置属性 FinalizeInitialChildren</li></ol></li> <li>创建好的 DOM 节点会被赋值给 workInProgress 节点的 stateNode 属性。所以定位一个 Fiber 对应的 DOM 节点时，访问它的 stateNode 属性就可以了。</li> <li>将 DOM 节点插入到 DOM 树的操作是通过 appendAllChildren 函数来完成的。</li></ol> <p>说是将 DOM 节点插入到 DOM 树里去，实际上是将子 Fiber 节点所对应的 DOM 节点挂载到其父 Fiber 节点所对应的 DOM 节点里去。</p> <blockquote><p>Q: 那么如果执行 appendAllChildren 时，父级的 DOM 节点还不存在怎么办？</p> <p>A: 比如 h1 节点作为第一个进入 completeWork 的节点，它的父节点 div 对应的 DOM 就尚不存在。<br>
+其实不存在也没关系，反正 h1 DOM 节点被创建后，会作为 h1 Fiber 节点的 stateNode 属性存在，丢不掉的。<br>
+当父节点 div 进入 appendAllChildren 逻辑后，会逐个向下查找并添加自己的后代节点，<br>
+这时候，h1 就会被它的父级 DOM 节点“收入囊中”啦~</p></blockquote> <h2 id="completeunitofwork-开启收集-effectlist-的-大循环"><a href="#completeunitofwork-开启收集-effectlist-的-大循环" class="header-anchor">#</a> completeUnitOfWork —— 开启收集 EffectList 的 &quot;大循环&quot;</h2> <p>completeUnitOfWork 的作用是开启一个大循环，重复做下面三件事：</p> <ol><li>针对传入的当前节点，调用 completeWork</li> <li>将当前节点的副作用链 EffectList 插入到其父节点对应的副作用链 EffectList 中</li> <li>以当前节点为起点，循环遍历其兄弟节点及其父节点。当遍历到兄弟节点时，将 return 掉当前调用，触发兄弟节点对应的 performUnitOfWork 逻辑；而遍历到父节点时，则会直接进入下一轮循环，重复1、2逻辑</li></ol> <h2 id="completeunitofwork-开启下一轮循环的原则"><a href="#completeunitofwork-开启下一轮循环的原则" class="header-anchor">#</a> completeUnitOfWork 开启下一轮循环的原则</h2> <p>步骤三 相关源码</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">do</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ...</span>
+  <span class="token comment">// 获取当前节点的兄弟节点</span>
+  <span class="token keyword">var</span> siblingFiber <span class="token operator">=</span> completedWork<span class="token punctuation">.</span>sibling
+
+  <span class="token comment">// 若兄弟节点存在</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>siblingFiber <span class="token operator">!==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 将 workInProgress 赋值为当前节点的兄弟节点</span>
+    workInProgress <span class="token operator">=</span> siblingFiber
+    <span class="token comment">// 将正在进行的 completeUnitOfWork 逻辑 return 掉</span>
+    <span class="token keyword">return</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 若兄弟节点不存在，则 completeWork 会被赋值为 returnFiber，也就是当前节点的父节点</span>
+  completedWork <span class="token operator">=</span> returnFiber
+  <span class="token comment">// workInProgress 与 completedWork 保持一致</span>
+  workInProgress <span class="token operator">=</span> completedWork
+<span class="token punctuation">}</span> <span class="token keyword">while</span> <span class="token punctuation">(</span>completedWork <span class="token operator">!==</span> <span class="token keyword">null</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><p>当前节点处理完成之后，寻找下一个可以处理的节点。</p> <p>值得注意的是，completeUnitOfWork 中处理兄弟节点和父节点的顺序是：先检查兄弟节点是否存在，若存在则优先处理兄弟节点；<br>
+确认没有待处理的兄弟节点后，才转而处理父节点。这意味着，completeWork 的执行是严格自底向上的，子节点的 completeWork 总会先于父节点执行。</p> <h2 id="副作用链-effectlist-的设计与实现"><a href="#副作用链-effectlist-的设计与实现" class="header-anchor">#</a> 副作用链 effectList 的设计与实现</h2> <p>无论是 beginWork 还是 completeWork，应用对象都是 workInProgress 树上的节点。<br>
+render 阶段是一个递归过程，递归的对象就是这个 workInProgress 树。</p> <p><strong>render 阶段的工作目标是 找出界面中需要处理的更新。</strong></p> <p>并非是所有的节点上都会产生需要处理的更新。<br>
+比如在 挂载阶段，React 会发现实际只需要对 App 节点执行一个挂载操作即可；</p> <p>更新阶段与挂载阶段的主要区别在于 更新阶段的 current 树不为空。</p> <blockquote><p>怎么才能让渲染器又快又好地定位到真正需要更新的节点？</p></blockquote> <p>commit 只负责实现更新，而不负责寻找更新。此时，副作用链 effectList 的价值体现出来了。</p> <p>副作用链 effectList 可以理解为 render 阶段 工作成果的集合：<br>
+每个 Fiber 节点都维护者一个属于它自己的 effectList，effectList 在数据结构上以链表的形式存在，<br>
+链表内的每一个元素都是一个 Fiber 节点。这些 Fiber 节点需要满足两个共性：</p> <ol><li>都是当前 Fiber 节点的后代节点</li> <li>都有待处理的副作用</li></ol> <p>Fiber 节点的 effectList 里记录的并非它自身的更新，而是其需要更新的后代节点。</p> <p>因为 completeWork 是自底向上执行的，所以每次处理到一个节点，都将当前节点的 effectList 插入到其父节点的 effectList 中。<br>
+那么当所有节点的 completeWork 都执行完毕时，在 rootFiber 上，拿到了一个存储了当前 Fiber 树所有 effect Fiber 的 effectList。</p> <p>把所有需要更新的 Fiber 节点单独串成一串链表，方便后续有针对性地对它们进行更新，这就是所谓的 收集副作用 的过程。</p> <p>effectList 链表在 Fiber 节点是通过 firstEffect 和 lastEffect 来维护的。<br>
+其中 firstEffect 表示 effectList 的第一个节点，lastEffect 记录最后一个节点。</p> <p>effectList 的创建，为 firstEffect 和 lastEffect 各赋值一个引用即可。<br>
+completeUnitOfWork 源码中提取相关逻辑如下：</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token comment">// 若副作用类型的值大于“PerformedWork”，则说明这里存在一个需要记录的副作用</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>flags <span class="token operator">&gt;</span> PerformedWork<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// returnFiber 是当前节点的父节点</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>returnFiber<span class="token punctuation">.</span>lastEffect <span class="token operator">!==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 若父节点的 effectList 不为空，则将当前节点追加到 effectList 的末尾去</span>
+    returnFiber<span class="token punctuation">.</span>lastEffect<span class="token punctuation">.</span>nextEffect <span class="token operator">=</span> completedWork
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 若父节点的 effectList 为空，则当前节点就是 effectList 的 firstEffect</span>
+    returnFiber<span class="token punctuation">.</span>firstEffect <span class="token operator">=</span> completedWork
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 将 effectList 的 lastEffect 指针后移一位</span>
+  returnFiber<span class="token punctuation">.</span>lastEffect <span class="token operator">=</span> completedWork
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><h2 id="commit-阶段工作流简析"><a href="#commit-阶段工作流简析" class="header-anchor">#</a> commit 阶段工作流简析</h2> <p>commit 会在 performSyncWorkOnRoot 中被调用。</p> <p>commit 共分为 3 个阶段：before mutation、mutation、layout</p> <ul><li>before mutation 阶段，这个阶段 DOM 节点还没有被渲染到界面上去，过程会触发 getSnapshotBeforeUpdate，也会处理 useEffect 钩子相关的调度逻辑。</li> <li>mutation 阶段，负责 DOM 节点的渲染。遍历 effectList，根据 flags 的不同，执行不同的 DOM 操作。</li> <li>layout 阶段，处理 DOM 渲染完毕之后的收尾逻辑。比如 调用 componentDidMount/componentDidUpdate，调用 useLayoutEffect 钩子函数的回调等。除此之外，还会把 fiberRoot 的 current 指针指向 workInProgress Fiber 树。</li></ul> <p>commit 阶段 是一个 绝对同步的过程。render 阶段可以同步也可以异步。</p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/maxlxq/maxlxq.github.io/edit/master/docs/other/React_ReactDOM_render_commit.md" target="_blank" rel="noopener noreferrer">本文源码地址</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <!----></footer> <!----> </main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.c54d73b3.js" defer></script><script src="/assets/js/2.6cdc8135.js" defer></script><script src="/assets/js/121.b21708fa.js" defer></script><script src="/assets/js/4.a41c0c79.js" defer></script>
+  </body>
+</html>

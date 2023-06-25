@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>ReactDOM.render 调用栈 —— render 阶段 | 前端知识</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    <link rel="icon" href="/logo.jpg">
+    <meta name="description" content="欢迎访问公众号：前端周报">
+    
+    <link rel="preload" href="/assets/css/0.styles.b3dad54c.css" as="style"><link rel="preload" href="/assets/js/app.c54d73b3.js" as="script"><link rel="preload" href="/assets/js/2.6cdc8135.js" as="script"><link rel="preload" href="/assets/js/123.326dcef8.js" as="script"><link rel="preload" href="/assets/js/4.a41c0c79.js" as="script"><link rel="prefetch" href="/assets/js/10.c02c1e21.js"><link rel="prefetch" href="/assets/js/100.8700d646.js"><link rel="prefetch" href="/assets/js/101.3a187938.js"><link rel="prefetch" href="/assets/js/102.05cbfba4.js"><link rel="prefetch" href="/assets/js/103.ce22a9d1.js"><link rel="prefetch" href="/assets/js/104.7fb5abfe.js"><link rel="prefetch" href="/assets/js/105.76f077bd.js"><link rel="prefetch" href="/assets/js/106.0aa897e9.js"><link rel="prefetch" href="/assets/js/107.762b7545.js"><link rel="prefetch" href="/assets/js/108.af4eb65b.js"><link rel="prefetch" href="/assets/js/109.a861e6aa.js"><link rel="prefetch" href="/assets/js/11.28ffe2ea.js"><link rel="prefetch" href="/assets/js/110.9a0a6e5b.js"><link rel="prefetch" href="/assets/js/111.ff3ee859.js"><link rel="prefetch" href="/assets/js/112.79eba6d4.js"><link rel="prefetch" href="/assets/js/113.2fbc12db.js"><link rel="prefetch" href="/assets/js/114.8b7d68cd.js"><link rel="prefetch" href="/assets/js/115.5ea81830.js"><link rel="prefetch" href="/assets/js/116.40b46845.js"><link rel="prefetch" href="/assets/js/117.8c956aef.js"><link rel="prefetch" href="/assets/js/118.598a09ff.js"><link rel="prefetch" href="/assets/js/119.57cda7c9.js"><link rel="prefetch" href="/assets/js/12.17171ff9.js"><link rel="prefetch" href="/assets/js/120.baa8b724.js"><link rel="prefetch" href="/assets/js/121.b21708fa.js"><link rel="prefetch" href="/assets/js/122.d86a560f.js"><link rel="prefetch" href="/assets/js/124.be8155c5.js"><link rel="prefetch" href="/assets/js/125.038837fb.js"><link rel="prefetch" href="/assets/js/126.82810062.js"><link rel="prefetch" href="/assets/js/127.cdf23cc3.js"><link rel="prefetch" href="/assets/js/128.3921536c.js"><link rel="prefetch" href="/assets/js/129.fe16c1d8.js"><link rel="prefetch" href="/assets/js/13.92e69144.js"><link rel="prefetch" href="/assets/js/130.a8b1661f.js"><link rel="prefetch" href="/assets/js/131.12b5f184.js"><link rel="prefetch" href="/assets/js/132.cf3721df.js"><link rel="prefetch" href="/assets/js/133.6ac5a394.js"><link rel="prefetch" href="/assets/js/134.e3c0ab63.js"><link rel="prefetch" href="/assets/js/135.c852878d.js"><link rel="prefetch" href="/assets/js/136.637439b3.js"><link rel="prefetch" href="/assets/js/137.c529cb4d.js"><link rel="prefetch" href="/assets/js/138.1bcf2e99.js"><link rel="prefetch" href="/assets/js/14.1ad2cb2c.js"><link rel="prefetch" href="/assets/js/15.04d83116.js"><link rel="prefetch" href="/assets/js/16.509bd9b7.js"><link rel="prefetch" href="/assets/js/17.36a6c880.js"><link rel="prefetch" href="/assets/js/18.7504f2f2.js"><link rel="prefetch" href="/assets/js/19.adcade81.js"><link rel="prefetch" href="/assets/js/20.a48cc099.js"><link rel="prefetch" href="/assets/js/21.e08d4a66.js"><link rel="prefetch" href="/assets/js/22.e15443d8.js"><link rel="prefetch" href="/assets/js/23.d1e92eb1.js"><link rel="prefetch" href="/assets/js/24.34b53952.js"><link rel="prefetch" href="/assets/js/25.d41b9dd6.js"><link rel="prefetch" href="/assets/js/26.04879470.js"><link rel="prefetch" href="/assets/js/27.f36afdbf.js"><link rel="prefetch" href="/assets/js/28.60564414.js"><link rel="prefetch" href="/assets/js/29.f2d76d07.js"><link rel="prefetch" href="/assets/js/3.08666eba.js"><link rel="prefetch" href="/assets/js/30.58237659.js"><link rel="prefetch" href="/assets/js/31.ca6fa0ba.js"><link rel="prefetch" href="/assets/js/32.690853b8.js"><link rel="prefetch" href="/assets/js/33.78101815.js"><link rel="prefetch" href="/assets/js/34.a03db625.js"><link rel="prefetch" href="/assets/js/35.351fcf38.js"><link rel="prefetch" href="/assets/js/36.ef6ff735.js"><link rel="prefetch" href="/assets/js/37.a5b5e000.js"><link rel="prefetch" href="/assets/js/38.833005a4.js"><link rel="prefetch" href="/assets/js/39.35650724.js"><link rel="prefetch" href="/assets/js/40.36336ee6.js"><link rel="prefetch" href="/assets/js/41.8ab71818.js"><link rel="prefetch" href="/assets/js/42.bb097faf.js"><link rel="prefetch" href="/assets/js/43.61e77c0c.js"><link rel="prefetch" href="/assets/js/44.0b4457ca.js"><link rel="prefetch" href="/assets/js/45.aac3b481.js"><link rel="prefetch" href="/assets/js/46.a508044f.js"><link rel="prefetch" href="/assets/js/47.ce917a93.js"><link rel="prefetch" href="/assets/js/48.c714bc1d.js"><link rel="prefetch" href="/assets/js/49.92804c9b.js"><link rel="prefetch" href="/assets/js/5.30a0b667.js"><link rel="prefetch" href="/assets/js/50.87b3809b.js"><link rel="prefetch" href="/assets/js/51.b27ce3cc.js"><link rel="prefetch" href="/assets/js/52.477f8fb5.js"><link rel="prefetch" href="/assets/js/53.4bda0434.js"><link rel="prefetch" href="/assets/js/54.525de579.js"><link rel="prefetch" href="/assets/js/55.ef8e0bfb.js"><link rel="prefetch" href="/assets/js/56.3962c9c3.js"><link rel="prefetch" href="/assets/js/57.d6f42c28.js"><link rel="prefetch" href="/assets/js/58.8fea3227.js"><link rel="prefetch" href="/assets/js/59.bd7b25f7.js"><link rel="prefetch" href="/assets/js/6.3025ef15.js"><link rel="prefetch" href="/assets/js/60.05d4b4ea.js"><link rel="prefetch" href="/assets/js/61.831da8d5.js"><link rel="prefetch" href="/assets/js/62.7fceeeb1.js"><link rel="prefetch" href="/assets/js/63.6f46075f.js"><link rel="prefetch" href="/assets/js/64.1d89c818.js"><link rel="prefetch" href="/assets/js/65.ec965501.js"><link rel="prefetch" href="/assets/js/66.893ec329.js"><link rel="prefetch" href="/assets/js/67.4d00e228.js"><link rel="prefetch" href="/assets/js/68.9f06b6a2.js"><link rel="prefetch" href="/assets/js/69.07e70ec7.js"><link rel="prefetch" href="/assets/js/7.c16c90e5.js"><link rel="prefetch" href="/assets/js/70.5e312c5b.js"><link rel="prefetch" href="/assets/js/71.9c68dd0b.js"><link rel="prefetch" href="/assets/js/72.99f53b1e.js"><link rel="prefetch" href="/assets/js/73.a98aebf5.js"><link rel="prefetch" href="/assets/js/74.55ccc92d.js"><link rel="prefetch" href="/assets/js/75.8fbad63a.js"><link rel="prefetch" href="/assets/js/76.22115303.js"><link rel="prefetch" href="/assets/js/77.89a66502.js"><link rel="prefetch" href="/assets/js/78.585e01c4.js"><link rel="prefetch" href="/assets/js/79.cef89b61.js"><link rel="prefetch" href="/assets/js/8.20975b36.js"><link rel="prefetch" href="/assets/js/80.40e152a5.js"><link rel="prefetch" href="/assets/js/81.7bd4f3fa.js"><link rel="prefetch" href="/assets/js/82.06872893.js"><link rel="prefetch" href="/assets/js/83.b70b99a6.js"><link rel="prefetch" href="/assets/js/84.fd372a96.js"><link rel="prefetch" href="/assets/js/85.1837c29b.js"><link rel="prefetch" href="/assets/js/86.295ae7b1.js"><link rel="prefetch" href="/assets/js/87.c4287e41.js"><link rel="prefetch" href="/assets/js/88.1850155b.js"><link rel="prefetch" href="/assets/js/89.e2a7834d.js"><link rel="prefetch" href="/assets/js/9.2ee6a774.js"><link rel="prefetch" href="/assets/js/90.3b4154d1.js"><link rel="prefetch" href="/assets/js/91.25b76255.js"><link rel="prefetch" href="/assets/js/92.bb5707b2.js"><link rel="prefetch" href="/assets/js/93.918cc5ea.js"><link rel="prefetch" href="/assets/js/94.3f688cce.js"><link rel="prefetch" href="/assets/js/95.e8066710.js"><link rel="prefetch" href="/assets/js/96.d49e2a71.js"><link rel="prefetch" href="/assets/js/97.965ac2e0.js"><link rel="prefetch" href="/assets/js/98.05924f51.js"><link rel="prefetch" href="/assets/js/99.24466c79.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.b3dad54c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">前端知识</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/base/" class="nav-link">
+  基础
+</a></div><div class="nav-item"><a href="/more/" class="nav-link">
+  进阶
+</a></div><div class="nav-item"><a href="/blog/" class="nav-link">
+  原创
+</a></div><div class="nav-item"><a href="/mdn/" class="nav-link">
+  MDN
+</a></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试
+</a></div><div class="nav-item"><a href="/leetcode/" class="nav-link">
+  力扣
+</a></div> <a href="https://github.com/maxlxq/maxlxq.github.io" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/base/" class="nav-link">
+  基础
+</a></div><div class="nav-item"><a href="/more/" class="nav-link">
+  进阶
+</a></div><div class="nav-item"><a href="/blog/" class="nav-link">
+  原创
+</a></div><div class="nav-item"><a href="/mdn/" class="nav-link">
+  MDN
+</a></div><div class="nav-item"><a href="/interview/" class="nav-link">
+  面试
+</a></div><div class="nav-item"><a href="/leetcode/" class="nav-link">
+  力扣
+</a></div> <a href="https://github.com/maxlxq/maxlxq.github.io" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="reactdom-render-调用栈-render-阶段"><a href="#reactdom-render-调用栈-render-阶段" class="header-anchor">#</a> ReactDOM.render 调用栈 —— render 阶段</h1> <p>performSyncWorkOnRoot 标志着 render 阶段的开始，finishSyncRender 标志着 render 阶段结束。</p> <p>render 阶段包含大量的 beginWork、completeWork 调用栈，它们串联起的是一个&quot;模拟递归&quot;的过程。</p> <p>栈调和中讲过，React 15 的调和过程是一个递归的过程。<br>
+而 Fiber 架构下的调和过程，虽然并不是依赖递归来实现的，但在 RenderDOM.render 触发的同步模式下，它仍然是一个深度优先搜索的过程。<br> <strong>在这个过程中，beginWork 将创建新的 Fiber 节点，而 completeWork 则负责将 Fiber 节点映射为 DOM 节点。</strong></p> <h2 id="workinprogress-节点的创建-wip"><a href="#workinprogress-节点的创建-wip" class="header-anchor">#</a> workInProgress 节点的创建（WIP)</h2> <p>performSyncWorkOnRoot 是 render 阶段的起点。<br>
+它调用了 renderRootSync，然后是 prepareFreshStack。</p> <p>prepareFreshStack 的作用是重置一个新的堆栈环境，关注其中对 createWorkInProgress 的调用。</p> <details><summary>
+createWorkInProgress 主逻辑
+</summary> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token comment">// 这里入参中的 current 传入的是现有树结构中的 rootFiber 对象</span>
+<span class="token keyword">function</span> <span class="token function">createWorkInProgress</span><span class="token punctuation">(</span><span class="token parameter">current<span class="token punctuation">,</span> pendingProps</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> workInProgress <span class="token operator">=</span> current<span class="token punctuation">.</span>alternate
+  <span class="token comment">// ReactDOM.render 触发的首屏渲染将进入这个逻辑</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>workInProgress <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 这是需要你关注的第一个点，workInProgress 是 createFiber 方法的返回值</span>
+    workInProgress <span class="token operator">=</span> <span class="token function">createFiber</span><span class="token punctuation">(</span>current<span class="token punctuation">.</span>tag<span class="token punctuation">,</span> pendingProps<span class="token punctuation">,</span> current<span class="token punctuation">.</span>key<span class="token punctuation">,</span> current<span class="token punctuation">.</span>mode<span class="token punctuation">)</span>
+    workInProgress<span class="token punctuation">.</span>elementType <span class="token operator">=</span> current<span class="token punctuation">.</span>elementType
+    workInProgress<span class="token punctuation">.</span>type <span class="token operator">=</span> current<span class="token punctuation">.</span>type
+    workInProgress<span class="token punctuation">.</span>stateNode <span class="token operator">=</span> current<span class="token punctuation">.</span>stateNode
+    <span class="token comment">// 这是需要你关注的第二个点，workInProgress 的 alternate 将指向 current</span>
+    workInProgress<span class="token punctuation">.</span>alternate <span class="token operator">=</span> current
+    <span class="token comment">// 这是需要你关注的第三个点，current 的 alternate 将反过来指向 workInProgress</span>
+    current<span class="token punctuation">.</span>alternate <span class="token operator">=</span> workInProgress
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token comment">// else 的逻辑此处先不用关注</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 以下省略大量 workInProgress 对象的属性处理逻辑</span>
+  <span class="token comment">// 返回 workInProgress 节点</span>
+  <span class="token keyword">return</span> workInProgress
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div></details> <ul><li>createWorkInProgress 调用 createFiber，workInProgress 是 createFiber 的返回值</li> <li>workInProgress 的 alternate 指向 current</li> <li>current 的 alternate 反过来指向 workInProgress</li></ul> <p>createFiber 创建了一个 FiberNode 实例，是一个 Fiber 节点类型。所以 WorkInProgress 就是一个 Fiber 节点。</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">var</span> <span class="token function-variable function">createFiber</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">tag<span class="token punctuation">,</span> pendingProps<span class="token punctuation">,</span> key<span class="token punctuation">,</span> mode</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">FiberNode</span><span class="token punctuation">(</span>tag<span class="token punctuation">,</span> pendingProps<span class="token punctuation">,</span> key<span class="token punctuation">,</span> mode<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>同时，workInProgress 的创建入参其实来源于 current。</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code>workInProgress <span class="token operator">=</span> <span class="token function">createFiber</span><span class="token punctuation">(</span>current<span class="token punctuation">.</span>tag<span class="token punctuation">,</span> pendingProps<span class="token punctuation">,</span> current<span class="token punctuation">.</span>ken<span class="token punctuation">,</span> current<span class="token punctuation">.</span>mode<span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>所以 workInProgress 节点其实就是 current 节点的副本。</p> <p>再结合 current 指向 rootFiber 对象，以及 current 和 workInProgress 通过 alternate 互相连接这些信息。</p> <p>完成上述过程后，就会进入 workLoopSync 的逻辑。</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">workLoopSync</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span>workInProgress <span class="token operator">!==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">performUnitOfWork</span><span class="token punctuation">(</span>workInProgress<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>performUnitOfWork 函数将触发对 beginWork 的调用，实现对新 Fiber 节点的创建。<br>
+若新创建的 Fiber 节点不为空，则 performUnitOfWork 会用这个新的 Fiber 节点来更新 WorkInProgress 的值，为下一次循环作准备。</p> <p>当 workInProgress 终于为空时，整棵 Fiber 树构建完成。</p> <h2 id="beginwork-开启-fiber-节点创建过程"><a href="#beginwork-开启-fiber-节点创建过程" class="header-anchor">#</a> beginWork 开启 Fiber 节点创建过程</h2> <details><summary>
+beginWork 相关逻辑提取
+</summary> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">beginWork</span><span class="token punctuation">(</span><span class="token parameter">current<span class="token punctuation">,</span> workInProgress<span class="token punctuation">,</span> renderLanes</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ...</span>
+  <span class="token comment">//  current 节点不为空的情况下，会加一道辨识，看看是否有更新逻辑要处理</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>current <span class="token operator">!==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 获取新旧 props</span>
+    <span class="token keyword">var</span> oldProps <span class="token operator">=</span> current<span class="token punctuation">.</span>memoizedProps
+    <span class="token keyword">var</span> newProps <span class="token operator">=</span> workInProgress<span class="token punctuation">.</span>pendingProps
+    <span class="token comment">// 若 props 更新或者上下文改变，则认为需要&quot;接受更新&quot;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>oldProps <span class="token operator">!==</span> newProps <span class="token operator">||</span> <span class="token function">hasContextChanged</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token punctuation">(</span>
+     workInProgress<span class="token punctuation">.</span>type <span class="token operator">!==</span> current<span class="token punctuation">.</span>type <span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 打个更新标</span>
+      didReceiveUpdate <span class="token operator">=</span> <span class="token boolean">true</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>xxx<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 不需要更新的情况 A</span>
+      <span class="token keyword">return</span> <span class="token constant">A</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">需要更新的情况 B</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        didReceiveUpdate <span class="token operator">=</span> <span class="token boolean">true</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 不需要更新的其他情况，这里我们的首次渲染就将执行到这一行的逻辑</span>
+        didReceiveUpdate <span class="token operator">=</span> <span class="token boolean">false</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    didReceiveUpdate <span class="token operator">=</span> <span class="token boolean">false</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// ...</span>
+  <span class="token comment">// 这坨 switch 是 beginWork 中的核心逻辑，原有的代码量相当大</span>
+  <span class="token keyword">switch</span> <span class="token punctuation">(</span>workInProgress<span class="token punctuation">.</span>tag<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// ...</span>
+    <span class="token comment">// 这里省略掉大量形如&quot;case: xxx&quot;的逻辑</span>
+    <span class="token comment">// 根节点将进入这个逻辑</span>
+    <span class="token keyword">case</span> HostRoot<span class="token operator">:</span>
+      <span class="token keyword">return</span> <span class="token function">updateHostRoot</span><span class="token punctuation">(</span>current<span class="token punctuation">,</span> workInProgress<span class="token punctuation">,</span> renderLanes<span class="token punctuation">)</span>
+    <span class="token comment">// dom 标签对应的节点将进入这个逻辑</span>
+    <span class="token keyword">case</span> HostComponent<span class="token operator">:</span>
+      <span class="token keyword">return</span> <span class="token function">updateHostComponent</span><span class="token punctuation">(</span>current<span class="token punctuation">,</span> workInProgress<span class="token punctuation">,</span> renderLanes<span class="token punctuation">)</span>
+    <span class="token comment">// 文本节点将进入这个逻辑</span>
+    <span class="token keyword">case</span> HostText<span class="token operator">:</span>
+      <span class="token keyword">return</span> <span class="token function">updateHostText</span><span class="token punctuation">(</span>current<span class="token punctuation">,</span> workInProgress<span class="token punctuation">)</span>
+    <span class="token comment">// ...</span>
+    <span class="token comment">// 这里省略掉大量形如&quot;case: xxx&quot;的逻辑</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// 这里是错误兜底，处理 switch 匹配不上的情况</span>
+  <span class="token punctuation">{</span>
+    <span class="token punctuation">{</span>
+      <span class="token keyword">throw</span> <span class="token function">Error</span><span class="token punctuation">(</span>
+        <span class="token string">&quot;Unknown unit of work tag (&quot;</span> <span class="token operator">+</span>
+          workInProgress<span class="token punctuation">.</span>tag <span class="token operator">+</span>
+          <span class="token string">&quot;). This error is likely caused by a bug in React. Please file an issue.&quot;</span>
+      <span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br></div></div></details> <ol><li>beginWork 的入参是一对用 alternate 连接起来的 workInProgress 和 current 节点</li> <li>beginWork 的核心逻辑是根据 fiber 节点的 tag 属性的不同，调用不同节点创建函数</li></ol> <p>tag 的值会对应进入相应的 update* 逻辑。<br>
+update + 类型名 函数共同特点为：通过调用 reconcileChildren 方法，生成当前节点的子节点。</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">reconcileChildren</span><span class="token punctuation">(</span><span class="token parameter">current<span class="token punctuation">,</span> workInProgress<span class="token punctuation">,</span> nextChildren<span class="token punctuation">,</span> renderLanes</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 判断 current 是否为 null</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>current <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 若 current 为 null，则进入 mountChildFibers 的逻辑</span>
+    workInProgress<span class="token punctuation">.</span>child <span class="token operator">=</span> <span class="token function">mountChildFibers</span><span class="token punctuation">(</span>workInProgress<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> nextChildren<span class="token punctuation">,</span> renderLanes<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 若 current 不为 null，则进入 reconcileChildFibers 的逻辑</span>
+    workInProgress<span class="token punctuation">.</span>child <span class="token operator">=</span> <span class="token function">reconcileChildFibers</span><span class="token punctuation">(</span>workInProgress<span class="token punctuation">,</span> current<span class="token punctuation">.</span>child<span class="token punctuation">,</span> nextChildren<span class="token punctuation">,</span> renderLanes<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>reconcileChildren 做逻辑分发，具体实现为 mountChildFibers 和 reconcileChildFibers。</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">var</span> reconcileChildFibers <span class="token operator">=</span> <span class="token function">ChildReconciler</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span>
+<span class="token keyword">var</span> mountChildFibers <span class="token operator">=</span> <span class="token function">ChildReconciler</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h2 id="childreconciler-才是最终处理-fiber-节点的幕后函数。"><a href="#childreconciler-才是最终处理-fiber-节点的幕后函数。" class="header-anchor">#</a> ChildReconciler 才是最终处理 Fiber 节点的幕后函数。</h2> <details><summary>
+ChildReconciler 关键逻辑
+</summary> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">ChildReconciler</span><span class="token punctuation">(</span><span class="token parameter">shouldTrackSideEffects</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 删除节点的逻辑</span>
+  <span class="token keyword">function</span> <span class="token function">deleteChild</span><span class="token punctuation">(</span><span class="token parameter">returnFiber<span class="token punctuation">,</span> childToDelete</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>shouldTrackSideEffects<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// Noop.</span>
+      <span class="token keyword">return</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// 以下执行删除逻辑</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// ......</span>
+
+  <span class="token comment">// 单个节点的插入逻辑</span>
+  <span class="token keyword">function</span> <span class="token function">placeSingleChild</span><span class="token punctuation">(</span><span class="token parameter">newFiber</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>shouldTrackSideEffects <span class="token operator">&amp;&amp;</span> newFiber<span class="token punctuation">.</span>alternate <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      newFiber<span class="token punctuation">.</span>flags <span class="token operator">=</span> Placement
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> newFiber
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 插入节点的逻辑</span>
+  <span class="token keyword">function</span> <span class="token function">placeChild</span><span class="token punctuation">(</span><span class="token parameter">newFiber<span class="token punctuation">,</span> lastPlacedIndex<span class="token punctuation">,</span> newIndex</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    newFiber<span class="token punctuation">.</span>index <span class="token operator">=</span> newIndex
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>shouldTrackSideEffects<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// Noop.</span>
+      <span class="token keyword">return</span> lastPlacedIndex
+    <span class="token punctuation">}</span>
+    <span class="token comment">// 以下执行插入逻辑</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// ......</span>
+  <span class="token comment">// 此处省略一系列 updateXXX 的函数，它们用于处理 Fiber 节点的更新</span>
+
+  <span class="token comment">// 处理不止一个子节点的情况</span>
+  <span class="token keyword">function</span> <span class="token function">reconcileChildrenArray</span><span class="token punctuation">(</span><span class="token parameter">returnFiber<span class="token punctuation">,</span> currentFirstChild<span class="token punctuation">,</span> newChildren<span class="token punctuation">,</span> lanes</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// ......</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// 此处省略一堆 reconcileXXXXX 形式的函数，它们负责处理具体的 reconcile 逻辑</span>
+  <span class="token keyword">function</span> <span class="token function">reconcileChildFibers</span><span class="token punctuation">(</span><span class="token parameter">returnFiber<span class="token punctuation">,</span> currentFirstChild<span class="token punctuation">,</span> newChild<span class="token punctuation">,</span> lanes</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 这是一个逻辑分发器，它读取入参后，会经过一系列的条件判断，调用上方所定义的负责具体节点操作的函数</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// 将总的 reconcileChildFibers 函数返回</span>
+  <span class="token keyword">return</span> reconcileChildFibers
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br></div></div><p><a href="https://github.com/facebook/react/blob/56e9feead0f91075ba0a4f725c9e4e343bca1c67/packages/react-reconciler/src/ReactChildFiber.old.js#L253" target="_blank" rel="noopener noreferrer">查看具体文件<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a><br></p></details><p></p> <ol><li>关键入参 shouldTrackSideEffects，意为&quot;是否需要追踪副作用&quot;。reconcileChildFibers 和 mountChildFibers 的不同之处</li> <li>定义了大量对 Fiber 节点的创建、增加、删除、修改等动作，将直接或间接地被 reconcileChildFibers 调用</li> <li>ChildReconciler 的返回值为一个 reconcileChildFibers 的函数，这个函数是一个逻辑分发器，将根据入参的不同，执行不同的 Fiber 节点操作，最终返回不同的目标 Fiber 节点</li></ol> <blockquote><p>Q：对副作用的处理不同，到底是哪里不同？</p> <p>A：shouldTrackSideEffects 若为 false，会直接返回。若为 true，会给 Fiber 节点搭上一个叫 &quot;flags&quot; 的标记。</p></blockquote> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code>newFiber<span class="token punctuation">.</span>flags <span class="token operator">=</span> Placement
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><blockquote><p>flags 是什么</p> <p>React v17.0.0 版本中，属性名已经变更为 flags，早一些的版本中，更常见的是 effectTag。</p> <p>Placement 这个 flags 的意义，是在渲染器执行时，也就是真实 DOM 渲染时，告诉渲染器：这里需要新增 DOM 节点。<br>
+flags 记录的是副作用的类型，所谓的副作用，React 给出的定义是&quot;数据获取、订阅或者修改 DOM&quot;等动作。</p></blockquote> <h2 id="fiber-节点创建过程梳理"><a href="#fiber-节点创建过程梳理" class="header-anchor">#</a> Fiber 节点创建过程梳理</h2> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token comment">/**
+ *                      beginWork
+ *                          ｜
+ *      updateHostRoot, 进入 rootFiber 节点的处理逻辑
+ *                          ｜
+ *   调用 reconcileChildren 分发当前节点（此处为 rootFiber 节点）
+ *           的子节点（此处为 App 节点）的创建逻辑
+ *                          ｜
+ *    Current 不为 null，逻辑因此被分发进 reconcileChildFibers，
+ *    reconcileChildFibers 是 ChildReconciler(true) 的返回值，
+ *                这意味着副作用将被追踪
+ *                          ｜
+ *    reconcileChildRibers 将子节点的创建逻辑分发给 reconcileSingleElement，
+ *                   得到 App FiberNode
+ *                          ｜
+ *       调用 placeSingleChild，为 App FiberNode 打上
+ *                    Placement 的标识
+ *                          ｜
+ *       App FiberNode 作为 rottFiber 的 child 的属性，与现有
+ *               workInProgress Fiber 树建立关联
+ */</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><p><strong>循环创建新的 Fiber 节点。</strong></p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">workLoopSync</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">while</span><span class="token punctuation">(</span>workInProgress <span class="token operator">!==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">performUnitOfWork</span><span class="token punctuation">(</span>workInProgress<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>workLoopSync 循环地调用 performUnitOfWork，performUnitOfWork 主要工作是通过 调用 beginWork，来实现新 Fiber 节点的创建；<br>
+次要工作是把新创建的这个 Fiber 节点的值更新到 workInProgress 变量中。</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code>next <span class="token operator">=</span> <span class="token function">beginWork$1</span><span class="token punctuation">(</span>current<span class="token punctuation">,</span> unitOfWork<span class="token punctuation">,</span> subtreeRenderLanes<span class="token punctuation">)</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>next <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">completeUnitOfWork</span><span class="token punctuation">(</span>unitOfWork<span class="token punctuation">)</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+  workInProgress <span class="token operator">=</span> next
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>这样便能够确保每次 performUnitOfWork 执行完毕后，当前的 WorkInProgress 都存储着下一个需要被处理的节点，从而为下一次的 workLoopSync 循环做准备。</p> <p><strong>Fiber 节点间是如何连接的</strong></p> <p>不同的 Fiber 节点之间，将通过 child、return、sibling 这三个属性建立关系，<br>
+其中 child、return 记录的是父子节点关系，而 sibling 记录的是兄弟节点关系。</p> <p>FiberNode 实例中，return 指向的是当前 Fiber 节点的父节点，而 sibling 指向的是当前节点的第一个兄弟节点。</p> <p>此时的 Fiber 树本质上已经从树变成了链表。</p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/maxlxq/maxlxq.github.io/edit/master/docs/other/React_ReactDOM_render_render.md" target="_blank" rel="noopener noreferrer">本文源码地址</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <!----></footer> <!----> </main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.c54d73b3.js" defer></script><script src="/assets/js/2.6cdc8135.js" defer></script><script src="/assets/js/123.326dcef8.js" defer></script><script src="/assets/js/4.a41c0c79.js" defer></script>
+  </body>
+</html>
