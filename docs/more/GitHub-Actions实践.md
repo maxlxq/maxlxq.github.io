@@ -98,7 +98,7 @@ jobs:
 ![创建新的workflow](../.vuepress/public/blog/create_workflow.png)
 ![配置.yml文件，提交](../.vuepress/public/blog/yml_config.png)
 
-ACCESS_TOKEN 需要去用户的 `Settings => Developer Settings => Personal access tokens` 创建，配置权限有限的 token，注意保存 token，仅出现一次。
+ACCESS_TOKEN 需要去用户的 `Settings => Developer Settings => Personal access tokens` 创建，配置权限有限的 token，注意保存 token，仅出现一次。[有效期一年]
 
 配置中出现的 `ACCESS_TOKEN` 则需要在 Settings 中配置，如下：
 ![ACCESS_TOKEN 设置](../.vuepress/public/blog/ACCESS_TOKEN.png)
