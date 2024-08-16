@@ -45,7 +45,27 @@ JS 的运行环境包括 全局执行上下文、函数执行上下文、eval �
 - 对于变量声明：此时会给变量分配内存，并初始化为 undefined。（编译阶段只进行声明，执行阶段才进行赋值）
 - 对于函数声明：在内存中创建函数对象，并直接初始化为该函数对象。
 
+---
 函数声明提升优先于变量声明提升。
+
+```javascript
+console.log(test); // 输出: [Function: test]
+
+var test = '变量';
+
+function test() {
+  console.log('函数');
+}
+
+console.log(test); // 输出: '变量'
+```
+解释：
+
+- 函数 test 的声明优先被提升到作用域顶部。
+- var test 的声明也被提升，但不会影响函数声明。首次 console.log(test) 打印的是函数。
+-	之后，test 被赋值为 '变量'，所以第二次 console.log(test) 输出 '变量'。
+
+---
 
 JS 怎么支持块级作用域的？
 
