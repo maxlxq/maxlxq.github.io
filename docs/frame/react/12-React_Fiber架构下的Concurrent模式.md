@@ -38,6 +38,7 @@ export default App
 ### 挂在后的 Fiber 树
 
 构建 Fiber 树，挂载时的 render 阶段结束后，commit 阶段执行前，两颗 Fiber 树的形态。
+
 ```javascript
 /**
  *         fiberRoot 对象 （FiberRootNode 实例）
@@ -212,6 +213,7 @@ function dispatchAction(fiber, queue, action) {
 ### 从 update 对象到 scheduleUpdateOnFiber
 
 上述代码的逻辑，React 里 updateContainer 函数中有相同的行为。
+
 ```javascript
 var update = createUpdate(eventTime, lane)
 
@@ -234,6 +236,7 @@ scheduleUpdateOnFiber(current$1, lane, eventTime)
 ```
 
 以 enqueueUpdate 为界：
+
 1. enqueueUpdate 之前：创建 update
 2. enqueueUpdate 调用：将 update 入队。每个 Fiber 节点都会有一个属于自身的 updateQueue，用于存储多个更新，updateQueue 以链表形式存在。在 render 阶段，updateQueue 的内容会成为 render 阶段计算 Fiber 节点的新 state 的依据
 3. scheduleUpdateOnFiber：调度 update。这个方法之后会紧跟 performSyncWorkOnRoot 所触发的 render 阶段。
@@ -244,6 +247,7 @@ scheduleUpdateOnFiber(current$1, lane, eventTime)
 但对于更新这种场景来说，大部分更新的动作都不是由根节点触发的，而 render 阶段的起点则是根节点。
 
 因此，在 scheduleUpdateOnFiber 中，有 markUpdateLaneFromFiberToRoot 这样一个方法。
+
 ```javascript
 function scheduleUpdateOnFiber(fiber, lane, eventTime) {
   checkForNestedUpdates()
@@ -270,6 +274,7 @@ markUpdateLaneFromFiberToRoot 会从当前 Fiber 节点开始，向上遍历直�
 ### scheduleUpdateOnFiber 如何区分同步还是异步？
 
 之前的 同步渲染链路分析中，有如下代码：
+
 ```javascript
 if (lane === SyncLane) { // 同步
   if (
@@ -292,6 +297,7 @@ if (lane === SyncLane) { // 同步
 ```
 
 在 ensureRootIsScheduled 中，有这样一段逻辑：
+
 ```javascript
 if (newCallbackPriority === SyncLanePriority) {
   // 同步更新的 render 入口
@@ -346,6 +352,7 @@ function workLoopConcurrent() {
 shouldYield 表示 需要让出。当 shouldYield() 调用返回为 true 时，就说明当前需要对祝线程进行让出了，此时 while 不再循环。
 
 shouldYield 是什么？
+
 ```javascript
 var Scheduler_shouldYield = Scheduler.unstable_shouldYield
 // ......
@@ -461,6 +468,7 @@ unstable_scheduleCallback 的主要工作是针对当前任务创建一个 task�
 最后根据 timerQueue 和 taskQueue 的情况，执行延时任务或即时任务。
 
 几个概念：
+
 - **startTime**：任务的开始时间
 - **expirationTime**: 与优先级相关，值越小，优先级越高
 - **timerQueue**：一个 以 startTime 为排序依据的小顶堆，存储的是 startTime 大于当前时间的任务[待执行]

@@ -1,5 +1,6 @@
+# Map、Set、WeakMap、WeakSet
 
-# Map
+## Map
 
 ECMAScript 6 以前，在 JavaScript 中实现 键值对 式存储可以使用 Object。
 
@@ -7,7 +8,7 @@ ECMAScript 6 以前，在 JavaScript 中实现 键值对 式存储可以使用 O
 
 Map 是 ECMAScript 6 新增的一个集合类型。
 
-## 基本 API
+### 基本 API
 
 new 关键字和 Map 构造函数创建空映射
 
@@ -55,15 +56,15 @@ delete() 接受一个字符串参数，删除对应的键值对
 
 clear() 无参数，清空当前映射实例所有键值对
 
-### 与 Object 的区别一
+#### 与 Object 的区别一
 
 Object 只能使用数值、字符串、符号当做键，Map 可以使用任何 JavaScript 数据类型作为键。
 
 Map 内部使用 SameValueZero 比较操作，基本上相当于使用严格对象相等的标准检查键的匹配性。
 
-## 顺序与迭代
+### 顺序与迭代
 
-### 与 Object 区别二
+#### 与 Object 区别二
 
 Map 实例会维护键值对的插入顺序，可以根据插入顺序执行迭代操作。
 
@@ -103,7 +104,7 @@ keys() 和 values() 分别返回以插入顺序生成键和值的迭代器。
 
 键和值在迭代器遍历时是可以修改的，但映射内部的引用则无法修改。
 
-## 选择 Object 还是 Map
+### 选择 Object 还是 Map
 
 1. 内存占用。给定固定大小的内存，Map 大约可以比 Object 多存储 50% 的键值对
 2. 插入性能。大量插入操作，Map 性能更佳
@@ -116,7 +117,7 @@ ECMAScript 6 新增的 弱映射 是一种新的集合类型，WeakMap 是 Map �
 
 weak 描述的是 JavaScript 垃圾回收程序对待弱映射中键的方式。
 
-## 基本 API
+### 基本 API
 
 new 关键字 + WeakMap 构造函数
 
@@ -223,11 +224,11 @@ global.gc();
 console.log(usageSize()); // ≈ 1.96M
 ```
 
-## 不可迭代键
+### 不可迭代键
 
 因为 WeakMap 中键值对随时可能被销毁，所以没有必要提供迭代能力。当然，也不用提供 clear() 一次清除所有键值对的方法。
 
-## 使用弱映射
+#### 使用弱映射
 
 1. 私有变量
 2. DOM 节点元数据
@@ -236,7 +237,7 @@ console.log(usageSize()); // ≈ 1.96M
 
 ECMAScript 6 新增的 一种新集合类型。
 
-## 基本 API
+### 基本 API
 
 new 关键字 + Set 构造函数 创建一个空集合。
 
@@ -268,7 +269,7 @@ delete() 接受一个参数，删除对应元素，并返回一个布尔值，�
 
 clear() 销毁集合实例中所有值
 
-## 顺序与迭代
+### 顺序与迭代
 
 Set 会维护值插入时的顺序，因此支持顺序迭代。
 

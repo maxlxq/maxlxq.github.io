@@ -111,11 +111,13 @@ React 16.4+ 之后，Context API：React.createContext、Provider、Consumer
 编码角度认识 API
 
 React.createContext 创建一个 context 对象，可以选择性的传入一个 defaultValue
+
 ```javascript
 const AppContext = React.createContext(defaultValue)
 ```
 
 从创建出来的 AppContext 读取 Provider、Consumer
+
 ```javascript
 const { Provider, Consumer } = AppContext
 ```
@@ -171,6 +173,7 @@ Redux 通过提供一个统一的状态容器，使得数据能够自由而有�
 编码角度理解 Redux 工作流
 
 1. 使用 createStore 来完成 store 对象的创建
+
 ```javascript
 // 引入 redux
 import { createStore } from 'redux'
@@ -183,6 +186,7 @@ const store = createStore(
 ```
 
 createStore 方法接收三个入参：
+
 - reducer
 - 初始状态内容
 - 指定中间件：如 saga、logger
@@ -214,5 +218,3 @@ store.dispatch(action)
 ```
 
 总结流程：首先根据 reducer 创建 store，store 提供了 dispatch 方法，由视图中某些操作使用 dispatch 触发 action 行为，传入 reducer 进行逻辑处理，将返回后的新 state 传递给 store 对象做更新。
-
-

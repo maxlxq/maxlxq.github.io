@@ -1,7 +1,9 @@
 # JavaScript原型
 
 ## 原型
+
 1. 每个引用类型都具有对象的特征，即 可自由拓展属性
+
    ```javascript
    const obj = {}
    const arr = []
@@ -17,6 +19,7 @@
    ```
 
 2. 引用类型，都具有一个`__proto__`属性
+
    ```javascript
    console.log('obj.__proto__', obj.__proto__);
    console.log('arr.__proto__', arr.__proto__);
@@ -24,6 +27,7 @@
    ```
 
 3. 隐式原型`__proto__`的属性值，指向它的构造函数的显式原型`prototype`属性
+
    ```javascript
    obj.__proto__ == Object.prototype // true
    arr.__proto__ === Array.prototype // true
@@ -31,6 +35,7 @@
    ```
 
 4. 当试图去寻找一个对象的属性时，如果对象本身没有这个属性，那么它会去它的隐式原型`__proto__` (即它的构造函数的显式原型`prototype`) 中寻找
+
    ```javascript
    const obj = { a: 1 }
    obj.toString

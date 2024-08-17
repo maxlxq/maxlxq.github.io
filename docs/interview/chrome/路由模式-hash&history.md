@@ -15,6 +15,7 @@
 ### 属性
 
 ### 方法
+
 - History.back()
 - History.forward()
 - History.go()
@@ -23,6 +24,3 @@
 - History.replaceState()
 
 ### popstate 事件
-
-
-

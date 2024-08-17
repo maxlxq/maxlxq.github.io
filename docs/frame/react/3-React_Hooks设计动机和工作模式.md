@@ -66,6 +66,3 @@ Hooks 出现就是为了帮助函数组件补齐这些缺失的能力。
 
 - useState(): 引入状态 state
 - useEffect(): 副作用，可以在此实现 componentDidMount、componentDidUpdate、componentWillUnmount 里面做的事，如 DOM 操作、订阅事件、调用外部 API
-
-
-

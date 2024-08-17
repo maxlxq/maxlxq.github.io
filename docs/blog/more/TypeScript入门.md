@@ -63,6 +63,7 @@ number 也可以换为其他类型，如 JavaScript 的原始类型：number、s
 ### 数组类型
 
 可以直接使用 [] 的形式定义数组类型
+
 ```typescript
 let arrayOfNumber: number[] = [1, 2, 3]
 
@@ -70,6 +71,7 @@ let arrayOfString: string[] = ['x', 'y', 'z']
 ```
 
 也可以使用 Array 泛型定义数组类型
+
 ```typescript
 let arrayOfNumber: Array<number> = [1, 2, 3]
 
@@ -165,6 +167,7 @@ type Direction = 'up' | 'down'
 ### 数字字面量类型及布尔字面量类型
 
 与字符串字面量类型类似，举个例子
+
 ```typescript
 interface Config {
     size: 'small' | 'big'
@@ -413,6 +416,7 @@ let LanguageMap: LanguageYearInterface = {
 接口类型可以继承与被继承
 
 1. 使用 extends 关键字
+
 ```typescript
 /** 关键字 接口名称 */
 interface ProgramLanguage {
@@ -673,6 +677,7 @@ const mondayIsDay: Day.MONDAY = Day.MONDAY; // ok: 字面量枚举成员既是�
 const mondayIsSunday = MyDay.SUNDAY; // ok: 类型是 MyDay，MyDay.SUNDAY 仅仅是值
 const mondayIsMyDay2: MyDay.MONDAY = MyDay.MONDAY; // ts(2535)，MyDay 包含非字面量值成员，所以 MyDay.MONDAY 不能作为类型
 ```
+
 这里因为 Day 的所有成员都是字面量枚举成员，所以 Day.MONDAY 可以同时作为值和类型使用。但是 MyDay 的成员 MONDAY 是非字面量枚举成员（但是是常量枚举成员），所以 MyDay.MONDAY 仅能作为值使用.
 
 如果枚举仅有一个成员且是字面量成员，那么这个成员的类型等于枚举类型
@@ -692,6 +697,7 @@ $('#id').addClass('show');
 ```
 
 外部枚举和常规枚举的差异在于以下几点：
+
 - 在外部枚举中，如果没有指定初始值的成员都被当作计算（值）成员，这跟常规枚举恰好相反；
 - 即便外部枚举只包含字面量成员，这些成员的类型也不会是字面量成员类型，自然完全不具备字面量类型的各种特性。
 

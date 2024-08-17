@@ -1,4 +1,5 @@
 # Fiber 详解
+>
 > Fiber 是比线程更小的粒度
 >
 > 在 V16 版本中增加了调度器，引入了 fiber 协程管理，通过异步可中断更新，替换 V15 版本的同步更新，
@@ -6,12 +7,14 @@
 > V15 的虚拟 dom 树已无法满足这种更新方式，因此使用 fiber 节点树来代替原来的虚拟 dom 树
 
 ## Fiber tree VS Virtual tree
+
 Fiber Tree 多了 expirationTime 过期时间，这样可以把每个节点当作一个独立的 task。
 当一个节点发生 update 时，通过这个节点的过期时间进行任务调度。
 比如 节点发生 update 时，则会一致向上找到 Fiber Root，进行所有的调度更新。
 同时这也是 React 不好的地方，这也是为什么要用到 shouldComponentUpdate 进行拦截优化，防止过度更新
 
 ## 数据结构
+
 ```javascript
 function FiberNode(
   tag: WorkTag,
@@ -58,6 +61,7 @@ function FiberNode(
 ## 运行原理
 
 Fiber 如何调度任务
+
 - 任务队列：这是一个循环双向链表（每个节点有 previous 和 next 两个属性来分别指向前后两个节点，同时最后一个节点的 next 指向第一个节点）
 - Fiber 任务：按优先级排序，expirationTime *过期时间* 计算优先级顺序
 - Fiber 利用 **浏览器渲染机制** 来执行任务
@@ -69,6 +73,7 @@ Fiber 如何调度任务
   - 主线程继续渲染下一帧，在下一帧的空闲时间内，继续执行上一帧未执行完的任务，如此反复
 
 ## requestAnimationFrame 模拟帧
+>
 > MDN: 告诉浏览器——你希望执行一个动画，并且要求浏览器在下次重绘之前调用指定的回调函数更新动画。该方法需要传入一个回调函数作为参数，该回调函数会在浏览器下一次重绘之前执行
 >
 > 若你想在浏览器下次重绘之前继续更新下一帧动画，那么回调函数自身必须再次调用`window.requestAnimationFrame()`
@@ -106,6 +111,7 @@ window.requestAnimationFrame(step);
 ```
 
 ## MessageChannel
+
 虽然 requestAnimationFrame 可以模拟实现 requestIdleCallback，但是它占用了**主线程**的渲染，
 因此不能在这里执行宏任务，而是通过它计算剩余时间。
 
@@ -142,7 +148,9 @@ function handleMessage(e) {
 ```
 
 ## React 17 中，使用 lanes 模型替代 expirationTime 模型
+
 使用 lanes 模型替代 expirationTime 模型
+
 - lanes 优先级管理: 解决了从前的每次只能执行一个任务，到现在可以同时执行多个任务的能力
   - lanes 指定一个连续的优先级区间，如果 update 的优先级在这个区间内，则将位于该区间内的任务生成对应的页面快照
   - lanes 使用 31 位的二进制，其中每个 bit 被称为一个 lane，代表优先级；
@@ -202,6 +210,7 @@ export const OffscreenLane: Lane = /*                   */ 0b1000000000000000000
 
 export const NoTimestamp = -1;
 ```
+
 </details>
 
 <br>
@@ -239,6 +248,7 @@ const OffscreenLanePriority: LanePriority = 1;
 
 export const NoLanePriority: LanePriority = 0;
 ```
+
 </details>
 
 <br>
@@ -324,6 +334,7 @@ function getHighestPriorityLanes(lanes: Lanes | Lane): Lanes {
   return lanes;
 }
 ```
+
 </details>
 
 ```javascript
@@ -332,7 +343,9 @@ function getHighestPriorityLane(lanes: Lanes) {
   return lanes & -lanes;
 }
 ```
+
 通过 `lanes & -lanes` 可以分离出所有比特位中最右边的 `1` ，具体解释如下：
+
 1. 假如 `lanes(InputDiscreteLanes) = 0b0000000000000000000000000011000`
 2. 那么 `-lanes = 0b1111111111111111111111111101000`
 3. 所以 `lanes & -lanes = 0b0000000000000000000000000001000`
@@ -349,6 +362,7 @@ function getLowestPriorityLane(lanes: Lanes): Lane {
   return index < 0 ? NoLanes : 1 << index;
 }
 ```
+
 1. 假设 `lanes(InputDiscreteLanes) = 0b0000000000000000000000000011000`
 2. 那么 `clz32(lanes) = 27`, 源码中被书写成 31 位，但转换成标准 32 位后获取前导 0 的个数是 27 个
 3. `index = 31 - clz32(lanes) = 4`

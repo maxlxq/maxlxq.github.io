@@ -19,6 +19,7 @@ React 官网指出：
 所以 JSX 在被编译后，会变成一个 React.createElement() 的调用。而编译这个动作，是由 Babel 来完成的。
 
 - 什么是 Babel 呢？
+
 > Babel 是一个工具链，主要用于将 ECMAScript 2015+ 版本的代码转换为向后兼容的 JavaScript 语法，以便能够运行在当前和旧版的浏览器或其他环境中。
 
 如，模板字符串 语法，Babel 会帮我们转转为大部分低版本浏览器也能够识别的 ES5 代码。
@@ -54,6 +55,7 @@ createElement - React master branch 2021/06/12
 </summary>
 
 > 已省略部分 __DEV__ 代码
+
 ```javascript
 /**
  * Create and return a new ReactElement of the given type.
@@ -139,11 +141,13 @@ export function createElement(type, config, children) {
   );
 }
 ```
+
 </details>
 
 1. 入参解读
 
 入参共有 3 个。
+
 - type：用于标识节点类型。可以使 `div`、`h1` 这种标准的 HTML 标签字符串，也可以是 React 组件类型
 - config：以对象形式传入，组件所有的属性都会以键值对的形式存储在 config 对象中
 - children：以对象形式传入，它记录的是组件标签之间嵌套的内容。
@@ -164,6 +168,7 @@ React.createElement(
 ```
 
 // 对应的 DOM 结构如下
+
 ```jsx
 <ul className="list">
   <li key="1">1</li>
@@ -171,6 +176,7 @@ React.createElement(
   <li key="3">3</li>
 </ul>
 ```
+
 </details>
 
 createElement 解读
@@ -233,11 +239,13 @@ const ReactElement = function(type, key, ref, self, source, owner, props) {
   return element;
 };
 ```
+
 </details>
 
 ReactElement 只把所有的入参按照规范创建了一个对象 element，并返回给 React.createElement
 
 如下示例，返回的确实是一个 ReactElement 对象实例
+
 ```javascript
 function App() {
   return (
@@ -364,9 +372,11 @@ function legacyRenderSubtreeIntoContainer(
   return getPublicRootInstance(fiberRoot);
 }
 ```
+
 </details>
 
 接收三个入参
+
 - element：需要渲染的元素 ReactElement
 - container：需要挂载的目标容器 真实 DOM
 - callback：可选 回调函数，处理渲染后的逻辑

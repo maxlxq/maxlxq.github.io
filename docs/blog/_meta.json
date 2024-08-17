@@ -5,9 +5,9 @@
     "label": "首页"
   },
   {
-    "type": "dir",
-    "name": "js_base",
-    "label": "红宝书（第四版）"
+    "type": "file",
+    "name": "taro_3",
+    "label": "Taro 3 跨端框架原理"
   },
   {
     "type": "dir",

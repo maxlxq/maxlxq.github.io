@@ -1,6 +1,7 @@
 # new模拟实现
 
 ## `new` 操作符做了什么
+
 1. 创建了一个新对象
 2. 新对象被执行[[Prototype]]链接
 3. 新对象绑定到函数调用的`this`
@@ -8,6 +9,7 @@
 5. 函数若没有返回对象类型`Object`，那么 `new` 表达式中的函数调用会自动返回这个新的对象
 
 ## 代码实现一
+
 ```javascript
 function newOperator() {
   let Constructor = [].shift.apply(arguments)
@@ -26,6 +28,7 @@ function newOperator() {
 ```
 
 ## 代码实现二
+
 ```javascript
 function newFunc() {
   let Constructor = [].shift.apply(arguments)

@@ -1,6 +1,7 @@
 # instanceof-模拟实现
 
 ## 手写 instanceof
+
 ```javascript
 // R 的原型 存在于 L 的原型链上
 function instanceofFn(L, R) {
@@ -23,6 +24,7 @@ function instanceofFn(L, R) {
 ```
 
 ## JS 中寻找属性的方式
+
 - 链式调用：a.b
 - for...in...
 - instanceof

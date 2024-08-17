@@ -8,8 +8,8 @@
 
 这里会使用 JS 和 Python 进行算法解题，分享在做题过程中遇到的问题和思考。
 
-[Array](/leetcode/Array.html)
+[Array](/leetcode/base/Array.html)
 
-[Tree](/leetcode/Tree.html)
+[Tree](/leetcode/base/Tree.html)
 
-[ByteDance](/leetcode/ByteDance.html)
+[ByteDance](/leetcode/base/ByteDance.html)

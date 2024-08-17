@@ -44,6 +44,7 @@ function createWorkInProgress(current, pendingProps) {
   return workInProgress
 }
 ```
+
 </details>
 
 - createWorkInProgress 调用 createFiber，workInProgress 是 createFiber 的返回值
@@ -51,20 +52,25 @@ function createWorkInProgress(current, pendingProps) {
 - current 的 alternate 反过来指向 workInProgress
 
 createFiber 创建了一个 FiberNode 实例，是一个 Fiber 节点类型。所以 WorkInProgress 就是一个 Fiber 节点。
+
 ```javascript
 var createFiber = function (tag, pendingProps, key, mode) {
   return new FiberNode(tag, pendingProps, key, mode);
 };
 ```
+
 同时，workInProgress 的创建入参其实来源于 current。
+
 ```javascript
 workInProgress = createFiber(current.tag, pendingProps, current.ken, current.mode)
 ```
+
 所以 workInProgress 节点其实就是 current 节点的副本。
 
 再结合 current 指向 rootFiber 对象，以及 current 和 workInProgress 通过 alternate 互相连接这些信息。
 
 完成上述过程后，就会进入 workLoopSync 的逻辑。
+
 ```javascript
 function workLoopSync() {
   while (workInProgress !== null) {
@@ -72,6 +78,7 @@ function workLoopSync() {
   }
 }
 ```
+
 performUnitOfWork 函数将触发对 beginWork 的调用，实现对新 Fiber 节点的创建。
 若新创建的 Fiber 节点不为空，则 performUnitOfWork 会用这个新的 Fiber 节点来更新 WorkInProgress 的值，为下一次循环作准备。
 
@@ -141,6 +148,7 @@ function beginWork(current, workInProgress, renderLanes) {
 }
 
 ```
+
 </details>
 
 1. beginWork 的入参是一对用 alternate 连接起来的 workInProgress 和 current 节点
@@ -169,7 +177,7 @@ var reconcileChildFibers = ChildReconciler(true)
 var mountChildFibers = ChildReconciler(false)
 ```
 
-## ChildReconciler 才是最终处理 Fiber 节点的幕后函数。
+## ChildReconciler 才是最终处理 Fiber 节点的幕后函数
 
 <details>
 <summary>
@@ -233,6 +241,7 @@ function ChildReconciler(shouldTrackSideEffects) {
 > Q：对副作用的处理不同，到底是哪里不同？
 >
 > A：shouldTrackSideEffects 若为 false，会直接返回。若为 true，会给 Fiber 节点搭上一个叫 "flags" 的标记。
+
 ```javascript
 newFiber.flags = Placement
 ```

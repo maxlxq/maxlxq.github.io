@@ -1,13 +1,17 @@
 # call和apply模拟实现
 
 ## call 原理
+
 `call()` 方法使用一个指定的 `this` 值和单独给出的一个或多个参数来调用一个函数
 
 ## apply 原理
+
 `apply()` 方法接受的是一个包含多个参数的数组，语法和作用与 `call()` 类似
 
 ## 代码实现
+
 - call
+
 ```javascript
 Function.prototype.call = function(context) {
   context = context ? Object(context) : window
@@ -23,6 +27,7 @@ Function.prototype.call = function(context) {
 ```
 
 - apply
+
 ```javascript
 Function.prototype.apply = function(context, arr) {
   context = context ? Object(context) : window
@@ -43,4 +48,3 @@ Function.prototype.apply = function(context, arr) {
   return result
 }
 ```
-

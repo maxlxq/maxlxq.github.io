@@ -24,6 +24,7 @@ ReactDOM.render(<App />, rootElement)
 运行 Demo 案例，并通过 Chrome 的 Performance 面板，记录页面调用栈。
 
 以 scheduleUpdateOnFiber 和 commitRoot 两个方法为界，把 ReactDOM.render 的调用栈划分为 三个阶段：
+
 1. 初始化阶段
 2. render 阶段
 3. commit 阶段
@@ -84,9 +85,11 @@ function legacyRenderSubtreeIntoContainer(parentComponent, children, container, 
   return getPublicRootInstance(fiberRoot)
 }
 ```
+
 </details>
 
 总结一下首次渲染过程中 legacyRenderSubtreeIntoContainer 方法的主要逻辑链路：
+
 1. 调用 legacyRenderSubtreeIntoContainer 创建 container._reactRootContainer 对象，并赋值给 root
 2. 将 root 上的 _internalRoot 属性赋值给 fiberRoot
 3. 将 fiberRoot 与方法入参一起，传入 updateContainer 方法，形成回调
@@ -126,8 +129,8 @@ function unbatchedUpdates(fn, a) {
   }
 }
 ```
-</details>
 
+</details>
 
 在 unbatchedUpdates 函数体中，直接调用了传入的回调 fn。即 updateContainer。
 
@@ -174,9 +177,11 @@ function updateContainer(element, container, parentComponent, callback) {
   return lane
 }
 ```
+
 </details>
 
 总结 updateContainer 的逻辑：
+
 1. 请求当前 Fiber 节点的 lane
 2. 结合 lane，创建当前 Fiber 节点的 update 对象，并将其入队
 3. 调度当前节点

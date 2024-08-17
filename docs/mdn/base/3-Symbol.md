@@ -11,12 +11,15 @@
 ## 属性
 
 ### Symbol.asyncIterator
+>
 > @@asyncIterator ｜ ❌ IE 不支持
 
 `Symbol.asyncIterator` 指定一个对象的默认异步迭代器。如果一个对象设置了这个属性，就是异步可迭代对象，可用 `for await ... of` 循环
 
 ### Symbol.prototype.description
+>
 > description 返回 Symbol 对象的可选描述的字符串
+
 ```javascript
 Symbol('description').toString()
 // "Symbol(description)"
@@ -37,6 +40,7 @@ Symbol.for('foo').description
 ```
 
 ### Symbol.hasInstance
+>
 > Symbol.hasInstance 用于判断某对象是否为某构造器的实例。 因此可以用它自定义 instanceof 操作符在某个类上的行为。
 
 ```javascript
@@ -55,6 +59,7 @@ Symbol.hasInstance 属性的属性特性：
 `configurable: false`
 
 ### Symbol.isConcatSpreadable
+>
 > Symbol.isConcatSpreadable 符号用于配置某对象作为 Array.prototype.concat() 方法的参数时是否展开其数组元素。
 >
 > @@isConcatSpreadable 可以直接定义为对象属性或继承而来，布尔类型。
@@ -74,6 +79,7 @@ alphaNumeric = alpha.concat(numeric)
 ```
 
 ### Symbol.iterator
+>
 > Symbol.iterator 为每一个对象定义了默认的迭代器，可以被 for...of 循环使用
 
 一些内置类型拥有默认的迭代器行为，其他类型(如：Object)则没有
@@ -101,6 +107,7 @@ console.log([...myIterable])
 ```
 
 ### Symbol.match
+>
 > Symbol.match 指定了匹配的是正则表达式而不是字符串。 String.prototype.match() 会调用此函数。
 >
 还用于标识对象是否具有正则表达式行为。
@@ -120,6 +127,7 @@ reg[Symbol.match] = false
 ```
 
 ### Symbol.matchAll ??
+>
 > Symbol.matchAll 返回一个迭代器，根据字符串生成正则表达式的匹配项。String.prototype.matchAll() 方法调用此函数。
 
 ```javascript
@@ -130,6 +138,7 @@ reg[Symbol.match] = false
 ```
 
 ### Symbol.replace
+>
 > Symbol.replace 指定了当一个字符串替换所匹配字符串时所调用的方法。 String.prototype.replace() 会调用此方法。
 
 详见 RegExp.prototype[@@replace]\() 和 String.prototype.replace()
@@ -149,6 +158,7 @@ class Replace1 {
 ```
 
 ### Symbol.search
+>
 > Symbol.search 指定了一个搜索方法，接受用户输入的正则表达式，返回该正则表达式在字符串中匹配到的下标。 String.prototype.search() 调用此方法。
 
 详见 RegExp.prototype[@@search]() 和String.prototype.search().
@@ -168,6 +178,7 @@ class caseInsensitiveSearch {
 ```
 
 ### Symbol.species
+>
 > Symbol.species 是个函数值属性，其被构造函数用以创建派生对象。
 
 在扩展数组类 MyArray 上返回 Array 对象。
@@ -186,6 +197,7 @@ console.log(mapped instanceof Array);   // true
 ```
 
 ### Symbol.split
+>
 > Symbol.split 指向和一个正则表达式的索引处分割字符串的方法。 String.prototype.split() 调用
 
 ```javascript
@@ -204,6 +216,7 @@ console.log('foobar'.split(new Split1('foo')));
 ```
 
 ### Symbol.toPrimitive
+>
 > Symbol.toPrimitive 是一个内置的 Symbol 值，作为对象的函数值属性存在，当一个对象转换为对应的原始值时，会调用此函数。
 
 ```javascript
@@ -224,6 +237,7 @@ console.log(+object1, `${object1}456`, !object1)
 ```
 
 ### Symbol.toStringTag
+>
 > Symbol.toStringTag 是一个内置 symbol，通常作为对象的属性键使用，对应的属性值应该为字符串类型，这个字符串用来表示该对象的自定义类型标签，通常只有内置的 Object.prototype.toString() 方法会去读取这个标签并把它包含在自己的返回值里。
 
 ```javascript
@@ -238,6 +252,7 @@ Object.prototype.toString.call(new ValidatorClass())
 ```
 
 ### Symbol.unscopables
+>
 > Symbol.unscopables 用于指定对象值，其对象自身和继承的从关联对象的 with 环境绑定中排除的属性名称
 
 ```javascript
@@ -263,6 +278,7 @@ with(object1) {
 ## 方法
 
 ### Symbol.for()
+>
 > Symbol.for(key) 根据给定的 key，从运行时的 symbol 注册表中找到对应的 symbol，如果找到了，则返回它，否则会新建一个与该键关联的 symbol，并放入全局 symbol 注册表中
 
 ```javascript
@@ -278,6 +294,7 @@ sym.toString();
 ```
 
 ### Symbol.keyFor()
+>
 > Symbol.keyFor(sym) 方法用来获取全局symbol 注册表中与某个 symbol 关联的键。
 
 如果全局注册表中查找到该 symbol，则返回该 symbol 的 key 值，返回值为字符串类型。否则返回 undefined
@@ -295,6 +312,7 @@ Symbol.keyFor(Symbol.iterator) // undefined
 ```
 
 ### Symbol.prototype.toString()
+>
 > toString() 方法返回当前 symbol 对象的字符串表示。
 >
 > Symbol 对象拥有自己的 toString 方法，因而遮蔽了原型链上的 Object.prototype.toString()。
@@ -311,6 +329,7 @@ Object(Symbol("foo")).toString() + "bar"
 ```
 
 ### Symbol.prototype.valueOf()
+>
 > valueOf() 方法返回当前 symbol 对象所包含的 symbol 原始值。
 
 在 JavaScript 中，虽然大多数类型的对象在某些操作下都会自动的隐式调用自身的 valueOf() 方法或者 toString() 方法来将自己转换成一个原始值，但 symbol 对象不会这么干，symbol 对象无法隐式转换成对应的原始值

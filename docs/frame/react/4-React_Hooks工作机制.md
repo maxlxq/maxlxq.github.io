@@ -2,10 +2,12 @@
 # React-Hooks 工作机制
 
 使用原则：
+
 - 只在 React 函数中调用 Hook
 - 不要在循环、条件或嵌套函数中调用 Hook
 
 目的：
+
 - 确保 Hooks 在每次渲染时都保持同样的执行顺序
 
 从源码调用流程看原理：Hooks 的正常运作，在底层依赖于顺序链表
@@ -120,10 +122,10 @@ function mountWorkInProgressHook(): Hook {
   return workInProgressHook;
 }
 ```
+
 </details>
 
 hook 相关的所有信息收敛在一个 hook 对象里，而 hook 对象之间以单向链表的形式互相串联。
-
 
 ### 更新过程
 
@@ -160,7 +162,3 @@ mountState 用来初始化 Hooks。
 updateState 要做的就是：按**顺序遍历**之前构建好的链表，取出对应的数据信息进行渲染。
 
 所以，**hooks 的渲染是 通过"依次遍历"来定位每个 hooks 内容的。如果前后两次读到的链表在顺序上出现差异，那么渲染的结果自然是不可控的。**
-
-
-
-

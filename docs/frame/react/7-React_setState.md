@@ -56,12 +56,14 @@ export default class App extends React.Component{
 ```
 
 - 点击第一个按钮，触发 `increment` 方法，打印
+
 ```javascript
 // 0
 // 0
 ```
 
 - 点击第二个按钮，触发 `triple` 方法，打印
+
 ```javascript
 // 点完第一个之后，count 为 1
 // 1
@@ -69,6 +71,7 @@ export default class App extends React.Component{
 ```
 
 - 点击第三个按钮，触发 `reduce` 方法，打印
+
 ```javascript
 // 点完第一个之后，count 为 2，因为批量更新，多个 setState 只会保留最后一次逻辑。
 // 2
@@ -141,6 +144,7 @@ enqueueSetState: function enqueueSetState(publicInstance, partialState) {
 ```
 
 enqueueSetState 做了两件事：
+
 - 将新的 state 放进组件的状态队列里
 - 用 enqueueUpdate 来处理将要更新的实例对象
 
@@ -241,6 +245,7 @@ Transaction 就像是一个壳子，首先会讲目标函数用 wrapper 封装�
 ### 同步现象的本质
 
 ReactDefaultBatchingStrategy 是一个批量更新策略事务，它的 wrapper 有两个：
+
 - FLUSH_BATCHED_UPDATES
 - RESET_BATCHED_UPDATES
 
@@ -262,6 +267,7 @@ var TRANSACTION_WRAPPERS = [FLUSH_BATCHED_UPDATES, RESET_BATCHED_UPDATES];
 在 callback 执行完之后，RESET_BATCHED_UPDATES 将 isBatchingUpdates 设为 false，FLUSH_BATCHED_UPDATES 执行 flushBatchedUpdates， 然后里面会循环所有 dirtyComponent，调用 updateComponent 来执行所有的生命周期方法，最后实现组件的更新。
 
 那么，为什么 setState 会表现同步？
+
 - 因为 batchedUpdates 这个方法，不仅仅会在 setState 之后才被调用。
 
 ```javascript
@@ -287,6 +293,7 @@ _renderNewRootComponent: function _renderNewRootComponent(nextElement, container
 因此，需要开启 batch 来确保所有的更新都能够进入 dirtyComponents 里去，进而确保厨师渲染流程中所有的 setState 都是生效的。
 
 下面是 React 时间系统中的代码，组件上绑定事件后，也可能触发 setState，为确保每一次 setState 都有效，React 同样会在此处手动开启批量更新。
+
 ```javascript
 // ReactEventListener.js
 dispatchEvent: function dispatchEvent(topLevelType, nativeEvent) {
@@ -306,6 +313,7 @@ dispatchEvent: function dispatchEvent(topLevelType, nativeEvent) {
 ## 总结
 
 setState 并不是单纯同步/异步的，它的表现会因调用场景的不同而不同：
+
 - 在 React 钩子函数及合成事件中，表现为异步
 - 在 setTimeout、setInterval 等函数中，包括在 DOM 原生事件中，都表现为 同步
 

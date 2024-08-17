@@ -11,11 +11,11 @@
 - 极客时间 - [《浏览器工作原理》](https://www.notion.so/maxlxq/7aa8430337284365b167dd50c73411ce)
 - 拉勾教育 - 《前端基础建设与架构》
 - 拉勾教育 - [《深入浅出搞定 React》](/frame/react.html)
-- 拉勾教育 - [《Node.js 应用开发实战》](./NodeJS应用开发实战.md)
+- 拉勾教育 - [《Node.js 应用开发实战》](/record/node_base.html)
 
 ## 项目问题记录
 
-- [Taro 3 跨端框架原理](./Taro_3_跨端框架原理.md)
+- [Taro 3 跨端框架原理](/blog/taro_3.html)
 
 ## 新知识 demo
 

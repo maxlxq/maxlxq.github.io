@@ -5,6 +5,7 @@
 ## Git 安装和本地搭建 Git 项目
 
 git 工具在安装 xcode 后自动集成。
+
 ```bash
 # 建立空白文件夹
 mkdir project
@@ -20,4 +21,20 @@ git init
 
 ## Git 常用命令
 
+- git fetch
+- git branch
+- git checkout
+- git pull
+- git push
+- git commit
+- git log
+- git merge
+- git rebase
+- git reset
+- git stash
+- git cherry
+- git cherry-pick
+
 ## git-flow 常用命令
+
+- git flow init 初始化

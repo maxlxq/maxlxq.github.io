@@ -32,8 +32,10 @@ workflow 文件采用 YAML 格式文件，统一后缀名 .yml，一个库可以
 GitHub 只要发现 .github/workflows 目录中有 .yml 文件，就会运行该文件。
 
 ### 基本字段
+
 - name：workflow 名称，缺省时，默认为当前 workflow 的文件名
 - on：触发条件，如：push、\[push, pull_request], 还可以配置 限定分支或标签
+
 ```yaml
 # 只有 master 分支发生 push 事件，才会触发 workflow
 on:
@@ -41,6 +43,7 @@ on:
     branches:
       - master
 ```
+
 - jobs: 需要写出每一项的 job_id，名称自定
   - name 字段是任务说明
   - runs-on 虚拟机环境
@@ -58,7 +61,9 @@ jobs:
     name: second job
     needs: [job1, job2]
 ```
+
 - steps：包含 name、env、run
+
 ```yaml
 jobs:
   job:
@@ -98,6 +103,11 @@ jobs:
 ![创建新的workflow](/blog/create_workflow.png)
 ![配置.yml文件，提交](/blog/yml_config.png)
 
+升级为 rspress 框架后，构建发布配置也有所变化，![rspress 发布配置](/blog/rspress-deploy.png)
+参考官网文档，直接复制yml代码，使用即可
+
+---
+
 ACCESS_TOKEN 需要去用户的 `Settings => Developer Settings => Personal access tokens` 创建，配置权限有限的 token，注意保存 token，仅出现一次。[有效期一年]
 
 配置中出现的 `ACCESS_TOKEN` 则需要在 Settings 中配置，如下：
@@ -106,6 +116,7 @@ ACCESS_TOKEN 需要去用户的 `Settings => Developer Settings => Personal acce
 整体配置结束后，将 vuepress 项目推送到 GitHub 仓库地址 master 分支，GitHub Actions 会自动运行，将构建产物发布到网页。
 
 CNAME 使用自定义域名访问
+
 ```yaml
 jobs:
   job:
@@ -122,6 +133,7 @@ jobs:
         BUILD_DIR: docs/.vuepress/dist/
         CNAME: blog.ahulib.com # <= 左侧设置 CNAME 地址
 ```
+
 Settings 中配置信息：分支 = TARGET_BRANCH、设置 domain，启用 HTTPS
 ![自定义域名访问](/blog/CNAME_config.png)
 
