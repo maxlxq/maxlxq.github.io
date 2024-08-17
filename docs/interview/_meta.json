@@ -1,0 +1,47 @@
+[
+  {
+    "type": "file",
+    "name": "index",
+    "label": "首页"
+  },
+  {
+    "type": "file",
+    "name": "intro",
+    "label": "基础介绍"
+  },
+  {
+    "type": "dir",
+    "name": "base",
+    "label": "面试题"
+  },
+  {
+    "type": "dir",
+    "name": "http",
+    "label": "HTTP系列"
+  },
+  {
+    "type": "dir",
+    "name": "webpack",
+    "label": "工程化常见问题"
+  },
+  {
+    "type": "dir",
+    "name": "css",
+    "label": "CSS常见问题"
+  },
+  {
+    "type": "dir",
+    "name": "js",
+    "label": "JavaScript常见问题"
+  },
+  {
+    "type": "dir",
+    "name": "chrome",
+    "label": "浏览器相关"
+  },
+  {
+    "type": "dir",
+    "name": "list",
+    "label": "性能优化"
+  }
+]

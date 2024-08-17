@@ -1,0 +1,32 @@
+[
+  {
+    "text": "文章",
+    "link": "/blog/",
+    "activeMatch": "^/blog/"
+  },
+  {
+    "text": "面试",
+    "link": "/interview/",
+    "activeMatch": "^/interview/"
+  },
+  {
+    "text": "算法",
+    "link": "/leetcode/",
+    "activeMatch": "^/leetcode/"
+  },
+  {
+    "text": "MDN",
+    "link": "/mdn/",
+    "activeMatch": "^/mdn/"
+  },
+  {
+    "text": "框架",
+    "link": "/frame/",
+    "activeMatch": "^/frame/"
+  },
+  {
+    "text": "读书笔记",
+    "link": "/record/",
+    "activeMatch": "^/record/"
+  }
+]

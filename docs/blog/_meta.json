@@ -1,0 +1,17 @@
+[
+  {
+    "type": "file",
+    "name": "index",
+    "label": "首页"
+  },
+  {
+    "type": "dir",
+    "name": "js_base",
+    "label": "红宝书（第四版）"
+  },
+  {
+    "type": "dir",
+    "name": "more",
+    "label": "更多文章"
+  }
+]

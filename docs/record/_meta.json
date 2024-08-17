@@ -1,0 +1,22 @@
+[
+  {
+    "type": "file",
+    "name": "index",
+    "label": "读书笔记"
+  },
+  {
+    "type": "dir",
+    "name": "js_base",
+    "label": "红宝书（第四版）"
+  },
+  {
+    "type": "dir",
+    "name": "build_base",
+    "label": "前端基础建设与架构"
+  },
+  {
+    "type": "dir",
+    "name": "node_base",
+    "label": "NodeJS开发实践"
+  }
+]
