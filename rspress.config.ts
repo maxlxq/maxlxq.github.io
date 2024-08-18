@@ -15,5 +15,11 @@ export default defineConfig({
     socialLinks: [
       { icon: 'github', mode: 'link', content: 'https://github.com/maxlxq/maxlxq.github.io' },
     ],
+    footer: {
+      message: `
+        © 2024 MAXLXQ. All Rights Reserved. <br />
+        备案号：<a href="https://beian.miit.gov.cn/#/Integrated/index">皖ICP备16006052号</a>
+      `
+    }
   },
 });

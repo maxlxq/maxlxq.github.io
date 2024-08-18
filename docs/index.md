@@ -4,7 +4,7 @@ pageType: home
 hero:
   name: 前端周报
   text: 前端学习分享
-  tagline: 前端周报 面试笔记 算法 学习笔记
+  tagline: 面试 算法 学习笔记
   actions:
     - theme: brand
       text: 开始阅读 →
