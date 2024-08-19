@@ -8,5 +8,10 @@
     "type": "dir",
     "name": "base",
     "label": "算法题"
+  },
+  {
+    "type": "dir",
+    "name": "core",
+    "label": "核心类型题"
   }
 ]

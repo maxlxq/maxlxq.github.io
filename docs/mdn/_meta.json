@@ -8,5 +8,10 @@
     "type": "dir",
     "name": "base",
     "label": "JS基础"
+  },
+  {
+    "type": "dir",
+    "name": "css",
+    "label": "CSS"
   }
 ]
