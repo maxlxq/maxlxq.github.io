@@ -20,6 +20,10 @@ export default defineConfig({
         © 2024 MAXLXQ. All Rights Reserved. <br />
         备案号：<a href="https://beian.miit.gov.cn/#/Integrated/index">皖ICP备16006052号</a>
       `
-    }
+    },
+    outlineTitle: '大纲',
+    nextPageText: '下一页',
+    prevPageText: '上一页',
+    searchPlaceholderText: '搜索文档',
   },
 });
