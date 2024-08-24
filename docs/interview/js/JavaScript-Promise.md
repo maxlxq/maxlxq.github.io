@@ -102,21 +102,25 @@ class Promise {
 
       if (this.status === PENDING) {
         this.onResolvedCallbackArr.push(() => {
-          try {
-            let result = onResolved(this.value)
-            resolvePromise(nextPromise, result, resolve, reject)
-          } catch (e) {
-            reject(e)
-          }
-        }, 0)
+          setTimeout(() => {
+            try {
+              let result = onResolved(this.value)
+              resolvePromise(nextPromise, result, resolve, reject)
+            } catch (e) {
+              reject(e)
+            }
+          }, 0)
+        })
         this.onRejectedCallbackArr.push(() => {
-          try {
-            let result = onRejected(this.value)
-            resolvePromise(nextPromise, result, resolve, reject)
-          } catch (e) {
-            reject(e)
-          }
-        }, 0)
+          setTimeout(() => {
+            try {
+              let result = onRejected(this.value)
+              resolvePromise(nextPromise, result, resolve, reject)
+            } catch (e) {
+              reject(e)
+            }
+          }, 0)
+        })
       }
     })
   }
@@ -147,33 +151,26 @@ function Promise(fn) {
 ## Promise.all
 
 ```javascript
-function PromiseAll(arr) {
-  let args = Array.prototype.slice.call(arr)
-  return new Promise(function(resolve, reject) {
-    if (args.length === 0) return resolve([])
-    let remaining = args.length
+function PromiseAll(promises) {
+  return new Promise((resolve, reject) => {
+    if (!promises[Symbol.iterator] || !promises) return reject(new TypeError('类型错误'))
+    if (!promises?.length) return resolve([])
+    
+    let index = 0
+    const resultArr = []
 
-    function res(i, val) {
-      try {
-        if (val && ['object', 'function'].includes(typeof val)) {
-          let then = val.then
-          if (typeof then === 'function') {
-            then.call(val, function(val) {
-              res(i, val)
-            }, reject)
-            return
-          }
-        }
-        args[i] = val
-        if (--remaining === 0) {
-          resolve(args)
-        }
-      } catch(e) {
-        reject(e)
+    const processValue = (i, value) => {
+      resultArr[i] = value
+      index++
+      if (index === promises.length) {
+        resolve(resultArr)
       }
     }
-    for(let i = 0; i < args.length; i++) {
-      res(i, args[i])
+
+    for(let i = 0; i < promises.length; i++) {
+      Promise.resolve(promises[i]).then((value) => {
+        processValue(i, value)
+      }, e => reject(e))
     }
   })
 }
