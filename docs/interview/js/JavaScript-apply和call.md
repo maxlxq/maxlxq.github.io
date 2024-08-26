@@ -13,7 +13,7 @@
 - call
 
 ```javascript
-Function.prototype.call = function(context) {
+Function.prototype.callFn = function(context) {
   context = context ? Object(context) : window
   var fn = Symbol()
   context[fn] = this
@@ -29,22 +29,18 @@ Function.prototype.call = function(context) {
 - apply
 
 ```javascript
-Function.prototype.apply = function(context, arr) {
-  context = context ? Object(context) : window
-  context.fn = this
-
-  var result
-  if (!arr) {
-    result = context.fn()
-  } else {
-    var args = []
-    for(var i = 0, len = arr.length; i < len; i++) {
-      args.push(`arr[${i}]`)
-    }
-    result = eval(`context.fn(${args})`)
+Function.prototype.applyFn = function(ctx, arr) {
+  if (typeof this !== 'function') {
+    throw new TypeError(this + ' is not a function');
   }
 
-  delete context.fn
-  return result
+  ctx = ctx || window;
+  const key = Symbol();
+  ctx[key] = this;
+
+  const res = !arr ? ctx[key]() : ctx[key](arr);
+
+  delete ctx[key];
+  return res;
 }
 ```
