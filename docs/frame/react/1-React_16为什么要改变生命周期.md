@@ -97,7 +97,7 @@ componentWillUnmount()
 
 ### 进化的生命周期方法：React 16 生命周期工作流
 
-![React 16.4+ 生命周期](https://ahulib-1251891330.cos.ap-hongkong.myqcloud.com/image/other/React16_lifecycle.png)
+![React 16.4+ 生命周期](https://blog-1251891330.cos.ap-shanghai.myqcloud.com/image/other/React16_lifecycle.png)
 
 React 16.3- 版本生命周期，getDerivedStateFromProps 由 constructor 和 new props 这两个部分触发。
 
@@ -185,7 +185,7 @@ React 16 之前，每一次触发组件的更新，都会构建一个新的虚�
 
 Fiber 架构的重要特征就是 可以被打断的异步渲染模式。
 
-![React 16 左侧阶段划分](https://ahulib-1251891330.cos.ap-hongkong.myqcloud.com/image/other/React16_lifecycle.png)
+![React 16 左侧阶段划分](https://blog-1251891330.cos.ap-shanghai.myqcloud.com/image/other/React16_lifecycle.png)
 
 - render 阶段： 纯净且没有副作用，可能会被 React 暂停、终止或重新启动
 - pre-commit 阶段：可以读取 DOM

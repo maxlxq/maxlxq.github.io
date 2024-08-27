@@ -47,7 +47,7 @@ Fiber 及相关源码处理 详见文章：[Fiber详解](https://blog.ahulib.com
 
 ### 生命周期变更
 
-![React 16.4 以上生命周期](https://ahulib-1251891330.cos.ap-hongkong.myqcloud.com/image/interview/react_lifestyle.png)
+![React 16.4 以上生命周期](https://blog-1251891330.cos.ap-shanghai.myqcloud.com/image/interview/react_lifestyle.png)
 
 #### 挂载阶段
 

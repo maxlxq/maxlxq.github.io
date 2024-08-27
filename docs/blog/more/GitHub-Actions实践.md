@@ -100,10 +100,10 @@ jobs:
 
 新出现一个页面，需要新创建一个 路径文件：`.github/workflows/<your_ci_name>.yml`，在模版文件中做对应修改，右侧可以搜索一些常用的库，直接根据提示将模版代码复制到文件中即可。
 
-![创建新的workflow](https://ahulib-1251891330.cos.ap-hongkong.myqcloud.com/image/blog/create_workflow.png)
-![配置.yml文件，提交](https://ahulib-1251891330.cos.ap-hongkong.myqcloud.com/image/blog/yml_config.png)
+![创建新的workflow](https://blog-1251891330.cos.ap-shanghai.myqcloud.com/image/blog/create_workflow.png)
+![配置.yml文件，提交](https://blog-1251891330.cos.ap-shanghai.myqcloud.com/image/blog/yml_config.png)
 
-升级为 rspress 框架后，构建发布配置也有所变化，![rspress 发布配置](https://ahulib-1251891330.cos.ap-hongkong.myqcloud.com/image/blog/rspress-deploy.png)
+升级为 rspress 框架后，构建发布配置也有所变化，![rspress 发布配置](https://blog-1251891330.cos.ap-shanghai.myqcloud.com/image/blog/rspress-deploy.png)
 参考官网文档，直接复制yml代码，使用即可
 
 ---
@@ -111,7 +111,7 @@ jobs:
 ACCESS_TOKEN 需要去用户的 `Settings => Developer Settings => Personal access tokens` 创建，配置权限有限的 token，注意保存 token，仅出现一次。[有效期一年]
 
 配置中出现的 `ACCESS_TOKEN` 则需要在 Settings 中配置，如下：
-![ACCESS_TOKEN 设置](https://ahulib-1251891330.cos.ap-hongkong.myqcloud.com/image/blog/ACCESS_TOKEN.png)
+![ACCESS_TOKEN 设置](https://blog-1251891330.cos.ap-shanghai.myqcloud.com/image/blog/ACCESS_TOKEN.png)
 
 整体配置结束后，将 vuepress 项目推送到 GitHub 仓库地址 master 分支，GitHub Actions 会自动运行，将构建产物发布到网页。
 
@@ -135,7 +135,7 @@ jobs:
 ```
 
 Settings 中配置信息：分支 = TARGET_BRANCH、设置 domain，启用 HTTPS
-![自定义域名访问](https://ahulib-1251891330.cos.ap-hongkong.myqcloud.com/image/blog/CNAME_config.png)
+![自定义域名访问](https://blog-1251891330.cos.ap-shanghai.myqcloud.com/image/blog/CNAME_config.png)
 
 更多内容详见 [Actions 文档](https://docs.github.com/en/rest/reference/actions)
 
