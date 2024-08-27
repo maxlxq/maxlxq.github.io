@@ -13,7 +13,7 @@ hero:
       text: GitHub
       link: https://github.com/maxlxq/maxlxq.github.io
   image:
-    src: /logo.jpg
+    src: https://ahulib-1251891330.cos.ap-hongkong.myqcloud.com/image/logo.jpg
     alt: 前端周报 Logo
 features:
   - title: A Blog

@@ -132,7 +132,7 @@ foo 函数的定义期，函数 bar 的 [[scope]] 将会包含全局 [[scope]] �
 bar[[scope]] = [fooContext, globalContext]
 ```
 
-![控制台的预期输出](/base/foo_bar_dir.png)
+![控制台的预期输出](https://ahulib-1251891330.cos.ap-hongkong.myqcloud.com/image/base/foo_bar_dir.png)
 
 可以看到：
 

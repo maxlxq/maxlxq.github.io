@@ -6,10 +6,10 @@ export default defineConfig({
   base: '/',
   title: '前端周报',
   description: '前端相关技能学习记录分享',
-  icon: '/D.png',
+  icon: 'https://ahulib-1251891330.cos.ap-hongkong.myqcloud.com/image/D.png',
   logo: {
-    light: '/D.png',
-    dark: '/D.png',
+    light: 'https://ahulib-1251891330.cos.ap-hongkong.myqcloud.com/image/D.png',
+    dark: 'https://ahulib-1251891330.cos.ap-hongkong.myqcloud.com/image/D.png',
   },
   themeConfig: {
     socialLinks: [
