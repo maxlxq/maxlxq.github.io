@@ -5,6 +5,11 @@
     "label": "原创笔记"
   },
   {
+    "type": "dir",
+    "name": "list",
+    "label": "一点记录"
+  },
+  {
     "type": "file",
     "name": "taro_3",
     "label": "Taro 3 跨端框架原理"
