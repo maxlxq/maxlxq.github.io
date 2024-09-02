@@ -10,9 +10,11 @@ import { useEffect, useRef } from 'react';
 
 export default function usePrevious<T>(state: T): T | undefined {
   const ref = useRef<T>();
+  const cur = useRef<T>();
 
   useEffect(() => {
-    ref.current = state;
+    ref.current = cur.current;
+    cur.current = state;
   }, [state]);
 
   return ref.current;
