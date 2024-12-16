@@ -3,6 +3,293 @@
 > 转载自掘金文章：[React17 源码分析](https://juejin.cn/post/6898635086657224717)
 > author: [xfz](https://juejin.cn/user/1415826705485128)
 
+## 19 版本特点
+
+### Actions
+
+- useTransition
+- useActionState
+- useFormState
+- useOptimistic
+- use
+
+> React 19 新内容：[React19 new content](https://react.dev/blog/2024/12/05/react-19)
+
+> 以下所有案例，直接复制到 codesandbox 中运行即可，缺少的 import 请自行补充。
+
+- Actions: useTransition 任务执行方法及状态
+```javascript
+const updateName = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      Math.random() > 0.5
+        ? resolve("finished")
+        : reject(new Error("error get"));
+    }, 1000);
+  });
+};
+
+export default function App() {
+  const [name, setName] = useState("init");
+  const [error, setError] = useState(null);
+  const [isPending, startTransition] = useTransition();
+
+  const handleSubmit = () => {
+    startTransition(async () => {
+      const res = await updateName().catch((err) => setError(err));
+      res && setName(res);
+    });
+  };
+
+  return (
+    <div className="App">
+      <h1>Hello {name}</h1>
+      <h2>Start editing to see some magic happen!</h2>
+      <button onClick={handleSubmit} disabled={isPending}>
+        Update
+      </button>
+      {error && <p>{error.toString()}</p>}
+    </div>
+  );
+}
+```
+- Actions: useActionState
+```javascript
+
+const updateName = (name) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      Math.random() > 0.5
+        ? resolve(`${name} finished`)
+        : reject(new Error("error get"));
+    }, 1000);
+  });
+};
+
+export default function App() {
+  const [error, setError] = useState(null);
+  const [state, submitAction, isPending] = useActionState(
+    async (previousState, formData) => {
+      setError(null);
+      const state = await updateName(formData.get("name")).catch((err) =>
+        setError(err)
+      );
+      if (state) {
+        return state;
+      }
+    },
+    null
+  );
+
+  return (
+    <form action={submitAction}>
+      <input name="name" />
+      <button type="submit" disabled={isPending}>
+        Update
+      </button>
+      <p>state: {state}</p>
+      {error && <p>{error.toString()}</p>}
+    </form>
+  );
+}
+```
+- Actions: useFormState
+```javascript
+function SubmitButton() {
+  const { pending } = useFormStatus();
+
+  return (
+    <div className="form_item">
+      <button className="primary" type="submit" disabled={pending}>
+        {pending ? "Submitting..." : "Submit"}
+      </button>
+    </div>
+  );
+}
+
+export default function App() {
+  const [state, submitAction, isPending] = useActionState(
+    async (previousState, formData) => {
+      const title = formData.get("name");
+
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      return [...(previousState || []), title];
+    },
+    null
+  );
+
+  return (
+    <form action={submitAction}>
+      <input type="text" name="name" />
+      <p>posts: {isPending ? "loading" : (state || []).join(",")}</p>
+      <SubmitButton />
+    </form>
+  );
+}
+```
+- Actions: useOptimistic
+```javascript
+const updateName = (name) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(`${name} finished`);
+    }, 1000);
+  });
+};
+function SubmitButton() {
+  const { pending } = useFormStatus();
+
+  return (
+    <div className="form_item">
+      <button className="primary" type="submit" disabled={pending}>
+        {pending ? "Submitting..." : "Submit"}
+      </button>
+    </div>
+  );
+}
+
+function ChangeName({ currentName, onUpdateName }) {
+  const [optimisticName, setOptimisticName] = useOptimistic(currentName);
+
+  const submitAction = async (formData) => {
+    const newName = formData.get("name");
+    setOptimisticName(newName);
+    const updatedName = await updateName(newName);
+    onUpdateName(updatedName);
+  };
+
+  return (
+    <form action={submitAction}>
+      <p>Your name is: {optimisticName}</p>
+      <p>
+        <label>Change Name:</label>
+        <input
+          type="text"
+          name="name"
+          disabled={currentName !== optimisticName}
+        />
+      </p>
+      <SubmitButton />
+    </form>
+  );
+}
+
+export default function App() {
+  const [currentName, updateName] = useState("");
+
+  return <ChangeName currentName={currentName} onUpdateName={updateName} />;
+}
+
+```
+- Actions：use
+
+使用 Promise 及 Context 示例
+
+```javascript
+function Comments({ commentsPromise }) {
+  // `use` will suspend until the promise resolves.
+  const comments = use(commentsPromise);
+  return comments.map((comment) => <p key={comment.id}>{comment.comment}</p>);
+}
+
+function Page({ commentsPromise }) {
+  // When `use` suspends in Comments,
+  // this Suspense boundary will be shown.
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <Comments commentsPromise={commentsPromise} />
+    </Suspense>
+  );
+}
+
+const themeContext = createContext({ color: "light" });
+
+export default function App() {
+  const theme = use(themeContext);
+
+  console.log("theme color:", theme?.color);
+
+  const commentsPromise = new Promise((resolve) => {
+    setTimeout(() => {
+      resolve([
+        { id: 1, comment: "hello 1" },
+        { id: 2, comment: "hello 2" },
+        { id: 3, comment: "hello 3" },
+        { id: 4, comment: "hello 4" },
+      ]);
+    }, 1000);
+  });
+
+  return <Page commentsPromise={commentsPromise} />;
+}
+```
+
+### Improvements
+
+- ref as a prop
+
+> 移除了 forwardRef 的写法
+
+```javascript
+function MyInput({placeholder, ref}) {
+  return <input placeholder={placeholder} ref={ref} />
+}
+
+//...
+<MyInput ref={ref} />
+```
+
+- \<Context\> as a provider 
+
+> Context 替代了 <del>Context.Provider</del>「已弃用」
+
+```javascript
+const ThemeContext = createContext('');
+
+function App({children}) {
+  return (
+    <ThemeContext value="dark">
+      {children}
+    </ThemeContext>
+  );  
+}
+```
+
+- Cleanup functions for refs
+
+```javascript
+<input
+  ref={(ref) => {
+    // ref created
+
+    // NEW: return a cleanup function to reset
+    // the ref when element is removed from DOM.
+    return () => {
+      // ref cleanup
+    };
+  }}
+/>
+
+// 停止使用 隐式返回，因为引入了 ref 清理函数，需改为下面写法
+- <div ref={current => (instance = current)} />
++ <div ref={current => {instance = current}} />
+```
+
+- useDeferredValue initial value
+
+当提供 initialValue 时，useDeferredValue 会将其作为组件初始渲染的值返回，并使用返回的 deferredValue 在后台安排重新渲染。
+```javascript
+function Search({deferredValue}) {
+  // 首次渲染的值为 空字符串
+  // 然后使用新得到的 deferredValue 安排重新渲染
+  const value = useDeferredValue(deferredValue, '');
+  
+  return (
+    <Results query={value} />
+  );
+}
+```
+
 ## 15 版本特点
 
 React 15 的架构分为两层
