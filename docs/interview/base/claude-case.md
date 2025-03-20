@@ -15,8 +15,7 @@
 
 ![Claude 页面](https://blog-1251891330.cos.ap-shanghai.myqcloud.com/image/interview/e70ec0af-03ac-42c7-807f-46639bb7bd53.webp)
 
-<!-- ![React Native执行效果](https://blog-1251891330.cos.ap-shanghai.myqcloud.com/image/interview/6a4f532a-a4b5-425e-9daf-0db032fade1b.webp) -->
-<center><img src="https://blog-1251891330.cos.ap-shanghai.myqcloud.com/image/interview/6a4f532a-a4b5-425e-9daf-0db032fade1b.webp" width="200" alt="React Native执行效果" /></center>
+![React Native执行效果](https://blog-1251891330.cos.ap-shanghai.myqcloud.com/image/interview/6a4f532a-a4b5-425e-9daf-0db032fade1b.webp)
 
 可以看到页面效果还不错，可以根据自己的想法进行调整。
 
